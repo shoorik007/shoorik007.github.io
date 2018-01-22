@@ -1,0 +1,1186 @@
+<!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>-->
+<!-- <link href='https://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'> -->
+<!--<script>hljs.initHighlightingOnLoad();</script>-->
+<!--<script src="svn/loader/run_prettify.js"></script>-->
+
+<!--
+
+  Instructions:
+
+  - Save this file.
+  - Replace "USER" with your GitHub username.
+  - Replace "REPO" with your GitHub repo name.
+  - Replace "Your Project" with your project name.
+  - Upload this file (or commit to GitHub Pages).
+
+  Customize as you see fit!
+
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Blynk Docs</title>
+  
+-->
+  <!-- Flatdoc -->
+  <script src="scripts/jquery-1.9.1.min.js"></script>
+  <script src='scripts/legacy.js'></script>
+  <script src='scripts/flatdoc.js'></script>
+
+  <!-- Flatdoc theme -->
+  <link  href='css/style.css' rel='stylesheet'>
+  <script src='scripts/script.js'></script>
+
+  <!-- Meta -->
+  <meta content="Blynk" property="og:title">
+  <meta content="Blynk - build an app for your Arduino project in 5 minutes" name="description">
+
+  <!-- Initializer -->
+  <script>
+      Flatdoc.run({
+          fetcher: Flatdoc.file([
+              'IntroAndDownloads.md',
+              'GettingStarted.md',
+              'HardwareSetUps.md',
+              'BlynkMainOperations.md',
+              'Widgets.md',
+              'Sharing.md',
+              'http.md',
+              'SupportedHardware.md',
+              'Troubleshooting.md',
+              'Security.md',
+              'OTA.md',
+              'BlynkServer.md',
+              'BlynkFirmware.md',
+              'FAQ.md',
+              'Links.md',
+              'License.md'
+          ])
+      });
+  </script>
+
+</head>
+<body role="flatdoc" cz-shortcut-listen="true">
+
+  <div class="header">
+    <div class="left">
+      <h1><a href="http://blynk.cc"><ffn class="_ffn_textNode" style="border-bottom-color: rgba(0, 0, 0, 0);">Blynk</ffn></a></h1>
+      <!-- Flatdoc
+      <ul>
+               
+              <iframe src="http://ghbtns.com/github-btn.html?user=blynkkk&repo=blynk-library&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+
+
+      <iframe src="http://ghbtns.com/github-btn.html?user=blynkkk&repo=blynk-server&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+      </ul>
+      -->
+    </div>
+    <div class="right">
+      <!-- GitHub buttons: see http://ghbtns.com -->
+
+            <ul>
+        <li><a href="https://blynk.cc/">Головна</a></li>
+        <li><a href="https://www.blynk.cc/getting-started">Початок роботи</a></li>
+        <li><a href="http://docs.blynk.cc/">Документи </a></li>
+        <li><a href="https://community.blynk.cc/">Громада</a></li>
+</ul>
+    </div>
+  </div>
+
+  <div class="content-root">
+
+    <div class="menubar fixed">
+      <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="intro-item" class="level-1"><a id="intro-link" href="#intro" class="level-1">Вступ</a><ul class="level-2" id="intro-list"><li id="intro-how-blynk-works-item" class="level-2"><a id="intro-how-blynk-works-link" href="#intro-how-blynk-works" class="level-2">Як працює Blynk</a></li><li id="intro-features-item" class="level-2"><a id="intro-features-link" href="#intro-features" class="level-2">Особливості</a></li><li id="intro-what-do-i-need-to-blynk-item" class="level-2"><a id="intro-what-do-i-need-to-blynk-link" href="#intro-what-do-i-need-to-blynk" class="level-2">Що мені потрібно для Blynk?</a></li></ul></li><li id="downloads-item" class="level-1"><a id="downloads-link" href="#downloads" class="level-1">Завантаження</a><ul class="level-2" id="downloads-list"><li id="downloads-blynk-apps-for-ios-or-android-item" class="level-2"><a id="downloads-blynk-apps-for-ios-or-android-link" href="#downloads-blynk-apps-for-ios-or-android" class="level-2">Програми Blynk для iOS або Android </a></li><li id="downloads-blynk-library-item" class="level-2"><a id="downloads-blynk-library-link" href="#downloads-blynk-library" class="level-2">Blynk Library </a></li></ul></li><li id="getting-started-item" class="level-1"><a id="getting-started-link" href="#getting-started" class="level-1">Початок роботи</a><ul class="level-2" id="getting-started-list"><li id="getting-started-getting-started-with-the-blynk-app-item" class="level-2"><a id="getting-started-getting-started-with-the-blynk-app-link" href="#getting-started-getting-started-with-the-blynk-app" class="level-2">Початок роботи з програмою Blynk</a><ul class="level-3" id="getting-started-getting-started-with-the-blynk-app-list"><li id="getting-started-getting-started-with-the-blynk-app-1-create-a-blynk-account-item" class="level-3"><a id="getting-started-getting-started-with-the-blynk-app-1-create-a-blynk-account-link" href="#getting-started-getting-started-with-the-blynk-app-1-create-a-blynk-account" class="level-3">1. Створити обліковий запис Blynk</a></li><li id="getting-started-getting-started-with-the-blynk-app-2-create-a-new-project-item" class="level-3"><a id="getting-started-getting-started-with-the-blynk-app-2-create-a-new-project-link" href="#getting-started-getting-started-with-the-blynk-app-2-create-a-new-project" class="level-3">2. Створити новий проект</a></li><li id="getting-started-getting-started-with-the-blynk-app-3-choose-your-hardware-item" class="level-3"><a id="getting-started-getting-started-with-the-blynk-app-3-choose-your-hardware-link" href="#getting-started-getting-started-with-the-blynk-app-3-choose-your-hardware" class="level-3">3. Виберіть своє обладнання</a></li><li id="getting-started-getting-started-with-the-blynk-app-4-auth-token-item" class="level-3"><a id="getting-started-getting-started-with-the-blynk-app-4-auth-token-link" href="#getting-started-getting-started-with-the-blynk-app-4-auth-token" class="level-3">4. Auth Token</a></li><li id="getting-started-getting-started-with-the-blynk-app-5-add-a-widget-item" class="level-3"><a id="getting-started-getting-started-with-the-blynk-app-5-add-a-widget-link" href="#getting-started-getting-started-with-the-blynk-app-5-add-a-widget" class="level-3">5. Додайте віджет</a></li><li id="getting-started-getting-started-with-the-blynk-app-6-run-the-project-item" class="level-3"><a id="getting-started-getting-started-with-the-blynk-app-6-run-the-project-link" href="#getting-started-getting-started-with-the-blynk-app-6-run-the-project" class="level-3">6. Запустіть проект</a></li></ul></li><li id="getting-started-getting-started-with-hardware-item" class="level-2"><a id="getting-started-getting-started-with-hardware-link" href="#getting-started-getting-started-with-hardware" class="level-2">Початок роботи з обладнанням</a><ul class="level-3" id="getting-started-getting-started-with-hardware-list"><li id="getting-started-getting-started-with-hardware-how-to-use-an-example-sketch-item" class="level-3"><a id="getting-started-getting-started-with-hardware-how-to-use-an-example-sketch-link" href="#getting-started-getting-started-with-hardware-how-to-use-an-example-sketch" class="level-3">Як використовувати скетч прикладу</a></li><li id="getting-started-getting-started-with-hardware-auth-token-item" class="level-3"><a id="getting-started-getting-started-with-hardware-auth-token-link" href="#getting-started-getting-started-with-hardware-auth-token" class="level-3">Auth Token</a></li></ul></li><li id="getting-started-blynking-item" class="level-2"><a id="getting-started-blynking-link" href="#getting-started-blynking" class="level-2">Мигання</a></li></ul></li><li id="hardware-set-ups-item" class="level-1"><a id="hardware-set-ups-link" href="#hardware-set-ups" class="level-1">Налаштування апаратного забезпечення</a><ul class="level-2" id="hardware-set-ups-list"><li id="hardware-set-ups-arduino-over-usb-no-shield-item" class="level-2"><a id="hardware-set-ups-arduino-over-usb-no-shield-link" href="#hardware-set-ups-arduino-over-usb-no-shield" class="level-2">Arduino через USB (без шилда)</a></li><li id="hardware-set-ups-raspberry-pi-item" class="level-2"><a id="hardware-set-ups-raspberry-pi-link" href="#hardware-set-ups-raspberry-pi" class="level-2">Raspberry Pi</a></li><li id="hardware-set-ups-esp8266-standalone-item" class="level-2"><a id="hardware-set-ups-esp8266-standalone-link" href="#hardware-set-ups-esp8266-standalone" class="level-2">ESP8266 Standalone</a></li><li id="hardware-set-ups-nodemcu-item" class="level-2"><a id="hardware-set-ups-nodemcu-link" href="#hardware-set-ups-nodemcu" class="level-2">NodeMCU</a></li><li id="hardware-set-ups-arduino-esp8266-wifi-with-at-commands-item" class="level-2"><a id="hardware-set-ups-arduino-esp8266-wifi-with-at-commands-link" href="#hardware-set-ups-arduino-esp8266-wifi-with-at-commands" class="level-2">Arduino + ESP8266 WiFi з AT командами</a></li><li id="hardware-set-ups-particle-item" class="level-2"><a id="hardware-set-ups-particle-link" href="#hardware-set-ups-particle" class="level-2">Particle</a></li></ul></li><li id="blynk-main-operations-item" class="level-1"><a id="blynk-main-operations-link" href="#blynk-main-operations" class="level-1">Blynk основні операції</a><ul class="level-2" id="blynk-main-operations-list"><li id="blynk-main-operations-virtual-pins-item" class="level-2"><a id="blynk-main-operations-virtual-pins-link" href="#blynk-main-operations-virtual-pins" class="level-2">Virtual Pins</a></li><li id="blynk-main-operations-send-data-from-app-to-hardware-item" class="level-2"><a id="blynk-main-operations-send-data-from-app-to-hardware-link" href="#blynk-main-operations-send-data-from-app-to-hardware" class="level-2">Send data from app to hardware</a><ul class="level-3" id="blynk-main-operations-send-data-from-app-to-hardware-list"><li id="blynk-main-operations-send-data-from-app-to-hardware-sending-array-from-widget-item" class="level-3"><a id="blynk-main-operations-send-data-from-app-to-hardware-sending-array-from-widget-link" href="#blynk-main-operations-send-data-from-app-to-hardware-sending-array-from-widget" class="level-3">Sending array from Widget</a></li></ul></li><li id="blynk-main-operations-get-data-from-hardware-item" class="level-2"><a id="blynk-main-operations-get-data-from-hardware-link" href="#blynk-main-operations-get-data-from-hardware" class="level-2">Get data from hardware</a><ul class="level-3" id="blynk-main-operations-get-data-from-hardware-list"><li id="blynk-main-operations-get-data-from-hardware-perform-requests-by-widget-item" class="level-3"><a id="blynk-main-operations-get-data-from-hardware-perform-requests-by-widget-link" href="#blynk-main-operations-get-data-from-hardware-perform-requests-by-widget" class="level-3">Perform requests by Widget</a></li><li id="blynk-main-operations-get-data-from-hardware-pushing-data-from-hardware-item" class="level-3"><a id="blynk-main-operations-get-data-from-hardware-pushing-data-from-hardware-link" href="#blynk-main-operations-get-data-from-hardware-pushing-data-from-hardware" class="level-3">Pushing data from hardware</a></li></ul></li><li id="blynk-main-operations-state-syncing-item" class="level-2"><a id="blynk-main-operations-state-syncing-link" href="#blynk-main-operations-state-syncing" class="level-2">State syncing</a><ul class="level-3" id="blynk-main-operations-state-syncing-list"><li id="blynk-main-operations-state-syncing-for-hardware-item" class="level-3"><a id="blynk-main-operations-state-syncing-for-hardware-link" href="#blynk-main-operations-state-syncing-for-hardware" class="level-3">For hardware</a></li><li id="blynk-main-operations-state-syncing-for-app-item" class="level-3"><a id="blynk-main-operations-state-syncing-for-app-link" href="#blynk-main-operations-state-syncing-for-app" class="level-3">For app</a></li></ul></li><li id="blynk-main-operations-control-of-multiple-devices-item" class="level-2"><a id="blynk-main-operations-control-of-multiple-devices-link" href="#blynk-main-operations-control-of-multiple-devices" class="level-2">Control of multiple devices</a><ul class="level-3" id="blynk-main-operations-control-of-multiple-devices-list"><li id="blynk-main-operations-control-of-multiple-devices-tags-item" class="level-3"><a id="blynk-main-operations-control-of-multiple-devices-tags-link" href="#blynk-main-operations-control-of-multiple-devices-tags" class="level-3">Tags</a></li></ul></li><li id="blynk-main-operations-devices-online-status-item" class="level-2"><a id="blynk-main-operations-devices-online-status-link" href="#blynk-main-operations-devices-online-status" class="level-2">Devices online status</a></li><li id="blynk-main-operations-project-settings-item" class="level-2"><a id="blynk-main-operations-project-settings-link" href="#blynk-main-operations-project-settings" class="level-2">Project Settings</a></li><li id="blynk-main-operations-change-widget-properties-item" class="level-2"><a id="blynk-main-operations-change-widget-properties-link" href="#blynk-main-operations-change-widget-properties" class="level-2">Change Widget properties</a></li><li id="blynk-main-operations-limitations-and-recommendations-item" class="level-2"><a id="blynk-main-operations-limitations-and-recommendations-link" href="#blynk-main-operations-limitations-and-recommendations" class="level-2">Limitations and Recommendations</a></li></ul></li><li id="widgets-item" class="level-1"><a id="widgets-link" href="#widgets" class="level-1">Widgets</a><ul class="level-2" id="widgets-list"><li id="widgets-common-widget-settings-item" class="level-2"><a id="widgets-common-widget-settings-link" href="#widgets-common-widget-settings" class="level-2">Common Widget Settings</a><ul class="level-3" id="widgets-common-widget-settings-list"><li id="widgets-common-widget-settings-pin-selector-item" class="level-3"><a id="widgets-common-widget-settings-pin-selector-link" href="#widgets-common-widget-settings-pin-selector" class="level-3">Pin Selector</a></li><li id="widgets-common-widget-settings-data-mapping-item" class="level-3"><a id="widgets-common-widget-settings-data-mapping-link" href="#widgets-common-widget-settings-data-mapping" class="level-3">Data Mapping</a></li><li id="widgets-common-widget-settings-splitmerge-item" class="level-3"><a id="widgets-common-widget-settings-splitmerge-link" href="#widgets-common-widget-settings-splitmerge" class="level-3">SPLIT/MERGE</a></li><li id="widgets-common-widget-settings-send-on-release-item" class="level-3"><a id="widgets-common-widget-settings-send-on-release-link" href="#widgets-common-widget-settings-send-on-release" class="level-3">Send On Release</a></li><li id="widgets-common-widget-settings-write-interval-item" class="level-3"><a id="widgets-common-widget-settings-write-interval-link" href="#widgets-common-widget-settings-write-interval" class="level-3">Write interval</a></li><li id="widgets-common-widget-settings-color-gradient-item" class="level-3"><a id="widgets-common-widget-settings-color-gradient-link" href="#widgets-common-widget-settings-color-gradient" class="level-3">Color gradient</a></li></ul></li><li id="widgets-controllers-item" class="level-2"><a id="widgets-controllers-link" href="#widgets-controllers" class="level-2">Controllers</a><ul class="level-3" id="widgets-controllers-list"><li id="widgets-controllers-button-item" class="level-3"><a id="widgets-controllers-button-link" href="#widgets-controllers-button" class="level-3">Button</a></li><li id="widgets-controllers-slider-item" class="level-3"><a id="widgets-controllers-slider-link" href="#widgets-controllers-slider" class="level-3">Slider</a></li><li id="widgets-controllers-timer-item" class="level-3"><a id="widgets-controllers-timer-link" href="#widgets-controllers-timer" class="level-3">Timer</a></li><li id="widgets-controllers-joystick-item" class="level-3"><a id="widgets-controllers-joystick-link" href="#widgets-controllers-joystick" class="level-3">Joystick</a></li><li id="widgets-controllers-zergba-item" class="level-3"><a id="widgets-controllers-zergba-link" href="#widgets-controllers-zergba" class="level-3">zeRGBa</a></li><li id="widgets-controllers-step-control-item" class="level-3"><a id="widgets-controllers-step-control-link" href="#widgets-controllers-step-control" class="level-3">Step Control</a></li></ul></li><li id="widgets-displays-item" class="level-2"><a id="widgets-displays-link" href="#widgets-displays" class="level-2">Displays</a><ul class="level-3" id="widgets-displays-list"><li id="widgets-displays-value-display-item" class="level-3"><a id="widgets-displays-value-display-link" href="#widgets-displays-value-display" class="level-3">Value Display</a></li><li id="widgets-displays-labeled-value-item" class="level-3"><a id="widgets-displays-labeled-value-link" href="#widgets-displays-labeled-value" class="level-3">Labeled Value</a></li><li id="widgets-displays-led-item" class="level-3"><a id="widgets-displays-led-link" href="#widgets-displays-led" class="level-3">LED</a></li><li id="widgets-displays-gauge-item" class="level-3"><a id="widgets-displays-gauge-link" href="#widgets-displays-gauge" class="level-3">Gauge</a></li><li id="widgets-displays-lcd-item" class="level-3"><a id="widgets-displays-lcd-link" href="#widgets-displays-lcd" class="level-3">LCD</a></li><li id="widgets-displays-superchart-item" class="level-3"><a id="widgets-displays-superchart-link" href="#widgets-displays-superchart" class="level-3">SuperChart</a></li><li id="widgets-displays-graph-item" class="level-3"><a id="widgets-displays-graph-link" href="#widgets-displays-graph" class="level-3">Graph</a></li><li id="widgets-displays-history-graph-item" class="level-3"><a id="widgets-displays-history-graph-link" href="#widgets-displays-history-graph" class="level-3">History Graph</a></li><li id="widgets-displays-terminal-item" class="level-3"><a id="widgets-displays-terminal-link" href="#widgets-displays-terminal" class="level-3">Terminal</a></li><li id="widgets-displays-video-streaming-item" class="level-3"><a id="widgets-displays-video-streaming-link" href="#widgets-displays-video-streaming" class="level-3">Video Streaming</a></li><li id="widgets-displays-level-display-item" class="level-3"><a id="widgets-displays-level-display-link" href="#widgets-displays-level-display" class="level-3">Level Display</a></li></ul></li><li id="widgets-notifications-item" class="level-2"><a id="widgets-notifications-link" href="#widgets-notifications" class="level-2">Notifications</a><ul class="level-3" id="widgets-notifications-list"><li id="widgets-notifications-twitter-item" class="level-3"><a id="widgets-notifications-twitter-link" href="#widgets-notifications-twitter" class="level-3">Twitter</a></li><li id="widgets-notifications-email-item" class="level-3"><a id="widgets-notifications-email-link" href="#widgets-notifications-email" class="level-3">Email</a></li><li id="widgets-notifications-push-notifications-item" class="level-3"><a id="widgets-notifications-push-notifications-link" href="#widgets-notifications-push-notifications" class="level-3">Push Notifications</a></li><li id="widgets-notifications-unicode-in-notify-email-push-item" class="level-3"><a id="widgets-notifications-unicode-in-notify-email-push-link" href="#widgets-notifications-unicode-in-notify-email-push" class="level-3">Unicode in notify, email, push, …</a></li><li id="widgets-notifications-increasing-message-length-limit-item" class="level-3"><a id="widgets-notifications-increasing-message-length-limit-link" href="#widgets-notifications-increasing-message-length-limit" class="level-3">Increasing message length limit</a></li></ul></li><li id="widgets-interface-item" class="level-2"><a id="widgets-interface-link" href="#widgets-interface" class="level-2">Interface</a><ul class="level-3" id="widgets-interface-list"><li id="widgets-interface-tabs-item" class="level-3"><a id="widgets-interface-tabs-link" href="#widgets-interface-tabs" class="level-3">Tabs</a></li><li id="widgets-interface-menu-item" class="level-3"><a id="widgets-interface-menu-link" href="#widgets-interface-menu" class="level-3">Menu</a></li><li id="widgets-interface-time-input-item" class="level-3"><a id="widgets-interface-time-input-link" href="#widgets-interface-time-input" class="level-3">Time Input</a></li><li id="widgets-interface-map-item" class="level-3"><a id="widgets-interface-map-link" href="#widgets-interface-map" class="level-3">Map</a></li><li id="widgets-interface-table-item" class="level-3"><a id="widgets-interface-table-link" href="#widgets-interface-table" class="level-3">Table</a></li><li id="widgets-interface-device-selector-item" class="level-3"><a id="widgets-interface-device-selector-link" href="#widgets-interface-device-selector" class="level-3">Device Selector</a></li><li id="widgets-interface-device-tiles-item" class="level-3"><a id="widgets-interface-device-tiles-link" href="#widgets-interface-device-tiles" class="level-3">Device Tiles</a></li></ul></li><li id="widgets-sensors-item" class="level-2"><a id="widgets-sensors-link" href="#widgets-sensors" class="level-2">Sensors</a><ul class="level-3" id="widgets-sensors-list"><li id="widgets-sensors-accelerometer-item" class="level-3"><a id="widgets-sensors-accelerometer-link" href="#widgets-sensors-accelerometer" class="level-3">Accelerometer</a></li><li id="widgets-sensors-barometerpressure-item" class="level-3"><a id="widgets-sensors-barometerpressure-link" href="#widgets-sensors-barometerpressure" class="level-3">Barometer/pressure</a></li><li id="widgets-sensors-gravity-item" class="level-3"><a id="widgets-sensors-gravity-link" href="#widgets-sensors-gravity" class="level-3">Gravity</a></li><li id="widgets-sensors-humidity-item" class="level-3"><a id="widgets-sensors-humidity-link" href="#widgets-sensors-humidity" class="level-3">Humidity</a></li><li id="widgets-sensors-light-item" class="level-3"><a id="widgets-sensors-light-link" href="#widgets-sensors-light" class="level-3">Light</a></li><li id="widgets-sensors-proximity-item" class="level-3"><a id="widgets-sensors-proximity-link" href="#widgets-sensors-proximity" class="level-3">Proximity</a></li><li id="widgets-sensors-temperature-item" class="level-3"><a id="widgets-sensors-temperature-link" href="#widgets-sensors-temperature" class="level-3">Temperature</a></li><li id="widgets-sensors-gps-trigger-item" class="level-3"><a id="widgets-sensors-gps-trigger-link" href="#widgets-sensors-gps-trigger" class="level-3">GPS Trigger</a></li><li id="widgets-sensors-gps-streaming-item" class="level-3"><a id="widgets-sensors-gps-streaming-link" href="#widgets-sensors-gps-streaming" class="level-3">GPS Streaming</a></li></ul></li><li id="widgets-other-item" class="level-2"><a id="widgets-other-link" href="#widgets-other" class="level-2">Other</a><ul class="level-3" id="widgets-other-list"><li id="widgets-other-bridge-item" class="level-3"><a id="widgets-other-bridge-link" href="#widgets-other-bridge" class="level-3">Bridge</a></li><li id="widgets-other-eventor-item" class="level-3"><a id="widgets-other-eventor-link" href="#widgets-other-eventor" class="level-3">Eventor</a></li><li id="widgets-other-rtc-item" class="level-3"><a id="widgets-other-rtc-link" href="#widgets-other-rtc" class="level-3">RTC</a></li><li id="widgets-other-ble-item" class="level-3"><a id="widgets-other-ble-link" href="#widgets-other-ble" class="level-3">BLE</a></li><li id="widgets-other-bluetooth-item" class="level-3"><a id="widgets-other-bluetooth-link" href="#widgets-other-bluetooth" class="level-3">Bluetooth</a></li><li id="widgets-other-music-player-item" class="level-3"><a id="widgets-other-music-player-link" href="#widgets-other-music-player" class="level-3">Music Player</a></li><li id="widgets-other-webhook-item" class="level-3"><a id="widgets-other-webhook-link" href="#widgets-other-webhook" class="level-3">Webhook</a></li></ul></li></ul></li><li id="sharing-item" class="level-1"><a id="sharing-link" href="#sharing" class="level-1">Sharing</a><ul class="level-2" id="sharing-list"><li id="sharing-shared-access-to-your-hardware-item" class="level-2"><a id="sharing-shared-access-to-your-hardware-link" href="#sharing-shared-access-to-your-hardware" class="level-2">Shared access to your hardware</a></li><li id="sharing-share-your-project-configuration-item" class="level-2"><a id="sharing-share-your-project-configuration-link" href="#sharing-share-your-project-configuration" class="level-2">Share your Project configuration</a></li></ul></li><li id="http-restful-api-item" class="level-1"><a id="http-restful-api-link" href="#http-restful-api" class="level-1">HTTP RESTful API</a></li><li id="supported-hardware-item" class="level-1"><a id="supported-hardware-link" href="#supported-hardware" class="level-1">Supported Hardware</a><ul class="level-2" id="supported-hardware-list"><li id="supported-hardware-platforms-item" class="level-2"><a id="supported-hardware-platforms-link" href="#supported-hardware-platforms" class="level-2">Platforms</a></li><li id="supported-hardware-arduino-connection-types-item" class="level-2"><a id="supported-hardware-arduino-connection-types-link" href="#supported-hardware-arduino-connection-types" class="level-2">Arduino connection types</a></li><li id="supported-hardware-made-by-community-item" class="level-2"><a id="supported-hardware-made-by-community-link" href="#supported-hardware-made-by-community" class="level-2">Made by Community</a></li><li id="supported-hardware-problematic-boards-item" class="level-2"><a id="supported-hardware-problematic-boards-link" href="#supported-hardware-problematic-boards" class="level-2">Problematic Boards</a></li></ul></li><li id="troubleshooting-item" class="level-1"><a id="troubleshooting-link" href="#troubleshooting" class="level-1">Troubleshooting</a><ul class="level-2" id="troubleshooting-list"><li id="troubleshooting-connection-item" class="level-2"><a id="troubleshooting-connection-link" href="#troubleshooting-connection" class="level-2">Connection</a></li><li id="troubleshooting-wifi-network-connection-item" class="level-2"><a id="troubleshooting-wifi-network-connection-link" href="#troubleshooting-wifi-network-connection" class="level-2">WiFi network connection</a></li><li id="troubleshooting-delay-item" class="level-2"><a id="troubleshooting-delay-link" href="#troubleshooting-delay" class="level-2">Delay</a></li><li id="troubleshooting-flood-error-item" class="level-2"><a id="troubleshooting-flood-error-link" href="#troubleshooting-flood-error" class="level-2">Flood Error</a></li><li id="troubleshooting-enable-debug-item" class="level-2"><a id="troubleshooting-enable-debug-link" href="#troubleshooting-enable-debug" class="level-2">Enable debug</a></li><li id="troubleshooting-geo-dns-problem-item" class="level-2"><a id="troubleshooting-geo-dns-problem-link" href="#troubleshooting-geo-dns-problem" class="level-2">Geo DNS problem</a></li><li id="troubleshooting-reset-password-item" class="level-2"><a id="troubleshooting-reset-password-link" href="#troubleshooting-reset-password" class="level-2">Reset password</a></li></ul></li><li id="security-item" class="level-1"><a id="security-link" href="#security" class="level-1">Security</a></li><li id="ota-item" class="level-1"><a id="ota-link" href="#ota" class="level-1">OTA</a><ul class="level-2" id="ota-list"><li id="ota-how-does-it-work-item" class="level-2"><a id="ota-how-does-it-work-link" href="#ota-how-does-it-work" class="level-2">How does it work?</a><ul class="level-3" id="ota-how-does-it-work-list"><li id="ota-how-does-it-work-flow-item" class="level-3"><a id="ota-how-does-it-work-flow-link" href="#ota-how-does-it-work-flow" class="level-3">Flow</a></li></ul></li><li id="ota-trigger-update-for-the-specific-hardware-item" class="level-2"><a id="ota-trigger-update-for-the-specific-hardware-link" href="#ota-trigger-update-for-the-specific-hardware" class="level-2">Trigger update for the specific hardware</a></li><li id="ota-trigger-ota-for-all-devices-item" class="level-2"><a id="ota-trigger-ota-for-all-devices-link" href="#ota-trigger-ota-for-all-devices" class="level-2">Trigger OTA for all devices</a></li><li id="ota-trigger-ota-for-the-specific-user-item" class="level-2"><a id="ota-trigger-ota-for-the-specific-user-link" href="#ota-trigger-ota-for-the-specific-user" class="level-2">Trigger OTA for the specific user</a></li><li id="ota-trigger-ota-for-specific-user-and-project-item" class="level-2"><a id="ota-trigger-ota-for-specific-user-and-project-link" href="#ota-trigger-ota-for-specific-user-and-project" class="level-2">Trigger OTA for specific user and project</a></li><li id="ota-stop-ota-item" class="level-2"><a id="ota-stop-ota-link" href="#ota-stop-ota" class="level-2">Stop OTA</a></li><li id="ota-how-to-make-firmware-item" class="level-2"><a id="ota-how-to-make-firmware-link" href="#ota-how-to-make-firmware" class="level-2">How to make firmware</a></li></ul></li><li id="blynk-server-item" class="level-1"><a id="blynk-server-link" href="#blynk-server" class="level-1">Blynk server</a><ul class="level-2" id="blynk-server-list"><li id="blynk-server-why-do-i-need-local-blynk-server-item" class="level-2"><a id="blynk-server-why-do-i-need-local-blynk-server-link" href="#blynk-server-why-do-i-need-local-blynk-server" class="level-2">Why do I need Local Blynk Server?</a></li><li id="blynk-server-installing-your-own-local-blynk-server-item" class="level-2"><a id="blynk-server-installing-your-own-local-blynk-server-link" href="#blynk-server-installing-your-own-local-blynk-server" class="level-2">Installing your own Local Blynk Server</a></li></ul></li><li id="blynk-firmware-item" class="level-1"><a id="blynk-firmware-link" href="#blynk-firmware" class="level-1">Blynk Firmware</a><ul class="level-2" id="blynk-firmware-list"><li id="blynk-firmware-configuration-item" class="level-2"><a id="blynk-firmware-configuration-link" href="#blynk-firmware-configuration" class="level-2">Configuration</a><ul class="level-3" id="blynk-firmware-configuration-list"><li id="blynk-firmware-configuration-blynkbegin-item" class="level-3"><a id="blynk-firmware-configuration-blynkbegin-link" href="#blynk-firmware-configuration-blynkbegin" class="level-3">Blynk.begin()</a></li><li id="blynk-firmware-configuration-blynkconfig-item" class="level-3"><a id="blynk-firmware-configuration-blynkconfig-link" href="#blynk-firmware-configuration-blynkconfig" class="level-3">Blynk.config()</a></li></ul></li><li id="blynk-firmware-connection-management-item" class="level-2"><a id="blynk-firmware-connection-management-link" href="#blynk-firmware-connection-management" class="level-2">Connection management</a><ul class="level-3" id="blynk-firmware-connection-management-list"><li id="blynk-firmware-connection-management-blynkconnect-item" class="level-3"><a id="blynk-firmware-connection-management-blynkconnect-link" href="#blynk-firmware-connection-management-blynkconnect" class="level-3">Blynk.connect()</a></li><li id="blynk-firmware-connection-management-blynkdisconnect-item" class="level-3"><a id="blynk-firmware-connection-management-blynkdisconnect-link" href="#blynk-firmware-connection-management-blynkdisconnect" class="level-3">Blynk.disconnect()</a></li><li id="blynk-firmware-connection-management-blynkconnected-item" class="level-3"><a id="blynk-firmware-connection-management-blynkconnected-link" href="#blynk-firmware-connection-management-blynkconnected" class="level-3">Blynk.connected()</a></li><li id="blynk-firmware-connection-management-blynkrun-item" class="level-3"><a id="blynk-firmware-connection-management-blynkrun-link" href="#blynk-firmware-connection-management-blynkrun" class="level-3">Blynk.run()</a></li></ul></li><li id="blynk-firmware-digital-analog-pins-control-item" class="level-2"><a id="blynk-firmware-digital-analog-pins-control-link" href="#blynk-firmware-digital-analog-pins-control" class="level-2">Digital &amp; Analog pins control</a></li><li id="blynk-firmware-virtual-pins-control-item" class="level-2"><a id="blynk-firmware-virtual-pins-control-link" href="#blynk-firmware-virtual-pins-control" class="level-2">Virtual pins control</a><ul class="level-3" id="blynk-firmware-virtual-pins-control-list"><li id="blynk-firmware-virtual-pins-control-blynkvirtualwritevpin-value-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynkvirtualwritevpin-value-link" href="#blynk-firmware-virtual-pins-control-blynkvirtualwritevpin-value" class="level-3">Blynk.virtualWrite(vPin, value)</a></li><li id="blynk-firmware-virtual-pins-control-blynksetpropertyvpin-property-value-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynksetpropertyvpin-property-value-link" href="#blynk-firmware-virtual-pins-control-blynksetpropertyvpin-property-value" class="level-3">Blynk.setProperty(vPin, “property”, value)</a></li><li id="blynk-firmware-virtual-pins-control-blynk_writevpin-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynk_writevpin-link" href="#blynk-firmware-virtual-pins-control-blynk_writevpin" class="level-3">BLYNK_WRITE(vPIN)</a></li><li id="blynk-firmware-virtual-pins-control-blynk_readvpin-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynk_readvpin-link" href="#blynk-firmware-virtual-pins-control-blynk_readvpin" class="level-3">BLYNK_READ(vPIN)</a></li><li id="blynk-firmware-virtual-pins-control-blynk_write_default-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynk_write_default-link" href="#blynk-firmware-virtual-pins-control-blynk_write_default" class="level-3">BLYNK_WRITE_DEFAULT()</a></li><li id="blynk-firmware-virtual-pins-control-blynk_read_default-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynk_read_default-link" href="#blynk-firmware-virtual-pins-control-blynk_read_default" class="level-3">BLYNK_READ_DEFAULT()</a></li><li id="blynk-firmware-virtual-pins-control-blynk_connected-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynk_connected-link" href="#blynk-firmware-virtual-pins-control-blynk_connected" class="level-3">BLYNK_CONNECTED()</a></li><li id="blynk-firmware-virtual-pins-control-blynk_app_connected-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynk_app_connected-link" href="#blynk-firmware-virtual-pins-control-blynk_app_connected" class="level-3">BLYNK_APP_CONNECTED()</a></li><li id="blynk-firmware-virtual-pins-control-blynk_app_disconnected-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynk_app_disconnected-link" href="#blynk-firmware-virtual-pins-control-blynk_app_disconnected" class="level-3">BLYNK_APP_DISCONNECTED()</a></li><li id="blynk-firmware-virtual-pins-control-blynksyncall-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynksyncall-link" href="#blynk-firmware-virtual-pins-control-blynksyncall" class="level-3">Blynk.syncAll()</a></li><li id="blynk-firmware-virtual-pins-control-blynksyncvirtualvpin-item" class="level-3"><a id="blynk-firmware-virtual-pins-control-blynksyncvirtualvpin-link" href="#blynk-firmware-virtual-pins-control-blynksyncvirtualvpin" class="level-3">Blynk.syncVirtual(vPin)</a></li></ul></li><li id="blynk-firmware-blynktimer-item" class="level-2"><a id="blynk-firmware-blynktimer-link" href="#blynk-firmware-blynktimer" class="level-2">BlynkTimer</a></li><li id="blynk-firmware-debugging-item" class="level-2"><a id="blynk-firmware-debugging-link" href="#blynk-firmware-debugging" class="level-2">Debugging</a><ul class="level-3" id="blynk-firmware-debugging-list"><li id="blynk-firmware-debugging-define-blynk_print-item" class="level-3"><a id="blynk-firmware-debugging-define-blynk_print-link" href="#blynk-firmware-debugging-define-blynk_print" class="level-3">#define BLYNK_PRINT</a></li><li id="blynk-firmware-debugging-define-blynk_debug-item" class="level-3"><a id="blynk-firmware-debugging-define-blynk_debug-link" href="#blynk-firmware-debugging-define-blynk_debug" class="level-3">#define BLYNK_DEBUG</a></li><li id="blynk-firmware-debugging-blynk_log-item" class="level-3"><a id="blynk-firmware-debugging-blynk_log-link" href="#blynk-firmware-debugging-blynk_log" class="level-3">BLYNK_LOG()</a></li></ul></li><li id="blynk-firmware-minimizing-footprint-item" class="level-2"><a id="blynk-firmware-minimizing-footprint-link" href="#blynk-firmware-minimizing-footprint" class="level-2">Minimizing footprint</a></li><li id="blynk-firmware-porting-hacking-item" class="level-2"><a id="blynk-firmware-porting-hacking-link" href="#blynk-firmware-porting-hacking" class="level-2">Porting, hacking</a></li></ul></li><li id="faq-item" class="level-1"><a id="faq-link" href="#faq" class="level-1">FAQ</a></li><li id="links-item" class="level-1"><a id="links-link" href="#links" class="level-1">Links</a></li><li id="license-item" class="level-1"><a id="license-link" href="#license" class="level-1">License</a></li></ul></li></ul></div>
+    </div>
+    <div role="flatdoc-content" class="content"><h1 id="intro">Вступ</h1><p>Цей посібник допоможе вам зрозуміти, як почати використовувати Blynk та надати повний огляд усіх функцій.</p><p>Якщо ви хочете перейти прямо до гри з Blynk, перегляньте Початок роботи.
+<br></p><p><a href="#getting-started" class="button">Початок роботи</a></p><h2 id="intro-how-blynk-works">Як працює Blynk</h2><p>Blynk був розроблений для Інтернету речей. Він може контролювати апаратне забезпечення віддалено, він може відображати дані датчиків,
+він може зберігати дані, візуалізувати їх і робити багато інших цікавих речей. </p><p>У платформі є три основні компоненти: </p><ul>
+<li><p><strong>Blynk App</strong> - дозволяє створювати дивовижні інтерфейси для ваших проектів за допомогою різних віджетів, які ми надаємо.</p>
+</li>
+<li><p><strong>Blynk Server</strong> - відповідальний за всі комунікації між смартфоном і апаратним забезпеченням. 
+Ви можете скористатись нашою Хмарою Blynk або запустити свій <a href="#blynk-server">приватний Blynk server</a> локально. 
+Це відкрите джерело, він може легко обробляти тисячі пристроїв і навіть може бути запущений на Raspberry Pi.</p>
+</li>
+<li><p><strong>Blynk Libraries</strong> - для всіх популярних апаратних платформ - дозволити спілкування з сервером і
+обробляти всі вхідні та вихідні команди.</p>
+</li>
+</ul><p>Тепер уявіть собі: кожного разу, коли ви натискаєте кнопку в додатку Blynk, повідомлення переходить до <del>простору</del> Хмараи Blynk
+де воно чарівно знаходить свій шлях до вашого обладнання. Це працює в протилежному напрямку і Blynk бачить все, що відбувається.</p><p><img src="http://docs.blynk.cc/images/architecture.png" style="width: 640px; height:478px"></p><h2 id="intro-features">Особливості</h2><ul>
+<li>Подібний API &amp; UI для всього підтримуваного  обладнання та пристроїв</li>
+<li>Підключення до хмари використовується:<ul>
+<li>WiFi</li>
+<li>Bluetooth and BLE</li>
+<li>Ethernet</li>
+<li>USB (Serial)</li>
+<li>GSM</li>
+<li>…</li>
+</ul>
+</li>
+<li>Набір простих у використанні віджетів</li>
+<li>Прямий маніпуляції з пінами без написання коду</li>
+<li>Легко інтегрувати та додавати нові функції за допомогою віртуальних контактів</li>
+<li>Історія моніторингу даних через віджет History Graph</li>
+<li>Зв'язок між пристроями за допомогою Bridge widget</li>
+<li>Надсилання електронних листів, твітів, push-сповіщень тощо.</li>
+<li>… нові функції постійно додаються!</li>
+</ul><p>Ви можете знайти <a href="https://github.com/blynkkk/blynk-library/tree/master/examples">приклади ескізів</a> покриття базових можливостей Blynk.
+Вони включені в бібліотеку. Всі ескізи спроектовані так, щоб їх було легко об'єднати один з одним.</p><h2 id="intro-what-do-i-need-to-blynk">Що мені потрібно для Блинка?</h2><p>На цьому етапі ви можете думати: <strong>“Гаразд, я хочу це. Що мені потрібно для початку?”</strong> – Просто пара речей, дійсно:</p><h4><strong>1. Обладнання</strong>.</h4><p>Arduino, Raspberry Pi або аналогічний набір для розробки.</p><p><strong>Blynk працює через Інтернет.</strong> 
+Це означає, що вибране обладнання повинно мати можливість підключення до Інтернету. Деякі дошки, такі як Arduino Uno для комунікації потрібен Ethernet чи Wi-Fi Shield, інші вже підключені до Інтернету: як ESP8266, Raspberri Pi з WiFi-дошкою, Particle Photon або SparkFun Blynk Board. Але навіть якщо у вас немає шилда, ви можете підключити його через USB до вашого
+ноутбука або настільного комп'ютера (це трохи складніше для новачків, але ми вас врахували). 
+Що здорово, це те, що <a href="#supported-hardware">список апаратних засобів</a> що працюють з Blynk, величезний і буде продовжувати зростати. </p><h4><strong>2. Смартфон</strong>.</h4><p>Програма Blynk - це добре розроблений конструктор інтерфейсів. Він працює як на платформі iOS, так і на Android, так що тут немає жартівників, чи не так? </p><h1 id="downloads">Завантаження</h1><h2 id="downloads-blynk-apps-for-ios-or-android"><strong>Програми Blynk для iOS або Android</strong> <br></h2><p><a href="https://itunes.apple.com/us/app/blynk-control-arduino-raspberry/id808760481?ls=1&amp;mt=8"><img src="http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg" alt="Drawing" style=" width: 170px; height:60px"></a>  &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://play.google.com/store/apps/details?id=cc.blynk"><img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" alt="Drawing" style=" width: 158px; height:42px"></a></p><h2 id="downloads-blynk-library"><strong>Blynk бібліотека</strong> <br></h2><p><a href="https://github.com/blynkkk/blynk-library/releases/latest" class="button">Завантажити Бібліотеку Blynk</a></p><p>У випадку, якщо ви забули або не знаєте, як встановити бібліотеки Arduino <a href="http://www.arduino.cc/en/guide/libraries">натисніть тут</a>.</p><h1 id="getting-started">Починаємо</h1><p>Давайте почнемо працювати через 5 хвилин (читання не враховується!).
+Ми включимо світлодіод, підключений до вашого Arduino, за допомогою програми Blynk на вашому смартфоні. </p><p> Підключіть світлодіодний індикатор, як показано нижче:</p><p><img src="http://docs.blynk.cc/images/Arduino_LED.jpg" style="width: 250px; height:350px"></p><h2 id="getting-started-getting-started-with-the-blynk-app">Початок роботи з програмою Blynk</h2><h3 id="getting-started-getting-started-with-the-blynk-app-1-create-a-blynk-account">1. Створіть обліковий запис Blynk</h3><p>Після завантаження програми Blynk вам потрібно створити новий обліковий запис Blynk. Цей обліковий запис відокремлений від облікових записів, які використовуються для форуму Blynk, якщо у вас вже є.</p><p>Ми рекомендуємо використовувати <strong>реальну</strong> електронну адресу, тому що це полегшить подальшу роботу.</p><p><img src="http://docs.blynk.cc/images/register_account.png" style="width: 200px; height:360px"></p><h4>Чому мені потрібно створити обліковий запис?</h4><p>Обліковий запис необхідний для збереження ваших проектів та доступу до них з кількох пристроїв з будь-якого місця. Це також запобіжний захід. </p><p>Ви завжди можете налаштувати свій власний <a href="#blynk-server">Приватний Blynk сервер</a> і мати повний контроль.   </p><h3 id="getting-started-getting-started-with-the-blynk-app-2-create-a-new-project">2. Створити новий проект</h3><p>Після успішного входу в обліковий запис, почніть із створення нового проекту.</p><p><img src="http://docs.blynk.cc/images/create_project_button.png" style="width: 200px; height:360px"></p><p>Дайте йому ім'я.</p><p><img src="http://docs.blynk.cc/images/give_project_name.png" style="width: 200px; height:360px"></p><h3 id="getting-started-getting-started-with-the-blynk-app-3-choose-your-hardware">3. Виберіть своє обладнання</h3><p>Виберіть модель обладнання, яку ви будете використовувати. Перевірте <a href="#supported-hardware">список підтримуваного апаратного забезпечення</a>!</p><p><img src="http://docs.blynk.cc/images/select_hardware.png" style="width: 200px; height:360px"></p><h3 id="getting-started-getting-started-with-the-blynk-app-4-auth-token">4. Токен аутентифікації</h3><p><strong>Токен аутентифікації</strong> це унікальний ідентифікатор, який необхідний для підключення вашого обладнання до вашого смартфона.
+Кожен новий проект, який ви створюєте, матиме власний токен аутентифікації. Ви автоматично отримаєте Auth Token електронною поштою після створення проекту. Ви також можете скопіювати його вручну. Клацніть на розділі пристроїв : </p><p><img src="http://docs.blynk.cc/images/token_1.png" style="width: 200px; height:360px"></p><p>Натисніть на пристрій : </p><p><img src="http://docs.blynk.cc/images/list_of_devices.png" style="width: 200px; height:360px"></p><p>І ви побачите токен : </p><p><img src="http://docs.blynk.cc/images/new_device.png" style="width: 200px; height:360px"></p><p><span style="color:#D3435C;"><strong>ПРИМІТКА:</strong> Не повідомляйте свій Auth Token нікому, крім випадків, коли ви хочете, щоб хтось мав доступ до вашого устаткування. </span></p><p>Це дуже зручно надсилати електронною поштою. Натисніть кнопку електронної пошти, і токен буде відправлений на адресу електронної пошти, яку ви використовували для реєстрації. 
+Ви також можете торкнутися лінії Token і буде скопійовано в буфер обміну.</p><p>Тепер натисніть на <strong>“Create”</strong> кнопку.  </p><p><img src="http://docs.blynk.cc/images/new_project.png" style="width: 200px; height:360px"></p><h3 id="getting-started-getting-started-with-the-blynk-app-5-add-a-widget">5. Додайте віджет</h3><p>Полотно Вашого проекту порожнє, давайте додамо кнопку, щоб контролювати світлодіод.</p><p>Торкніться будь-де на полотні, щоб відкрити вікно віджета. Всі доступні віджети розміщені тут. Тепер оберіть кнопку.</p><p><strong>Вікно віджетів</strong></p><p><img src="http://docs.blynk.cc/images/widgets_box.png" style="width: 200px; height:360px"></p><p><img src="http://docs.blynk.cc/images/project_with_button.png" style="width: 200px; height:360px"></p><p><strong>Drag-n-Drop</strong> - Натисніть і утримуйте віджет, щоб перетягнути його до нової позиції.</p><p><strong>Параметри віджетів</strong> - Кожен віджет має власні налаштування. Натисніть на віджет, щоб дістати до них.</p><p><img src="http://docs.blynk.cc/images/button_settings.png" style="width: 200px; height:360px"></p><p>Найважливішим параметром для встановлення є <strong>PIN</strong> . Список штифтів відображає фізичні контакти, визначені вашим обладнанням. Якщо ваш LED підключений до Digital Pin 8 - тоді виберіть <strong>D8</strong> (<strong>D</strong> - означає <strong>D</strong>igital - цифровий).    </p><p><img src="http://docs.blynk.cc/images/pin_selection.png" style="width: 200px; height:360px"></p><h3 id="getting-started-getting-started-with-the-blynk-app-6-run-the-project">6. Запустіть проект</h3><p>Коли ви закінчите з налаштуваннями, натисніть кнопку <strong>PLAY</strong>. Це переключить з режиму EDIT в режим PLAY, де ви можете взаємодіяти з апаратним забезпеченням. Перебуваючи в режимі PLAY, ви не зможете перетягувати або налаштувати нові віджети, натисніть <strong>STOP</strong> і повернутися до режиму EDIT.</p><p>Ви отримаєте повідомлення "Arduino UNO is offline". Ми розглянемо це у наступному розділі.</p><p><img src="http://docs.blynk.cc/images/play_button.png" style="width: 200px; height:360px"></p><h2 id="getting-started-getting-started-with-hardware">Початок роботи з обладнанням</h2><h3 id="getting-started-getting-started-with-hardware-how-to-use-an-example-sketch">Як використовувати прикладу скетчу</h3><p>Тепер на вашому комп'ютері має бути встановлена бібліотека Blynk. Якщо ні - <a href="#downloads-blynk-library">натисніть тут</a>.</p><p>Приклади скетчів допоможуть швидко отримати ваш апаратне забезпечення та великі функції Blynk. </p><p>Відкрийте приклад скетчу відповідно до апаратної моделі чи екрану, який ви використовуєте.</p><p><img src="http://docs.blynk.cc/images/connection_type_sketch.png" style="width: 500px; height:217px"></p><p>Давайте подивимося на приклад скетчу для <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">Arduino UNO + Ethernet shield</a></p><pre><code class="lang-cpp"><span class="comment">#define BLYNK_PRINT Serial</span>
+<span class="comment">#include &lt;SPI.h&gt;</span>
+<span class="comment">#include &lt;Ethernet.h&gt;</span>
+<span class="comment">#include &lt;BlynkSimpleEthernet.h&gt;</span>
+
+char auth[] = <span class="string">"YourAuthToken"</span>;
+
+void setup()
+{
+  Serial.begin(<span class="number">9600</span>); <span class="comment">// See the connection status in Serial Monitor</span>
+  Blynk.begin(auth);  <span class="comment">// Here your Arduino connects to the Blynk Cloud.</span>
+}
+
+void loop()
+{
+  Blynk.run(); <span class="comment">// All the Blynk Magic happens here...</span>
+}</code></pre><h3 id="getting-started-getting-started-with-hardware-auth-token">Auth Token</h3><p>У цьому прикладі ескізу знайдіть цей рядок:</p><pre><code class="lang-cpp">char auth[] = <span class="string">"YourAuthToken"</span>;</code></pre><p>Це <a href="#getting-started-getting-started-with-application-4-auth-token">Auth Token</a> що ви надіслали собі по електронній пошті. 
+Будь ласка, перевірте свою електронну пошту та скопіюйте його, а потім вставте в лапки.</p><p>Він має виглядати подібним до цього:</p><pre><code>char auth[] = "f45626c103a94983b469637978b0c78a";</code></pre><p>Завантажте скетч до плати та відкрийте послідовний термінал. Зачекайте, поки ви побачите щось на зразок цього: </p><pre><code>Blynk v.X.X.X
+Your IP is 192.168.0.11
+Connecting...
+Blynk connected!</code></pre><p><span style="color:#24C48C"><strong>Вітаю! Ви всі налаштовані! Тепер ваше обладнання підключено до Cloud Blynk!</strong></span></p><h2 id="getting-started-blynking">Blynking</h2><p>Поверніться до програми Blynk, натисніть кнопку та вимкніть світлодіоди! Це має бути Blynking.</p><p><img src="http://docs.blynk.cc/images/button_pressed.png" style="width: 200px; height:360px"></p><p>Перевірте <a href="https://github.com/blynkkk/blynk-library/tree/master/examples">інші приклади скетчів</a>. </p><p>Не соромтеся експериментувати та об'єднувати різні приклади разом, щоб створити власні вражаючі проекти. </p><p>Наприклад, щоб приєднати світлодіод до <a href="http://www.arduino.cc/en/Tutorial/Fading">PWM</a> Pin на вашому Arduino, встановіть віджет слайдера, щоб керувати яскравістю світлодіодів. Просто використовуйте ті самі кроки, описані вище.</p><h1 id="hardware-set-ups">Налаштування апаратного забезпечення</h1><h2 id="hardware-set-ups-arduino-over-usb-no-shield">Arduino через USB (без шилда)</h2><p>Якщо у вас немає шилда, а ваше обладнання не має ніякого підключення, ви все ще можете використовувати Blynk - безпосередньо через USB :</p><ol>
+<li><p>Open <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_USB_Serial/Arduino_Serial_USB/Arduino_Serial_USB.ino">Arduino послідовний приклад USB</a> 
+і змінити <a href="#getting-started-getting-started-with-application-4-auth-token">Auth Token</a></p>
+<pre><code class="lang-cpp"> <span class="comment">// You could use a spare Hardware Serial on boards that have it (like Mega)</span>
+ <span class="comment">#include &lt;SoftwareSerial.h&gt;</span>
+ SoftwareSerial DebugSerial(<span class="number">2</span>, <span class="number">3</span>); <span class="comment">// RX, TX</span>
+
+ <span class="comment">#define BLYNK_PRINT DebugSerial</span>
+ <span class="comment">#include &lt;BlynkSimpleStream.h&gt;</span>
+
+ <span class="comment">// You should get Auth Token in the Blynk App.</span>
+ <span class="comment">// Go to the Project Settings (nut icon).</span>
+ char auth[] = <span class="string">"YourAuthToken"</span>;
+
+ void setup()
+ {
+   <span class="comment">// Debug console</span>
+   DebugSerial.begin(<span class="number">9600</span>);
+
+   <span class="comment">// Blynk will work through Serial</span>
+   Serial.begin(<span class="number">9600</span>);
+   Blynk.begin(auth, Serial);
+ }
+
+ void loop()
+ {
+   Blynk.run();
+ }</code></pre>
+</li>
+<li><p>Запустіть скрипт, який зазвичай знаходиться в <code>/scripts</code> папці:</p>
+<ul>
+<li>Windows:<code>My Documents\Arduino\libraries\Blynk\scripts</code></li>
+<li>Mac    <code>User$/Documents/Arduino/libraries/Blynk/scripts</code></li>
+</ul>
+</li>
+</ol><p>  <strong>У Windows:</strong></p><p>  Відкрийте cmd.exe</p><p>  Напишіть свій шлях до папки blynk-ser.bat. Наприклад:</p><pre><code>cd C:\blynk-library-0.3.1\blynk-library-0.3.1\scripts</code></pre><p>  Запустіт файл <code>blynk-ser.bat</code>. Наприклад : <code>blynk-ser.bat -c COM4</code> (де COM4 - порт з вашим Arduino)</p><p>  І натисніть "Enter", натисніть "Enter" і натисніть "Enter"</p><p>  <strong>На Linux і Mac</strong>:</p><p>  Перейдіть до папки /scripts. Наприклад:</p><pre><code>cd User$/Documents/Arduino/libraries/Blynk/scripts</code></pre><p>  Всередині цієї папки запустіть:</p><pre><code>user:scripts User$ ./blynk-ser.sh</code></pre><p>  <strong>УВАГА:</strong> Не закривайте вікно терміналу запущеним сценарієм.</p><p>  У деяких випадках вам також може знадобитися виконати : </p><pre><code>user:scripts User$ chmod +x blynk-ser.sh</code></pre><p>  Вам також може знадобитися запустити його <code>sudo</code></p><pre><code>user:scripts User$ sudo ./blynk-ser.sh</code></pre><p>  Це те, що ви побачите в додатку терміналу на Mac (адреси usbmodem можуть бути різними):</p><pre><code>[ Press Ctrl+C to exit ]
+/dev/tty.usbmodem not found.
+Select serial port [ /dev/tty.usbmodem1451 ]:</code></pre><p>  Скопіюйте адресу послідовного порту: <code>/dev/tty.usbmodem1451</code> і вставте його назад:</p><pre><code>Select serial port [ /dev/tty.usbmodem1451 ]: /dev/tty.usbmodem1451</code></pre><p>  Після натискання клавіші Enter ви побачите вивід, подібний до цього:</p><pre><code>Resetting device /dev/tty.usbmodem1451...
+Connecting: GOPEN:/dev/tty.usbmodem1451,raw,echo=0,clocal=1,cs8,nonblock=1,ixoff=0,ixon=0,ispeed=9600,ospeed=9600,crtscts=0 &lt;-&gt; openssl-connect:blynk-cloud.com:8441,cafile=/Users/.../server.crt,nodelay
+2015/10/03 00:29:45 socat[30438.2046857984] N opening character device "/dev/tty.usbmodem1451" for reading and writing
+2015/10/03 00:29:45 socat[30438.2046857984] N opening connection to LEN=16 AF=2 45.55.195.102:8441
+2015/10/03 00:29:45 socat[30438.2046857984] N successfully connected from local address LEN=16 AF=2 192.168.0.2:56821
+2015/10/03 00:29:45 socat[30438.2046857984] N SSL connection using AES128-SHA
+2015/10/03 00:29:45 socat[30438.2046857984] N starting data transfer loop with FDs [3,3] and [4,4]</code></pre><p><span style="color:#D3435C;"><strong>ПРИМІТКА:</strong> Arduino IDE може поскаржитися, "programmer is not responding". Перед завантаженням нового ескізу потрібно скасувати сценарій. </span></p><p>Додаткові матеріали:</p><ul>
+<li><a href="https://www.youtube.com/watch?v=fgzvoan_3_w">Підручник: керування Arduino через USB за допомогою програми Blynk. Ніякого шилда не потрібно. Mac OS)</a></li>
+<li><a href="https://www.youtube.com/watch?v=I_hgIj2FdPI">Як керувати arduino (бездротовий) з blynk через USB. Windows</a></li>
+<li><a href="http://www.instructables.com/id/Control-arduino-using-Blynk-over-usb/">Інструкція: контроль Arduino з Blynk через USB</a></li>
+</ul><h2 id="hardware-set-ups-raspberry-pi">Raspberry Pi</h2><ol>
+<li>Під'єднайте Raspberry Pi до Інтернету та відкрийте консоль.</li>
+<li><p>Запустіть цю команду (вона оновлює ваш сховище пакетів OS, щоб включити необхідні пакунки).:</p>
+<pre><code> curl -sL "https://deb.nodesource.com/setup_6.x" | sudo -E bash -</code></pre>
+</li>
+<li><p>Завантажте та створіть бібліотеку Blynk JS за допомогою npm:</p>
+<pre><code> sudo apt-get update &amp;&amp; sudo apt-get upgrade
+ sudo apt-get install build-essential
+ sudo npm install -g npm
+ sudo npm install -g onoff
+ sudo npm install -g blynk-library</code></pre>
+</li>
+<li><p>Запустіть сценарій тестування Blynk (введіть свій авторизований токен):</p>
+<pre><code> blynk-client 715f8cafe95f4a91bae319d0376caa8c</code></pre>
+</li>
+<li><p>Ви можете написати наш власний сценарій на основі <a href="https://github.com/vshymanskyy/blynk-library-js/tree/master/examples">прикладів</a></p>
+</li>
+<li><p>Щоб увімкнути Blynk для автоматичного перезапуску для Pi, знайдіть <code>/etc/rc.local</code> файл і додати туди:</p>
+<pre><code> node full_path_to_your_script.js &lt;Auth Token&gt;</code></pre>
+</li>
+</ol><p>Додаткові матеріали:</p><ul>
+<li><a href="http://www.instructables.com/id/Blynk-JavaScript-in-20-minutes-Raspberry-Pi-Edison">Інструкції: Blynk на Javascript для Raspberry Pi, Intel Edison та інші</a></li>
+<li><a href="http://www.instructables.com/id/Raspberry-Pi-Nodejs-Blynk-App-DHT11DHT22AM2302/?ALLSTEPS">Інструкції: За допомогою датчиків DHT11 / DHT12 з Raspberry Pi і Blynk</a></li>
+</ul><p><strong>Примітка:</strong> Замість того, щоб використовувати Node.js, ви також можете створити версію бібліотеки C++ (таку ж, як Arduino, WiringPi):
+- <a href="https://github.com/blynkkk/blynk-library/blob/master/linux/README.md">Library README for Linux</a>
+- <a href="http://community.blynk.cc/t/howto-for-raspberry-pi/332">Blynk Community Topic: How-To Raspberry Pi</a>
+- <a href="https://www.youtube.com/watch?v=iSG_8g6KyGE">Відео уроки - Налаштування Blynk та Raspberry Pi:</a></p><iframe width="200" height="110" src="http://docs.blynk.cc/images/iSG_8g6KyGE.html" frameborder="0" allowfullscreen=""></iframe><h2 id="hardware-set-ups-esp8266-standalone">ESP8266 Standalone</h2><p>Ви можете запустити Blynk безпосередньо на ESP8266!</p><p>Встановіть останню бібліотеку ESP8266 для Arduino, використовуючи <a href="https://github.com/esp8266/Arduino#installing-with-boards-manager">це керівництво</a>. </p><p><strong>Приклад ескізу:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_WiFi/ESP8266_Standalone/ESP8266_Standalone.ino">ESP8266_Standalone</a></p><p>Додаткові матеріали:</p><ul>
+<li><a href="http://www.instructables.com/id/ESP8266-ESP-12Standalone-Blynk-101">Інструкції: ESP8266 ESP-12(Standalone)+ Blynk</a></li>
+<li><a href="http://www.instructables.com/id/ESP8266-12-blynk-wireless-temperature-LM35-sensor/?ALLSTEPS">Інструкції: ESP8266-12 standalone Blynk lm35 temperature sensor</a></li>
+</ul><p><a href="http://esp8266.ru/esp8266-blynk">Крок за кроком підручник російською мовою</a></p><h2 id="hardware-set-ups-nodemcu">NodeMCU</h2><p>Будь ласка Слідуйте <a href="https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_WiFi/NodeMCU#instruction-for-nodemcu-setup">це докладна інструкція</a>.
+Або дивись <a href="https://www.youtube.com/watch?v=FhS44hGk1Lc">цей відео-підручник</a>.</p><h2 id="hardware-set-ups-arduino-esp8266-wifi-with-at-commands">Arduino + ESP8266 WiFi з AT командами</h2><p>Цей тип з'єднання не рекомендується для початківців.<br>Якщо ви хочете спробувати, уважно прочитайте <a href="http://help.blynk.cc/hardware-and-libraries/arduino/esp8266-with-at-firmware">цю довідкову тему</a>
+<strong>Примітка:</strong> Деякі плати, такі як Arduino UNO WiFi від Arduino.org, не використовують AT команди (і не надають відповідних бібліотек), тому вони стають непридатними для використання в Blynk.</p><h2 id="hardware-set-ups-particle">Частинка</h2><p>Blynk працює з усією сім'єю виробів Particle: Core, Photon та Electron</p><ol>
+<li>Відкритий <a href="https://build.particle.io/build">Particle Web IDE</a>.</li>
+<li>Переходьте до бібліотек.</li>
+<li>Шукайте <strong>Blynk</strong> в бібліотеках спільноти та натисніть на неї</li>
+<li>Відкритий <code>01_PARTICLE.INO</code> приклад</li>
+<li>Натисніть “use this example”</li>
+<li>Вставте свій Auth Token тут: <code>char auth[] = "YourAuthToken";</code> і прошийте Particle!</li>
+</ol><p>Ви можете сканувати цей QR-код з програми Blynk, і ви отримаєте готовий для тестування проект для <strong>Particle Photon</strong>. Просто введіть Auth Token в <code>01_PARTICLE.INO</code> приклад.
+<img src="http://docs.blynk.cc/images/Particle Demo1530733075.png" style="width: 300px; height:300px"></p><p>Додаткові матеріали:</p><ul>
+<li><a href="https://www.hackster.io/gusgonnet/temperature-humidity-monitor-with-blynk-7faa51">Particle core + DHT22</a></li>
+</ul><h1 id="blynk-main-operations">Blynk основні операції</h1><h2 id="blynk-main-operations-virtual-pins">Virtual Pins</h2><p>Blynk can control Digital and Analog I/O Pins on you hardware directly. You don’t even need to write code for it. 
+It’s great for blinking LEDs, but often it’s just not enough…</p><p>We designed Virtual Pins to send <strong>any</strong> data from your microcontroller to the Blynk App and back. </p><p>Anything you connect to your hardware will be able to talk to Blynk.
+With Virtual Pins you can send something from the App, process it on microcontroller and then send it back to the smartphone. You can trigger functions, read I2C devices, convert values, control servo and DC motors etc.</p><p>Virtual Pins can be used to interface with external libraries (Servo, LCD and others) and implement custom functionality. </p><p>Hardware may send data to the Widgets over the Virtual Pin like this:</p><pre><code class="lang-cpp">Blynk.virtualWrite(pin, <span class="string">"abc"</span>);
+Blynk.virtualWrite(pin, <span class="number">123</span>);
+Blynk.virtualWrite(pin, <span class="number"><span class="number">12</span>.<span class="number">34</span></span>);
+Blynk.virtualWrite(pin, <span class="string">"hello"</span>, <span class="number">123</span>, <span class="number"><span class="number">12</span>.<span class="number">34</span></span>);</code></pre><p>For more information about virtual pins, <a href="#blynk-firmware-virtual-pins-control">read this</a></p><h2 id="blynk-main-operations-send-data-from-app-to-hardware">Send data from app to hardware</h2><p>You can send any data from Widgets in the app to your hardware.</p><p>All <a href="#widgets-controllers">Controller Widgets</a> can send data to Virtual Pins on your hardware. 
+For example, code below shows how to get values from the Button Widget in the App</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) <span class="comment">//Button Widget is writing to pin V<span class="number">1</span></span>
+{
+  int pinData = param.asInt(); 
+}</code></pre><p>When you press a Button, Blynk App sends <code>1</code> On the second click - it sends <code>0</code> </p><p>This is how Button Widget is set up:</p><p><img src="http://docs.blynk.cc/images/button_virtual_1.png" style="width: 200px; height:360px"></p><p>Full example sketch: <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/GetData/GetData.ino#L24">Get Data</a></p><h3 id="blynk-main-operations-send-data-from-app-to-hardware-sending-array-from-widget">Sending array from Widget</h3><p>Some Widgets (e.g Joystick, zeRGBa) have more than one output. </p><p><img src="http://docs.blynk.cc/images/joystick_merge_mode.png" style="width: 200px; height:360px"></p><p>This output can be written to Virtual Pin as an array of values. 
+On the hardware side - you can get any element of the array [0,1,2…] by using: </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) <span class="comment">// Widget WRITEs to Virtual Pin V<span class="number">1</span></span>
+{   
+  int x = param[<span class="number">0</span>].asInt(); <span class="comment">// getting first value</span>
+  int y = param[<span class="number">1</span>].asInt(); <span class="comment">// getting second value</span>
+  int z = param[N].asInt(); <span class="comment">// getting N value</span>
+}</code></pre><p> <strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino#L24">JoystickTwoAxis</a></p><h2 id="blynk-main-operations-get-data-from-hardware">Get data from hardware</h2><p>There are two ways of pushing data from your hardware to the Widgets in the app over Virtual Pins.</p><h3 id="blynk-main-operations-get-data-from-hardware-perform-requests-by-widget">Perform requests by Widget</h3><ul>
+<li>Using Blynk built-in reading frequency while App is active by setting ‘Reading Frequency’ parameter to some interval:</li>
+</ul><p><img src="http://docs.blynk.cc/images/frequency_reading_pull.png" style="width: 200px; height:360px"></p><pre><code class="lang-cpp">BLYNK_READ(V<span class="number">5</span>) <span class="comment">// Widget in the app READs Virtal Pin V<span class="number">5</span> with the certain frequency</span>
+{
+  <span class="comment">// This command writes Arduino's uptime in seconds to Virtual Pin V<span class="number">5</span></span>
+  Blynk.virtualWrite(<span class="number">5</span>, millis() / <span class="number">1000</span>);
+}</code></pre><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushDataOnRequest/PushDataOnRequest.ino#L26">PushDataOnRequest</a></p><h3 id="blynk-main-operations-get-data-from-hardware-pushing-data-from-hardware">Pushing data from hardware</h3><p>If you need to PUSH sensor or other data from your hardware to Widget, you can write any logic you want. 
+Just set the frequency to PUSH mode. Any command that hardware sends to Blynk Cloud is automatically stored on server
+and you get this info either with <a href="#widgets-displays-history-graph">History Graph</a> widget 
+or with <a href="http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin">HTTP API</a>.</p><p><img src="http://docs.blynk.cc/images/frequency_reading_push.png" style="width: 200px; height:360px"></p><p>We recommend sending data in intervals and avoiding <a href="#troubleshooting-flood-error">Flood Error</a>.<br>You can use timers like <a href="#blynk-firmware-blynktimer">BlynkTimer</a>.<br>Please read instructions inside this <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino">example sketch</a> for more details.</p><p>Here is how it can work:</p><pre><code class="lang-cpp"><span class="comment">#include &lt;SPI.h&gt;</span>
+<span class="comment">#include &lt;Ethernet.h&gt;</span>
+<span class="comment">#include &lt;BlynkSimpleEthernet.h&gt;</span>
+
+char auth[] = <span class="string">"YourAuthToken"</span>; <span class="comment">// Put your token here</span>
+
+BlynkTimer timer; <span class="comment">// Create a Timer object called <span class="string">"timer"</span>! </span>
+
+void setup()
+{
+  Serial.begin(<span class="number">9600</span>);
+  Blynk.begin(auth);
+
+  timer.setInterval(<span class="number">1000</span>L, sendUptime); <span class="comment">//  Here you set interval (<span class="number">1</span>sec) and which function to call </span>
+}
+
+void sendUptime()
+{
+  <span class="comment">// This function sends Arduino up time every <span class="number">1</span> second to Virtual Pin (V<span class="number">5</span>)</span>
+  <span class="comment">// In the app, Widget<span class="string">'s reading frequency should be set to PUSH</span>
+  <span class="comment">// You can send anything with any interval using this construction</span>
+  <span class="comment">// Don'</span>t send more that <span class="number">10</span> values per second</span>
+
+  Blynk.virtualWrite(V<span class="number">5</span>, millis() / <span class="number">1000</span>);
+}
+
+void loop()
+{
+  Blynk.run(); <span class="comment">// all the Blynk magic happens here</span>
+  timer.run(); <span class="comment">// BlynkTimer is working...</span>
+}</code></pre><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30">PushData</a></p><h2 id="blynk-main-operations-state-syncing">State syncing</h2><h3 id="blynk-main-operations-state-syncing-for-hardware">For hardware</h3><p>If your hardware looses Internet connection or resets, you can restore all the values from Widgets in the Blynk app.</p><pre><code class="lang-cpp">BLYNK_CONNECTED() {
+    Blynk.syncAll();
+}
+
+<span class="comment">//here handlers for sync command</span>
+BLYNK_WRITE(V<span class="number">0</span>) {
+   ....
+}</code></pre><p>The <code>Blynk.syncAll()</code> command restores all the Widget’s values based on the last saved values on the server. 
+All analog and digital pin states will be restored. Every Virtual Pin will perform <code>BLYNK_WRITE</code> event.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino">Sync Hardware with App state</a></p><p>You can also update a single Virtual Pin value by calling <code>Blynk.syncVirtual(V0)</code> or you can update several pins with <code>Blynk.syncVirtual(V0, V1, V2, ...)</code>.</p><p>You can also use server to store any value without widget. Just call <code>Blynk.virtualWrite(V0, value)</code>.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_SingleValue/ServerAsDataStorage_SingleValue.ino">Storing single value on server</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_MultiValue/ServerAsDataStorage_MultiValue.ino">Storing multiple values on server</a></p><h3 id="blynk-main-operations-state-syncing-for-app">For app</h3><p>If you need to keep your hardware in sync with Widgets’ state even if app is offline use <code>Blynk.virtualWrite</code>.</p><p>Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a physical button attached to your hardware. 
+When you press a physical button, you would expect to see updated state of the LED Widget in the app. 
+To achieve that you need to send <code>Blynk.virtualWrite(V1, 255)</code> when a physical button gets pressed.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonInterrupt/ButtonInterrupt.ino">Represent physical button state via LED widget with interrupts</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonPoll/ButtonPoll.ino">Represent physical button state via LED widget with polling</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino">Represent physical button state via Button widget with polling</a></p><h2 id="blynk-main-operations-control-of-multiple-devices">Control of multiple devices</h2><p>Blynk app has support of multiple devices. That means you can assign any widget to specific device with own auth token. 
+For example - you may have button on V1 that controls wi-fi bulb A and another button on V1 that controls wi-fi bulb B. In order 
+to do this you need more than 1 device within your project. To achieve this please go to project settings and click on “Devices” section : </p><p><img src="http://docs.blynk.cc/images/new_project_settings.png" style="width: 200px; height:360px"></p><p>You’ll see list of devices :</p><p><img src="http://docs.blynk.cc/images/list_of_devices(1).png" style="width: 200px; height:360px"></p><p>So you can add new device : </p><p><img src="http://docs.blynk.cc/images/new_device(1).png" style="width: 200px; height:360px"></p><p>After above steps, every widget will have one more field “Target” : </p><p><img src="http://docs.blynk.cc/images/widget_settings_devices.png" style="width: 200px; height:360px"></p><p>Now you need to assign widget to device and after that widget will control only this specific device.</p><p>That’s it! Now you need to upload sketches with correct Auth Tokens to your hardware.</p><h3 id="blynk-main-operations-control-of-multiple-devices-tags">Tags</h3><p>Tags feature allows you to group multiple devices. Tags are very useful in case you want to control few devices with 
+1 widget. For example, imagine a case when you have 3 smart bulbs and you want to turn on all those bulbs with one 
+single click. You need to assign 3 devices to 1 tag and assign tag to button. That’s it.</p><p>Tag widgets also support state syncing. So you can get state of widget from your hardware. However you can’t update 
+state of such widgets from hardware.</p><h2 id="blynk-main-operations-devices-online-status">Devices online status</h2><p>Blynk app has support for online statuses for multiple devices.</p><p><img src="http://docs.blynk.cc/images/online_status.png" style="width: 200px; height:360px"></p><p>In ideal world when device closes tcp connection with some <code>connection.close()</code> - connected server will get notification 
+regarding closed connection. So you can get instant status update on UI. However in real world this mostly exceptional situation. 
+In majority of cases there is no easy and instant way to find out that connection is not active anymore. </p><p>That’s why Blynk uses <code>HEARTBEAT</code> mechanism. With this approach hardware periodically sends <code>ping</code> command with predefined 
+interval (10 seconds by default, <code>BLYNK_HEARTBEAT</code> <a href="https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h">property</a>). 
+In case hardware don’t send anything within 10 seconds server waits additional 5 seconds and after that connection 
+assumed to be broken and closed by server. So on UI you’ll see connection status update only after 15 seconds when it is 
+actually happened.</p><p>You can also change <code>HEARTBEAT</code> interval from hardware side via <code>Blynk.config</code>. In that case <code>newHeartbeatInterval * 2.3</code> formula will be applied. So in case you you decided to set <code>HEARTBEAT</code> interval to 
+5 seconds. You’ll get notification regarding connection with 11 sec delay in worst case.</p><h2 id="blynk-main-operations-project-settings">Project Settings</h2><p>Every project has it’s own settings:</p><p><img src="http://docs.blynk.cc/images/project_settings.png" style="width: 200px; height:360px"></p><ul>
+<li><strong>Theme</strong> - switch between the Light and Black Blynk Theme (Business accounts have wider choice);</li>
+<li><strong>Keep screen always on</strong> - allows you to use the Blynk app without going to the sleep mode (usually all mobile devices do that);</li>
+<li><strong>Send app connected command</strong> - with this option enabled the server will send “App Connected” and “App Disconnected” commands 
+to your hardware when your Blynk app goes online/offline. <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino">Usage example</a>;</li>
+<li><strong>Do not show offline notifications</strong> - right now, for debugging purposes, every time your hardware goes offline - the Blynk 
+Server will notify you with popup in the app about that. However, when debugging is not needed or the Blynk app is used only 
+via HTTP/S this notifications are meaningless. So this switch allows you to turn off this popups. Also this switch turns off 
+the Push notification “Notify when offline” option.</li>
+</ul><h2 id="blynk-main-operations-change-widget-properties">Change Widget properties</h2><p>Changing some of the widget properties from hardware side is also supported.<br>For example, you can change the color of LED widget based on a condition:</p><pre><code>//change LED color
+Blynk.setProperty(V0, "color", "#D3435C");
+
+//change LED label
+Blynk.setProperty(V0, "label", "My New Widget Label");
+
+//change MENU labels
+Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");</code></pre><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_SingleValue/SetProperty_SingleValue.ino">Set Property for single value field</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_MultiValue/SetProperty_MultiValue.ino">Set Property for multi value field</a></p><p><strong>NOTE : </strong> Changing these parameters work <strong>only</strong> for widgets attached to Virtual pins (analog/digital pins won’t work).</p><p>Four widget properties are supported - <code>color</code>, <code>label</code>, <code>min</code>, <code>max</code> for all widgets : </p><p><code>label</code> is string for label of all widgets.</p><p><code>color</code> is string in <a href="http://www.w3schools.com/html/html_colors.asp">HEX</a> format (in the form: #RRGGBB, 
+where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF). For example :</p><pre><code>#define BLYNK_GREEN     "#23C48E"
+#define BLYNK_BLUE      "#04C0F8"
+#define BLYNK_YELLOW    "#ED9D00"
+#define BLYNK_RED       "#D3435C"
+#define BLYNK_DARK_BLUE "#5F7CD8"</code></pre><p>On firmware side, widget objects also support <code>setLabel()</code> and <code>setColor()</code> functions.</p><p>Widget specific properties: </p><p><strong>Button</strong></p><p><code>onLabel</code> is string for ON label of button;</p><p><code>offLabel</code> is string for OFF label of button;</p><p><strong>Music Player</strong></p><p><code>isOnPlay</code> is boolean accepts true/false.</p><pre><code>Blynk.setProperty(V0, "isOnPlay", "true");</code></pre><p><strong>Menu</strong></p><p><code>labels</code> is list of strings for Menu widget selections;</p><pre><code>Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");</code></pre><p><strong>Video Streaming</strong></p><pre><code class="lang-cpp">Blynk.setProperty(V<span class="number">1</span>, <span class="string">"url"</span>, <span class="string">"http:<span class="comment">//my_new_video_url"</span>);</span></code></pre><p>You can also change widget properties via <a href="http://docs.blynkapi.apiary.io/#">HTTP API</a>.</p><h2 id="blynk-main-operations-limitations-and-recommendations">Limitations and Recommendations</h2><ul>
+<li><p>Don’t put <code>Blynk.virtualWrite</code> and any other <code>Blynk.*</code> command inside <code>void loop()</code>- it will cause 
+lot’s of outgoing messages to our server and your connection will be terminated; </p>
+</li>
+<li><p>We recommend calling functions with intervals. For example, use <a href="#blynk-firmware-blynktimer">BlynkTimer</a></p>
+</li>
+<li><p>Avoid using long delays with <code>delay()</code> – it may cause connection breaks;</p>
+</li>
+<li><p>If you send more than 100 values per second - you may cause 
+<a href="#troubleshooting-flood-error">Flood Error</a> and your hardware will be automatically disconnected from the server;</p>
+</li>
+<li><p>Be careful sending a lot of <code>Blynk.virtualWrite</code> commands as most hardware is not very powerful (like ESP8266) 
+so it may not handle many requests. </p>
+</li>
+</ul><h1 id="widgets">Widgets</h1><p>Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.</p><p>There are 4 types of Widgets: </p><ul>
+<li><strong>Controllers</strong> - they send commands to hardware. Use them to control your stuff;</li>
+<li><strong>Displays</strong> - used for various visualizations of data that comes from hardware to the smartphone;</li>
+<li><strong>Notifications</strong> - are various widgets to send messages and notifications;</li>
+<li><strong>Interface</strong> - are various widgets to make your UI look better;</li>
+<li><strong>Others</strong> - widgets that don’t belong to any category;</li>
+</ul><p>Each Widget has it’s own settings. </p><p>Some of the Widgets (e.g. Bridge Widget) are used to enable some functionality and they don’t have any settings.</p><h2 id="widgets-common-widget-settings">Common Widget Settings</h2><h3 id="widgets-common-widget-settings-pin-selector">Pin Selector</h3><p>This is one of the main parameters you need to set. It defines which pin to control or to read from. </p><p><img src="http://docs.blynk.cc/images/pin_selection.png" style="width: 200px; height:360px"></p><p><strong>Digital Pins</strong> - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the <code>~</code> symbol</p><p><strong>Analog Pins</strong> - represent physical Analog IO pins on your hardware</p><p><strong>Virtual Pins</strong> - have no physical representation. They are used for any data transfer between Blynk App and your hardware.
+Read more about Virtual Pins <a href="#blynk-main-operations-virtual-pins">here</a>.</p><h3 id="widgets-common-widget-settings-data-mapping">Data Mapping</h3><p>In case you want to map incoming values to specific range you may use mapping button : </p><p><img src="http://docs.blynk.cc/images/display_edit_mapping.png" style="width: 200px; height:360px"></p><p>Let’s say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the application. 
+With data mapping enabled, incoming value 1023 will be mapped to 100.</p><h3 id="widgets-common-widget-settings-splitmerge">SPLIT/MERGE</h3><p>Some of the Widgets can send more than one value. And with this switch you can control how to send them.</p><p><img src="http://docs.blynk.cc/images/split_merge.gif" style="width: 300px; height:280px"></p><ul>
+<li><p><strong>SPLIT</strong>:
+Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don’t need to write any code.</p>
+<p>  <strong>NOTE:</strong> In this mode you send multiple commands from one widget, which can reduce performance of your hardware.</p>
+<p>  Example: If you have a Joystick Widget and it’s set to D3 and D4, it will send 2 commands over the Internet:</p>
+<pre><code class="lang-cpp">  digitalWrite(<span class="number">3</span>, value);
+  digitalWrite(<span class="number">4</span>, value);</code></pre>
+</li>
+<li><p><strong>MERGE</strong>:
+When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you’ll need to parse it on the hardware. </p>
+<p>  This mode can be used with Virtual Pins only.</p>
+<p>  Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1</p>
+<pre><code class="lang-cpp">  BLYNK_WRITE(V<span class="number">1</span>) <span class="comment">// There is a Widget that WRITEs data to V<span class="number">1</span> </span>
+  {
+    int r = param[<span class="number">0</span>].asInt(); <span class="comment">// get a RED channel value</span>
+    int g = param[<span class="number">1</span>].asInt(); <span class="comment">// get a GREEN channel value</span>
+    int b = param[<span class="number">2</span>].asInt(); <span class="comment">// get a BLUE channel value</span>
+  }</code></pre>
+</li>
+</ul><h3 id="widgets-common-widget-settings-send-on-release">Send On Release</h3><p>This option is available for most controller widgets and allows you to decrease data traffic on your hardware. 
+For example, when you move joystick widget, commands are continuously streamed to the hardware, during a single joystick move 
+you can send dozens of commands. There are use-cases where it’s needed, however creating such a load may cause hardware reset. 
+We recommend enabling <strong>Send On Release</strong> feature for most of the cases, unless you really need instant feedback.
+This option is enabled by default.</p><h3 id="widgets-common-widget-settings-write-interval">Write interval</h3><p>Similar to above option. However, allows you to stream values to your hardware within certain interval. For example, 
+setting write interval to 100 ms - means, that while you move slider only 1 value will be send to hardware within 100 ms.
+This option also used to decrease data traffic on your hardware.</p><h3 id="widgets-common-widget-settings-color-gradient">Color gradient</h3><p>Some display widgets have ability to select gradient. Gradient allows you to colorize your widgets without any coding. 
+At the moment we provide 2 types of gradients :</p><ul>
+<li>Warm: Green - Orange - Red;</li>
+<li>Cold : Green - Blue - Violet;</li>
+</ul><p>Gradient changes color of your widget based on min/max properties. For example, you select warm gradient for your Level 
+Display widget with min 0 and max 100 value. When value 10 comes to widget it will have green color, when value 50 comes you’ll see orange color, when value 80 comes you’ll see red color.</p><h2 id="widgets-controllers">Controllers</h2><h3 id="widgets-controllers-button">Button</h3><p>Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.</p><p><img src="http://docs.blynk.cc/images/button.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/button_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-controllers-slider">Slider</h3><p>Similar to potentiometer. Allows to send values between MIN and MAX.</p><p><img src="http://docs.blynk.cc/images/slider.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/slider_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-controllers-timer">Timer</h3><p>Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).</p><p>Recent Android version also has improved Timer within Eventor widget.
+With Eventor Time Event you can assign multiple timers on same pin, send any string/value, select days and timezone. 
+It is recommended to use Eventor over Timer widget.
+However Timer widget is still suitable for simple timer events.</p><p><img src="http://docs.blynk.cc/images/timer.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/timer_edit.png" style="width: 200px; height:360px"></p><p><strong>NOTE:</strong> The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. </p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino">Timer</a></p><h3 id="widgets-controllers-joystick">Joystick</h3><p>Control servo movements in 4 directions</p><h4>Settings:</h4><ul>
+<li><p>SPLIT/MERGE modes - read <a href="#widgets-common-widget-settings-splitmerge">here</a></p>
+</li>
+<li><p><strong>Rotate on Tilt</strong></p>
+</li>
+</ul><p>When it’s ON, Joystck will automatically rotate if you use your smartphone in landscape orientation<br>- <strong>Auto-Return</strong>
+- 
+When it’s OFF, Joystick handle will not return back to center position. It will stay where you left it. </p><p><img src="http://docs.blynk.cc/images/joystick.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/joystick_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino">JoystickTwoAxis</a></p><h3 id="widgets-controllers-zergba">zeRGBa</h3><p>zeRGBa is usual RGB controller (color picker).</p><h4>Settings:</h4><ul>
+<li><strong>SPLIT</strong>:
+Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don’t need to write any code.</li>
+</ul><p><strong>NOTE:</strong> In this mode you send multiple commands from one widget, which can reduce performance of your hardware.</p><p>Example: If you have a zeRGBa Widget and it’s set to D1, D2, D3 it will send 3 commands over the Internet:</p><pre><code class="lang-cpp">digitalWrite(<span class="number">1</span>, r);
+digitalWrite(<span class="number">2</span>, g);
+digitalWrite(<span class="number">3</span>, b);</code></pre><ul>
+<li><strong>MERGE</strong>:
+When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you’ll need to parse it on the hardware. </li>
+</ul><p>This mode can be used with Virtual Pins only.</p><p>Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1.</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) <span class="comment">// zeRGBa assigned to V<span class="number">1</span> </span>
+{
+    <span class="comment">// get a RED channel value</span>
+    int r = param[<span class="number">0</span>].asInt();
+    <span class="comment">// get a GREEN channel value</span>
+    int g = param[<span class="number">1</span>].asInt();
+    <span class="comment">// get a BLUE channel value</span>
+    int b = param[<span class="number">2</span>].asInt();
+}</code></pre><h3 id="widgets-controllers-step-control">Step Control</h3><p>Step control is like 2 buttons assigned to 1 pin. One button increments your value by desired step and another 
+one decrements it. It is very useful for use cases where you need to change your values very precisely and you can’t 
+achieve this precision with slider widget.</p><p><strong>Send Step</strong> option allows you to send step to hardware instead of actual value of step widget.
+<strong>Loop value</strong> option allows you to reset step widget to start value when maximum value is reached.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">Basic Sketch</a></p><h2 id="widgets-displays">Displays</h2><h3 id="widgets-displays-value-display">Value Display</h3><p>Displays incoming data from your sensors or Virtual Pins.</p><p><img src="http://docs.blynk.cc/images/display.png" style="width: 77px; height:80px"> </p><p><img src="http://docs.blynk.cc/images/display_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-displays-labeled-value">Labeled Value</h3><p>Displays incoming data from your sensors or Virtual Pins. It is a better version of ‘Value Display’ as it has a formatting 
+string, so you could format incoming value to any string you want.</p><p><img src="http://docs.blynk.cc/images/display.png" style="width: 77px; height:80px"> </p><p><img src="http://docs.blynk.cc/images/labeled_value_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h4>Formatting options</h4><p>For example: your sensor sends vaule of 12.6789 to Blynk application.
+Next formatting options are supported:</p><p><code>/pin/</code> - displays the value without formatting (12.6789)</p><p><code>/pin./</code> - displays the rounded value without decimal part (13)</p><p><code>/pin.#/</code> - displays the value with 1 decimal digit (12.7)</p><p><code>/pin.##/</code> - displays the value with two decimal places (12.68)</p><p><img src="http://docs.blynk.cc/images/labeled_value_format_edit.png" style="width: 200px; height:360px"></p><h3 id="widgets-displays-led">LED</h3><p>A simple LED for indication. You need to send 0 in order to turn LED off. And 255 in order to turn LED on. Or just use
+Blynk API as described below :</p><pre><code class="lang-cpp">WidgetLED led<span class="number">1</span>(V<span class="number">1</span>); <span class="comment">//register to virtual pin <span class="number">1</span></span>
+led<span class="number">1</span>.off();
+led<span class="number">1</span>.on();</code></pre><p>All values between 0 and 255 will change LED brightness :</p><pre><code class="lang-cpp">WidgetLED led<span class="number">2</span>(V<span class="number">2</span>);
+led<span class="number">2</span>.setValue(<span class="number">127</span>); <span class="comment">//set brightness of LED to <span class="number">50</span>%.</span></code></pre><p><img src="http://docs.blynk.cc/images/led.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/led_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino">LED</a></p><h3 id="widgets-displays-gauge">Gauge</h3><p>A great visual way to display incoming numeric values.</p><p><img src="http://docs.blynk.cc/images/gauge.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/gauge_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h4>Formatting options</h4><p>For example: your sensor sends vaule of 12.6789 to Blynk application.
+Next formatting options are supported:</p><p><code>/pin/</code> - displays the value without formatting (12.6789)</p><p><code>/pin./</code> - displays the rounded value without decimal part (13)</p><p><code>/pin.#/</code> - displays the value with 1 decimal digit (12.7)</p><p><code>/pin.##/</code> - displays the value with two decimal places (12.68)</p><h3 id="widgets-displays-lcd">LCD</h3><p>This is a regular 16x2 LCD display made in our secret facility in China.</p><h4>SIMPLE / ADVANCED MODE</h4><h4>Commands</h4><p>You need to use special commands with this widget:</p><pre><code>lcd.print(x, y, "Your Message");</code></pre><p>Where x is a symbol position (0-15), y is a line id (0 or 1), </p><pre><code>lcd.clear();</code></pre><p><img src="http://docs.blynk.cc/images/lcd.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/lcd_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino">LCD Advanced Mode</a>
+<strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino">LCD Simple Mode Pushing</a>
+<strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino">LCD Simple Mode Reading</a></p><h4>Formatting options</h4><p>For example: your sensor sends vaule of 12.6789 to Blynk application.
+Next formatting options are supported:</p><p><code>/pin/</code> - displays the value without formatting (12.6789)</p><p><code>/pin./</code> - displays the rounded value without decimal part (13)</p><p><code>/pin.#/</code> - displays the value with 1 decimal digit (12.7)</p><p><code>/pin.##/</code> - displays the value with two decimal places (12.68)</p><p><img src="http://docs.blynk.cc/images/lcd_format_edit.png" style="width: 200px; height:360px"></p><h3 id="widgets-displays-superchart">SuperChart</h3><p>SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.</p><p>To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers.<br><a href="https://examples.blynk.cc/?board=ESP8266&amp;shield=ESP8266%20WiFi&amp;example=GettingStarted%2FPushData">Here is</a> a basic example for data pushing.</p><h4>Interactions:</h4><ul>
+<li><p><strong>Switch between time ranges and Live mode</strong>
+<br>Tap time ranges at the bottom of the widget to change time ranges</p>
+</li>
+<li><p><strong>Tap Legend Elements</strong> to show or hide datastreams
+<br></p>
+</li>
+<li><p><strong>Tap’n’hold to view timestamp and corresponding values</strong></p>
+</li>
+</ul><p><img src="http://docs.blynk.cc/images/tapnhold_charts.png" style="width: 300px; height:280px"></p><ul>
+<li><strong>Quick swipe from left to right to reveal previous data</strong> </li>
+</ul><p><img src="http://docs.blynk.cc/images/swipe_charts.png" style="width: 300px; height:280px"></p><p>Then you can then scroll data back and forward within the given time range.</p><ul>
+<li><strong>Full Screen Mode</strong><br>
+Press this button to open Full Screen view in landscape orientation:</li>
+</ul><p><img src="http://docs.blynk.cc/images/fullscreen_charts.png" style="width: 300px; height:280px"></p><p>Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
+In full screen view you will see X (time) and multiple Y scales. 
+Full Screen Mode can be disabled from widget Settings.</p><ul>
+<li><strong>Menu Button</strong><br>
+Menu button will open additional functions:<ul>
+<li>Export to CSV</li>
+<li>Erase Data on the server </li>
+</ul>
+</li>
+</ul><p><img src="http://docs.blynk.cc/images/menu_charts.png" style="width: 300px; height:280px"></p><h4>SuperChart Settings:</h4><ul>
+<li><p><strong>Chart Title</strong></p>
+</li>
+<li><p><strong>Title Font Size</strong>
+You have a choice of 3 font sizes</p>
+</li>
+<li><p><strong>Title Alignment</strong>
+Choose chart title alignment. This setting also affects Title and Legend position on the Widget.</p>
+</li>
+<li><p><strong>Datastreams</strong> - add datastreams (read below how to configure datastreams)</p>
+</li>
+<li><strong>Show/Hide Title</strong></li>
+<li><strong>Show/Hide Legend</strong></li>
+</ul><h4>Datastream Settings</h4><p>Widget supports up to 4 Datastreams. 
+Press Datastream Settings Icon to open Datastream Settings.</p><p><img src="http://docs.blynk.cc/images/datastream_charts.png"></p><p><strong>Design:</strong>
+Choose available types of Chart:</p><ul>
+<li>Line</li>
+<li>Area</li>
+<li>Bar</li>
+<li>Binary (anchor LINK to binary)</li>
+</ul><p><strong>Color:</strong>
+Choose solid colors or gradients</p><p><strong>Source and input:</strong>
+You can use 3 types of Data source: </p><p><strong>1. Virtual Pin</strong>
+Choose the desired Device and Virtual Pin to read the data from. </p><p><strong>2. Tags</strong>
+SuperChart can aggregate data from multiple devices using built-in aggregation functions. 
+For example, if you have 10 Temperature sensors sending temperature with the given period, 
+you can plot average value from 10 sensors on the widget.</p><p>To use Tags:</p><ul>
+<li><strong><a href="#blynk-main-operations-control-of-multiple-devices-tags">Add Tag</a></strong> to every device you want to aggregate data from. </li>
+<li><strong>Push data to the same Virtual Pin</strong> on every device. (e.g. <code>Blynk.virtualWrite (V0, temperature);</code>)</li>
+<li><strong>Choose Tag as a source</strong> in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br></li>
+</ul><p><strong>Functions available:</strong> </p><ul>
+<li><strong>SUM</strong>, will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag</li>
+<li><strong>AVG</strong>, will plot average value </li>
+<li><strong>MED</strong>, will find a median value</li>
+<li><strong>MIN</strong>, will plot minimum value </li>
+<li><strong>MAX</strong> will plot minimum value </li>
+</ul><p><strong>☝️ IMPORTANT: Tags are not working in Live Mode.</strong></p><ol>
+<li><strong><a href="#widgets-time-input-device-selector">Device Selector</a></strong>
+If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
+In this case, when you change the device in Device Selector, chart will be updated accordingly</li>
+</ol><p><strong>Y-Axis Settings</strong>
+<br>There are two modes of how to scale data along the Y axis</p><ol>
+<li><strong>Values</strong><br>
+When this mode is selected, Y scale will be set to the values you choose. 
+For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
+to this values and data will be rendered correctly.</li>
+</ol><p><img src="http://docs.blynk.cc/images/yScale_manual_charts.png" style="width: 300px; height:212"></p><p>You may also want to visualize the data within some specific range. 
+Let’s say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
+You can set it up and if values are out of Y scale you configured, chart will be cropped</p><ol>
+<li><strong>% of Height</strong><br>
+This option allows you to auto-scale incoming data on the widget and position it the way you want. 
+In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. </li>
+</ol><p><img src="http://docs.blynk.cc/images/yheight2_charts.png" style="width: 300px; height:212px"></p><p>If you set 0-100%, in fact it’s a full auto-scale. No matter in which range the data is coming,<br>it will be always scaled to the whole height of the widget.</p><p>If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height:
+<img src="http://docs.blynk.cc/images/yheight2_manual_charts.png" style="width: 300px; height:212px"></p><p>This setting is very valuable for <strong>Binary Chart</strong> or for visualizing a few datastreams on the same chart in a different way.</p><p><img src="http://docs.blynk.cc/images/binary_charts.png" style="width: 300px; height:280px"></p><p><strong>Suffix:</strong> <br>Here you can specify a suffix that will be shown during the Tap’n’hold</p><p><img src="http://docs.blynk.cc/images/suffix_charts.png" style="width: 300px; height:280px"></p><p><strong>Connect Missing Data Points</strong><br>
+If this switch is ON, then SuperChart will connect all the dots even if there was no data</p><p><img src="http://docs.blynk.cc/images/datapoints1_charts.png" style="width: 300px; height:280px"></p><p>If it’s set to OFF, then you will see gaps in case there was no data.</p><p><img src="http://docs.blynk.cc/images/datapoints2_charts.png" style="width: 300px; height:280px"></p><p><strong>Binary Chart Settings</strong><br>
+This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.</p><p>You need to specify a <strong>FLIP</strong> point, which is the point where incoming data will be turned into TRUE or FALSE state.</p><p>For example, you send the data in the range of <code>0 to 1023</code>. If you set <code>512</code> as a <strong>FLIP</strong> point, then everything above <code>512</code> (excluding 512) will be recorded as <code>TRUE</code>, any value below <code>512</code> (including 512) will be <code>FALSE</code>.</p><p>Another example, if you send <code>0 and 1</code> and set <code>0</code> as a <strong>FLIP</strong> point, then <code>1</code> will be <code>TRUE</code>, <code>0</code> will be <code>FALSE</code></p><p><strong>State Labels:</strong><br>
+Here you can specify how <code>TRUE/FALSE</code> should be shown in Tap’n’Hold mode. </p><p>For example, you can set to <code>TRUE</code> to “Equipment ON” label, <code>FALSE</code> to “Equipment OFF”.</p><p><img src="http://docs.blynk.cc/images/binarylabel_charts.png" style="width: 300px; height:280px"></p><h3 id="widgets-displays-graph">Graph</h3><p>Easily plot incoming data from your project in various designs.</p><p><img src="http://docs.blynk.cc/images/graph.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/graph_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-displays-history-graph">History Graph</h3><p>Allows you to see any data your hardware had sent to server previously. History graph has 3 granularities :</p><ul>
+<li>Minute granularity - <code>1h</code>, <code>6h</code>;</li>
+<li>Hour granularity - <code>1d</code>, <code>1w</code>;</li>
+<li>Day granularity - <code>1m</code>, <code>3m</code>;</li>
+</ul><p>This means that minimum graph update interval is 1 minute for <code>1h</code> and <code>6h</code> periods. 
+1 hour for <code>1d</code> and <code>1w</code> periods. 1 day for <code>1m</code> and <code>3m</code> periods.
+As Blynk Cloud is free to use we have a limit on how many data you can store. At the moment Blynk Cloud accepts 
+1 message per minute per pin. In case you send your data more frequently your values will be averaged. For example, 
+in case you send value <code>10</code> at 12:12:05 and than again <code>12</code> at  12:12:45 as result in history graph you’ll see
+value <code>11</code> for 12:12.</p><p>In order to see data in history graph you need to use either widgets with “Frequency reading” interval (in 
+that case your app should be open and running) or you can use <code>Blynk.virtualWrite</code> on hardware side. Every 
+<code>Blynk.virtualWrite</code> command is stored on server automatically. In that case you don’t need application to be up and running.</p><p>You can also easily clear data for selected pins or get all data for pins via email - just swipe left history graph and click “Erase data”.</p><p><img src="http://docs.blynk.cc/images/erase_history_graph.png" style="width: 525px; height:263px"></p><p>You can also get pin data via <a href="http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin">HTTP API</a>.</p><p><img src="http://docs.blynk.cc/images/history_graph.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/history_graph_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino">PushData</a></p><h3 id="widgets-displays-terminal">Terminal</h3><p>Displays data from your hardware. Allows to send any string to your hardware. Terminal always stores last 25 messages
+your hardware had send to Blynk Cloud. This limit may be increased on Local Server with <code>terminal.strings.pool.size</code> 
+property.</p><p>You need to use special commands with this widget:</p><pre><code class="lang-cpp">terminal.print();   <span class="comment">// Print values, like Serial.print</span>
+terminal.println(); <span class="comment">// Print values, like Serial.println()</span>
+terminal.write();   <span class="comment">// Write a raw data buffer</span>
+terminal.flush();   <span class="comment">// Ensure that data was sent out of device</span></code></pre><p><img src="http://docs.blynk.cc/images/terminal.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/terminal_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Terminal/Terminal.ino">Terminal</a></p><h3 id="widgets-displays-video-streaming">Video Streaming</h3><p>Simple widget that allows you to display any live stream. Widget supports RTSP (RP, SDP), HTTP/S progressive streaming, 
+HTTP/S live streaming. For more info please follow <a href="https://developer.android.com/guide/appendix/media-formats.html">official Android documentation</a>. </p><p>At the moment Blynk doesn’t provide streaming servers. So you can either stream directly from camera, use 3-d party 
+services or host streaming server on own server (on raspberry for example).</p><p>You can also change video url from hardware with : </p><pre><code class="lang-cpp">Blynk.setProperty(V<span class="number">1</span>, <span class="string">"url"</span>, <span class="string">"http:<span class="comment">//my_new_video_url"</span>);</span></code></pre><h3 id="widgets-displays-level-display">Level Display</h3><p>Displays incoming data from your sensors or Virtual Pins. Level Display is very similar to progress bar, it is very nice 
+and fancy view for indication of “filled” events, like “level of battery”. 
+You can update value display from hardware side with code : </p><pre><code class="lang-cpp">Blynk.virtualWrite(V<span class="number">1</span>, val);</code></pre><p>Every message that hardware sends to server is stored automatically on server. PUSH mode doesn’t require 
+application to be online or opened.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino">Push Example</a></p><h2 id="widgets-notifications">Notifications</h2><h3 id="widgets-notifications-twitter">Twitter</h3><p>Twitter widget connects your Twitter account to Blynk and allows you to send Tweets from your hardware.</p><p><img src="http://docs.blynk.cc/images/TwitterON.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/twitter_edit.png" style="width: 200px; height:360px"></p><p>Example code:</p><pre><code class="lang-cpp">Blynk.tweet(<span class="string">"Hey, Blynkers! My Arduino can tweet now!"</span>);</code></pre><p>Limitations :</p><ul>
+<li>you cant’ send 2 tweets with same message (it’s Twitter policy)</li>
+<li>only 1 tweet per 15 seconds is allowed</li>
+</ul><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Twitter/Twitter.ino">Twitter</a></p><h3 id="widgets-notifications-email">Email</h3><p>Email widget allows you to send email from your hardware to any address.</p><p>Example code:</p><pre><code class="lang-cpp">Blynk.email(<span class="string">"my_email@example.com"</span>, <span class="string">"Subject"</span>, <span class="string">"Your message goes here"</span>);</code></pre><p>It also contains <code>to</code> field. With this field you may define receiver of email in the app. 
+In that case you don’t need to specify receiver on hardware :</p><pre><code class="lang-cpp"> Blynk.email(<span class="string">"Subject"</span>, <span class="string">"Your message goes here"</span>);</code></pre><p><img src="http://docs.blynk.cc/images/mail.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/mail_edit.png" style="width: 200px; height:360px"></p><p>Limitations :</p><ul>
+<li>Maximum allowed email + subject + message length is 120 symbols. However you can increase this limit if necessary 
+by adding <code>#define BLYNK_MAX_SENDBYTES XXX</code> to you sketch. Where <code>XXX</code> is desired max length of your email. 
+For example for ESP you can set this to 1200 max length <code>#define BLYNK_MAX_SENDBYTES 1200</code>. The 
+<code>#define BLYNK_MAX_SENDBYTES 1200</code> must be included before any of the Blynk includes.</li>
+<li>Only 1 email per 15 seconds is allowed</li>
+<li>In case you are using gmail on the Local Server you are limited with 500 mails per day (by google). Other providers may have similar
+limitations, so please be careful.</li>
+<li>User is limited with 100 messages per day in the Blynk Cloud;</li>
+</ul><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Email/Email.ino">Email</a></p><h3 id="widgets-notifications-push-notifications">Push Notifications</h3><p>Push Notification widget allows you to send push notification from your hardware to your device. Currently it also 
+contains 2 additional options :</p><ul>
+<li><strong>Notify when hardware offline</strong> - you will get push notification in case your hardware went offline.</li>
+<li><strong>Offline Ignore Period</strong> - defines how long hardware could be offline (after it went offline) before sending notification. 
+In case period is exceeded - “hardware offline” notification will be send. You will get no notification in case hardware 
+was reconnected within specified period.</li>
+<li><strong>Priority</strong> high priority gives more chances that your message will be delivered without any delays. 
+See detailed explanation <a href="https://developers.google.com/cloud-messaging/concept-options#setting-the-priority-of-a-message">here</a>. </li>
+</ul><p><strong>WARNING</strong> : high priority contributes more to battery drain compared to normal priority messages.</p><p><img src="http://docs.blynk.cc/images/push.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/push_edit.png" style="width: 200px; height:360px"></p><p>Example code:</p><pre><code class="lang-cpp">Blynk.notify(<span class="string">"Hey, Blynkers! My hardware can push now!"</span>);</code></pre><p>Limitations :</p><ul>
+<li>Maximum allowed body length is 120 symbols.</li>
+<li>Only 1 notification per 15 seconds is allowed</li>
+</ul><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/PushNotification/PushNotification_Button/PushNotification_Button.ino">PushNotification</a></p><h3 id="widgets-notifications-unicode-in-notify-email-push">Unicode in notify, email, push, …</h3><p>The library handles all strings as UTF8 Unicode. If you’re facing problems, try to print your message to the Serial and see if it works (the terminal should be set to UTF-8 encoding). If it doesn’t work, probably you should read about unicode support of your compiler.<br>If it works, but your message is truncated - you need to increase message length limit (all Unicode symbols consume at least twice the size of Latin symbols).</p><h3 id="widgets-notifications-increasing-message-length-limit">Increasing message length limit</h3><p>You can increase maximum message length by putting on the top of your sketch (before Blynk includes):</p><pre><code class="lang-cpp"><span class="comment">#define BLYNK_MAX_SENDBYTES <span class="number">256</span> // Default is <span class="number">128</span></span></code></pre><h2 id="widgets-interface">Interface</h2><h3 id="widgets-interface-tabs">Tabs</h3><p>The only purpose of Tabs widget is to extend your project space. You can have up to 4 tabs. 
+Also you can drag widgets between tabs. Just drag widget on the label of required tab of tabs widget.</p><p><img src="http://docs.blynk.cc/images/tabs_settings.png" style="width: 200px; height:360px"></p><h3 id="widgets-interface-menu">Menu</h3><p>Menu widget allows you to send command to your hardware based on selection you made on UI. Menu
+sends index of element you selected and not label string. Sending index is starts from 1.
+It works same way as usual ComboBox element. You can also set Menu items 
+<a href="#blynk-main-operations-change-widget-properties">from hardware side</a>.</p><p><img src="http://docs.blynk.cc/images/menu_edit.png" style="width: 200px; height:360px"></p><p>Example code:</p><pre><code>switch (param.asInt())
+  {
+    case 1: { // Item 1
+      Serial.println("Item 1 selected");
+      break;
+    }
+    case 2: { // Item 2
+      Serial.println("Item 2 selected");
+      break;
+    }    
+  }</code></pre><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Menu/Menu.ino">Menu</a></p><h3 id="widgets-interface-time-input">Time Input</h3><p>Time input widget allows you to select start/stop time, day of week, timezone, sunrise/sunset formatted values
+and send them to your hardware. Supported formats for time now are <code>HH:MM</code> and <code>HH:MM AM/PM</code>.</p><p>Hardware will get selected on UI time as seconds of day (<code>3600 * hours + 60 * minutes</code>) for start/stop time.
+Time that widget sends to hardware is user local time.
+Selected days indexes : </p><pre><code>Monday - 1
+Tuesday - 2
+...
+Saturday - 6
+Sundays - 7</code></pre><p>You can also change state of widget on UI. See below sketches.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/SimpleTimeInput/SimpleTimeInput.ino">Simple Time Input for start time</a></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/AdvancedTimeInput/AdvancedTimeInput.ino">Advanced Time Input</a></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/TimeInput/UpdateTimeInputState/UpdateTimeInputState.ino">Update Time Input State on UI</a></p><h3 id="widgets-interface-map">Map</h3><p>Map widget allows you set points/pins on map from hardware side. This is very useful widget in case you have 
+multiple devices and you want track their values on map.</p><p>You can send a point to map with regular virtual wrtei command :  </p><pre><code class="lang-cpp">Blynk.virtualWrite(V<span class="number">1</span>, pointIndex, lat, lon, <span class="string">"value"</span>);</code></pre><p>We also created wrapper for you to make suage of map simpler : </p><p>You can change button labels from hardware with : </p><pre><code class="lang-cpp">WidgetMap myMap(V<span class="number">1</span>);
+...
+int index = <span class="number">1</span>;
+float lat = <span class="number"><span class="number">51</span>.<span class="number">5074</span></span>;
+float lon = <span class="number"><span class="number">0</span>.<span class="number">1278</span></span>;
+myMap.location(index, lat, lon, <span class="string">"value"</span>);</code></pre><p>Using save <code>index</code> allows you to override existing point value.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Map/Map.ino">Basic Sketch</a></p><h3 id="widgets-interface-table">Table</h3><p>Table widget comes handy when you need to structure similar data within 1 graphical element. It works as a usual table.</p><p>You can add a row to the table with : </p><pre><code>Blynk.virtualWrite(V1, "add", id, "Name", "Value");</code></pre><p>You can update a row in the table with :</p><pre><code>Blynk.virtualWrite(V1, "update", id, "UpdatedName", "UpdatedValue");</code></pre><p>To highlight any item in a table by using it’s index in a table starting from 0 : </p><pre><code>Blynk.virtualWrite(V1, "pick", 0);</code></pre><p>To select/deselect (make icon green/grey) item in a table by using it’s row id in a table : </p><pre><code>Blynk.virtualWrite(V1, "select", 0);
+Blynk.virtualWrite(V1, "deselect", 0);</code></pre><p>Move row to another position in the table by it index 
+(row is removed and after that is added, have that in mind when sending second index):</p><pre><code>//1 is old row index, 2 is new row index
+Blynk.virtualWrite(V1, "order", 1, 2);</code></pre><p>To clear the table at any time with: </p><pre><code>Blynk.virtualWrite(V1, "clr");</code></pre><p>You can also handle other actions coming from table. For example, use row as a switch button. </p><pre><code>BLYNK_WRITE(V1) {
+   String cmd = param[0].asStr();
+   if (cmd == "select") {
+       //row in table was selected. 
+       int rowId = param[1].asInt();
+   }
+   if (cmd == "deselect") {
+       //row in table was deselected. 
+       int rowId = param[1].asInt();
+   }
+   if (cmd == "order") {
+       //rows in table where reodered
+       int oldRowIndex = param[1].asInt();
+       int newRowIndex = param[2].asInt();
+   }
+}</code></pre><p><strong>Note :</strong> Max number of rows in the table is 100. When you reach the limit, table will work as FIFO (First In First Out) list.
+This limit can be changed by configuring <code>table.rows.pool.size</code> property for Local Server.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Simple/Table_Simple.ino">Simple Table usage</a></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Table/Table_Advanced/Table_Advanced.ino">Advanced Table usage</a></p><h3 id="widgets-interface-device-selector">Device Selector</h3><p>Device selector is a powerful widget which allows you to update widgets based on one active device. This widget is particlularly helpful when you have a fleet of devices with similar functionality.</p><p>Imagine you have 4 devices and every device has a Temperature &amp; Humidity sensor connected to it. To display the data for all 4 devices you would need to add 8 widgets.</p><p>With Device Selector, you can use only 2 Widgets which will display Temperature and Humidity based on the active device chosen in Device Selector.  </p><p>All you have to do is:</p><ol>
+<li>Add Device Selector Widget to the project</li>
+<li>Add 2 widgets (for example Value Display Widget) to show Temperature and Humidity</li>
+<li>In Widgets Settings you will be able assign them to Device Selector (Source or Target section)</li>
+<li>Exit settings, Run the project. </li>
+</ol><p>Now you can change the active device in Device Selector and you will see that Temperature and Humidity values are reflecting the data updates for the device you just picked.</p><p><strong>NOTE : </strong> Webhook Widget will not work with Device Selector (yet).</p><h3 id="widgets-interface-device-tiles">Device Tiles</h3><p>Device tiles is a powerful widget and very similar to the device selector widget, but with UI.
+It allows you to display 1 pin per device per tile. 
+This widget is particularly helpful when you have a fleet of devices with similar functionality. So you can 
+group similar devices within one layout (template).</p><h2 id="widgets-sensors">Sensors</h2><h3 id="widgets-sensors-accelerometer">Accelerometer</h3><p>Accelerometer is kind of <a href="https://developer.android.com/guide/topics/sensors/sensors_motion.html">motion sensors</a> 
+that allows you to detect motion of your smartphone. 
+Useful for monitoring device movement, such as tilt, shake, rotation, or swing. 
+Conceptually, an acceleration sensor determines the acceleration that is applied to a device by measuring the forces 
+that are applied to the sensor. Measured in <code>m/s^2</code> applied to <code>x</code>, <code>y</code>, <code>z</code> axis.</p><p>In order to accept data from it you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  <span class="comment">//acceleration force applied to axis x</span>
+  int x = param[<span class="number">0</span>].asFloat(); 
+  <span class="comment">//acceleration force applied to axis y</span>
+  int y = param[<span class="number">1</span>].asFloat();
+  <span class="comment">//acceleration force applied to axis y</span>
+  int z = param[<span class="number">2</span>].asFloat();
+}</code></pre><p>Accelerometer doesn’t work in background.</p><h3 id="widgets-sensors-barometerpressure">Barometer/pressure</h3><p>Barometer/pressure is kind of <a href="https://developer.android.com/guide/topics/sensors/sensors_environment.html">environment sensors</a> 
+that allows you to measure the ambient air pressure.</p><p>Measured in in <code>hPa</code> or <code>mbar</code>.</p><p>In oder to accept data from it you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  <span class="comment">//pressure in mbar</span>
+  int pressure = param[<span class="number">0</span>].asInt(); 
+}</code></pre><p>Barometer doesn’t work in background.</p><h3 id="widgets-sensors-gravity">Gravity</h3><p>Gravity is kind of <a href="https://developer.android.com/guide/topics/sensors/sensors_motion.html">motion sensors</a> 
+that allows you to detect motion of your smartphone. 
+Useful for monitoring device movement, such as tilt, shake, rotation, or swing. </p><p>The gravity sensor provides a three dimensional vector indicating the direction and magnitude of gravity. 
+Measured in <code>m/s^2</code> of gravity force applied to <code>x</code>, <code>y</code>, <code>z</code> axis.</p><p>In oder to accept data from it you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  <span class="comment">//force of gravity applied to axis x</span>
+  int x = param[<span class="number">0</span>].asFloat(); 
+  <span class="comment">//force of gravity applied to axis y</span>
+  int y = param[<span class="number">1</span>].asFloat();
+  <span class="comment">//force of gravity applied to axis y</span>
+  int z = param[<span class="number">2</span>].asFloat();
+}</code></pre><p>Gravity doesn’t work in background.</p><h3 id="widgets-sensors-humidity">Humidity</h3><p>Humidity is kind of <a href="https://developer.android.com/guide/topics/sensors/sensors_environment.html">environment sensors</a> 
+that allows you to measure ambient relative humidity.</p><p>Measured in <code>%</code> - actual relative humidity in percent.</p><p>In oder to accept data from it you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  <span class="comment">// humidity in %</span>
+  int humidity = param.asInt();
+}</code></pre><p>Humidity doesn’t work in background.</p><h3 id="widgets-sensors-light">Light</h3><p>Light is kind of <a href="https://developer.android.com/guide/topics/sensors/sensors_environment.html">environment sensors</a> 
+that allows you to measure level of light (measures the ambient light level (illumination) in lx).
+In phones it is used to control screen brightness.</p><p>In order to accept data from it you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  <span class="comment">//light value</span>
+  int lx = param.asInt(); 
+}</code></pre><p>Light doesn’t work in background.</p><h3 id="widgets-sensors-proximity">Proximity</h3><p>Proximity is kind of <a href="https://developer.android.com/guide/topics/sensors/sensors_position.html">position sensors</a> 
+that allows you to determine how close the face of a smartphone is to an object.
+Measured in <code>cm</code> - distance from phone face to object. However most of this sensors returns only FAR / NEAR information.
+So return value will be <code>0/1</code>. Where 0/LOW  is <code>FAR</code> and 1/HIGH is <code>NEAR</code>.</p><p>In order to accept data from it you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  <span class="comment">// distance to object</span>
+  int proximity = param.asInt();
+  if (proximity) {
+     <span class="comment">//NEAR</span>
+  } else {
+     <span class="comment">//FAR</span>
+  }
+}</code></pre><p>Proximity doesn’t work in background.</p><h3 id="widgets-sensors-temperature">Temperature</h3><p>Temperature is kind of <a href="https://developer.android.com/guide/topics/sensors/sensors_environment.html">environment sensors</a> 
+that allows you to measure ambient air temperature.
+Measured in <code>°C</code> - celcius.</p><p>In order to accept data from it you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  <span class="comment">// temperature in celcius</span>
+  int celcius = param.asInt();
+}</code></pre><p>Temperature doesn’t work in background.</p><h3 id="widgets-sensors-gps-trigger">GPS Trigger</h3><p>GPS trigger widget allows easily trigger events when you arrive to or leave from some destination. This widget 
+will work in background and periodically will check your coordinates. In case your location is within/out required 
+radius (selected on widget map) widget will send <code>HIGH</code>/<code>LOW</code> command to hardware. For example, let’s assume you have 
+GPS Trigger widget assigned to pin <code>V1</code> and option <code>Trigger When Enter</code>. In that case when you’ll arrive to destination 
+point widget will trigger <code>HIGH</code> event.</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  int state = param.asInt();
+  if (state) {
+      <span class="comment">//You enter destination</span>
+  } else {
+      <span class="comment">//You leave destination</span>
+  }
+}</code></pre><p>More details on how GPS widget works you can read <a href="https://developer.android.com/guide/topics/location/strategies.html">here</a>.</p><p>GPS trigger widget works in background.</p><h3 id="widgets-sensors-gps-streaming">GPS Streaming</h3><p>Useful for monitoring smartphone location data such as latitude, longitude, altitude and speed (speed could be often 0<br>in case smartphone doesn’t support it).</p><p>In order to accept data from this widget you need to : </p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  float latitude = param[<span class="number">0</span>].asFloat(); 
+  float longitude = param[<span class="number">1</span>].asFloat();
+  float altitude = param[<span class="number">2</span>].asFloat();
+  float speed = param[<span class="number">3</span>].asFloat();
+}</code></pre><p>or you can use prepared wrapper <code>GpsParam</code> :</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) {
+  GpsParam gps(param);
+  <span class="comment">// Print <span class="number">6</span> decimal places for Lat</span>
+  Serial.println(gps.getLat(), <span class="number">7</span>);
+  Serial.println(gps.getLon(), <span class="number">7</span>);
+
+  Serial.println(gps.getAltitude(), <span class="number">2</span>);
+  Serial.println(gps.getSpeed(), <span class="number">2</span>);
+}</code></pre><p>GPS Streaming works in background.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/GPS_Stream/GPS_Stream.ino">GPS Stream</a></p><h2 id="widgets-other">Other</h2><h3 id="widgets-other-bridge">Bridge</h3><p>Bridge can be used for Device-to-Device communication (no app. involved). You can send digital/analog/virtual write commands from one device to another, knowing it’s auth token.
+At the moment Bridge widget is not required on application side (it is mostly used for indication that we have such feature).<br><strong>You can use multiple bridges to control multiple devices.</strong></p><p><img src="http://docs.blynk.cc/images/bridge.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/bridge_edit.png" style="width: 200px; height:360px"></p><p>Bridge widget takes a virtual pin, and turns it into a channel to control another device. It means you can control any virtual, digital or analog pins of the target device.
+Be careful not to use pins like <code>A0, A1, A2 ...</code> when communicating between different device types, as Arduino Core may refer to wrong pins in such cases.</p><p>Example code for device A which will send values to device B :</p><pre><code class="lang-cpp">WidgetBridge bridge<span class="number">1</span>(V<span class="number">1</span>); <span class="comment">//Initiating Bridge Widget on V<span class="number">1</span> of Device A</span>
+...
+void setup() {
+    Blynk.begin(...);
+    while (Blynk.connect() == false) {
+        <span class="comment">// Wait until Blynk is connected</span>
+    }
+    bridge<span class="number">1</span>.digitalWrite(<span class="number">9</span>, HIGH); <span class="comment">// will trigger D<span class="number">9</span> HIGH on Device B. No code on Device B required</span>
+    bridge<span class="number">1</span>.analogWrite(<span class="number">10</span>, <span class="number">123</span>);
+    bridge<span class="number">1</span>.virtualWrite(V<span class="number">1</span>, <span class="string">"hello"</span>); <span class="comment">// you need to write code on Device B in order to receive this value. See below</span>
+    bridge<span class="number">1</span>.virtualWrite(V<span class="number">2</span>, <span class="string">"value<span class="number">1</span>"</span>, <span class="string">"value<span class="number">2</span>"</span>, <span class="string">"value<span class="number">3</span>"</span>);
+}
+
+BLYNK_CONNECTED() {
+  bridge<span class="number">1</span>.setAuthToken(<span class="string">"OtherAuthToken"</span>); <span class="comment">// Token of the hardware B</span>
+}</code></pre><p>IMPORTANT: when performing <code>virtualWrite()</code> with Bridge Widget, Device B will need to process the incoming data from Device A. 
+For example, if you are sending value from Device A to Device B using <code>bridge.virtualWrite(V5)</code> you would need to use this handler on Device B:</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">5</span>){
+    int pinData = param.asInt(); <span class="comment">//pinData variable will store value that came via Bridge</span>
+}</code></pre><p>Keep in mind that <code>bridge.virtualWrite</code> doesn’t send any value to mobile app. You need to call <code>Blynk.virtualWrite</code> for that.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Bridge/Bridge.ino">Bridge</a></p><h3 id="widgets-other-eventor">Eventor</h3><p>Eventor widget allows you to create simple behaviour rules or <strong>events</strong>. 
+Let’s look at a typical use case: read temperature from DHT sensor and send push notification when the temperature is over a certain limit :  </p><pre><code class="lang-cpp">  float t = dht.readTemperature();
+  if (isnan(t)) {
+    return;
+  }
+  if (t &gt; <span class="number">40</span>) {
+    Blynk.notify(String(<span class="string">"Temperature is too high : "</span>) + t);
+  }</code></pre><p>With Eventor you don’t need to write this code. All you need is to send the value from the sensor to the server :</p><pre><code class="lang-cpp">  float t = dht.readTemperature();
+  Blynk.virtualWrite(V<span class="number">0</span>, t);</code></pre><p>Don’t forget that <code>virtualWrite</code> commands should be wrapped in the timer and can’t be used in the main loop.</p><p>Now configure new <strong>Event</strong> in Eventor widget: </p><p><img src="http://docs.blynk.cc/images/eventor_for_temp_example.png" style="width: 200px; height:360px"></p><p><strong>NOTE</strong> Don’t forget to add notification widget.</p><p>Eventor comes handy when you need to change conditions on the fly without re-uploading new sketch on 
+the hardware. You can create as many <strong>events</strong> as you need.
+Eventor also could be triggered from the application side.
+You just need to assign the widget to the same pin as your Event within Eventor.
+Eventor doesn’t constantly sends events. Let’s consider simple event as above <code>if (temperature &gt; 40) send notification</code>.
+When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 
+40 threshold no actions will be triggered. But if <code>temperature</code> goes below threshold and then passes it again -
+notification will be sent again (there is no 15 sec limit on Eventor notifications).</p><p>Eventor also supports Timer events. For example, you can set a pin <code>V1</code> ON/HIGH at 21:00:00 every Friday.
+With Eventor Time Event you can assign multiple timers on same pin, send any string/number, select days and timezone. </p><p>In order to remove created <strong>event</strong> please use swipe. You can also swipe out last element in the Event itself. </p><p><strong>NOTE:</strong> The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. 
+<strong>NOTE</strong> : Events are triggered only once when the condition is met. That’s mean 
+<a href="https://community.blynk.cc/t/eventor-behavior-bug-feature/20962">chaining of events</a> is not possible (however, could be enabled for commercials).</p><p><img src="http://docs.blynk.cc/images/eventor_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Eventor/Eventor.ino">Eventor</a></p><p><strong>NOTE</strong> : Events are triggered only once when the condition is met. 
+However there is one exclusion:
+Let’s consider simple event as above <code>if (temperature &gt; 40) send notification</code>.
+When temperature goes beyond 40 threshold - notification action is triggered. If temperature continues to stay above the 40 threshold no actions will be triggered. But if <code>temperature</code> goes below threshold and then passes it again -
+notification will be sent again (there is no 15 sec limit on Eventor notifications).</p><h3 id="widgets-other-rtc">RTC</h3><p>Real-time clock allows you to get time from server. You can preselect any timezone on UI to get time on hardware in required locale. 
+No pin required for RTC widget.</p><p><img src="http://docs.blynk.cc/images/rtc_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/RTC/RTC.ino">RTC</a></p><h3 id="widgets-other-ble">BLE</h3><p>Widget for enabling Bluetooth Low Energy support. At the moment BLE widget requires 
+internet connection in order to login and load your profile. However this will be fixed soon. Also some Blynk 
+widget not allowed with BLE widget.</p><p>Blynk currently support bunch of different modules. Please check sketches below.</p><p><img src="http://docs.blynk.cc/images/ble_settings.png" style="width: 200px; height:360px"></p><p><strong>Sketches:</strong> <a href="https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth">BLE</a></p><h3 id="widgets-other-bluetooth">Bluetooth</h3><p>Widget for enabling Bluetooth support. At the moment Bluetooth widget supported only for Android and requires 
+internet connection in order to login and load your profile. However this will be fixed soon. Also some Blynk 
+widget not allowed with Bluetooth widget.</p><p>Blynk currently support bunch of different modules. Please check sketches below.</p><p><img src="http://docs.blynk.cc/images/ble_settings.png" style="width: 200px; height:360px"></p><p><strong>Sketches:</strong> <a href="https://github.com/blynkkk/blynk-library/tree/master/examples/Boards_Bluetooth">Bluetooth</a></p><h3 id="widgets-other-music-player">Music Player</h3><p>Simple UI element with 3 buttons - simulates music player interface. Every button sends it’s own command to hardware : 
+<code>play</code>, <code>stop</code>, <code>prev</code>, <code>next</code>.</p><p>You can change widget state within the app from hardware side with next commands:</p><pre><code>Blynk.virtualWrite(Vx, “play”);
+Blynk.virtualWrite(Vx, “stop”);</code></pre><p>You can also change widget play/stop state with next code (equivalent to above commands) : </p><p><code>Blynk.setProperty(V1, "isOnPlay", "false");</code></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Player/Player.ino">Music Player</a></p><h3 id="widgets-other-webhook">Webhook</h3><p>Webhook is a widget for 3-d party integrations. With webhook widget you can send HTTP/S requests to any 3-d party server 
+or device that has HTTP/S API (Philips Hue for instance).</p><p>Any write operation from hardware side will trigger webhook widget (same way as for eventor). You can also trigger 
+webhook from application side in case control widget assigned to same pin as webhook. You can trigger 3-d party service 
+with single button click.</p><p>For example, imagine a case when you want to send data from your hardware not only to Blynk but also to Thingspeak server.
+In typical, classic use case you’ll need to write code like this (this is minimal and not full sketch) : </p><pre><code>WiFiClient client;
+if (client.connect("api.thingspeak.com", 80)) {
+    client.print("POST /update HTTP/1.1\n");
+    client.print("Host: api.thingspeak.com\n");
+    client.print("Connection: close\n");
+    client.print("X-THINGSPEAKAPIKEY: " + apiKeyThingspeak1 + "\n");
+    client.print("Content-Type: application/x-www-form-urlencoded\n");
+    client.print("Content-Length: ");
+    client.print(postStr.length());
+    client.print("\n\n");
+    client.print(postStr);
+}</code></pre><p>With webhook widget this is not necessary anymore. All you need just fill below fields : </p><p><img src="http://docs.blynk.cc/images/webhook_settings.png" style="width: 200px; height:360px"></p><p>And do usual :  </p><pre><code>Blynk.virtualWrite(V0, value);</code></pre><p>where V0 is pin assigned to webhook widget.</p><p>Also you can use usual Blynk placeholders for pin value in body or url, for example : </p><pre><code>https://api.thingspeak.com/update?api_key=xxxxxx&amp;field1=/pin/</code></pre><p>or for body</p><pre><code>["/pin/"]</code></pre><p>You can also refer to specific index of multi value pin (multi pin supports up to 10 values) : </p><p><code>/pin[0]/</code>,<code>/pin[1]/</code>, <code>/pin[2]/</code></p><p>Another cool thing about webhook is that you can make GET requests from Blynk Server side and return response directly to
+your hardware. The beauty here is that you don’t need to code request to 3-d party service. Imagine a case when you want to get 
+weather from some 3-d party service. For example, you have an url 
+<code>http://api.sunrise-sunset.org/json?lat=33.3823&amp;lng=35.1856&amp;date=2016-10-01</code>, you can put it in widget, select <code>V0</code> pin,
+and do usual :  </p><pre><code>BLYNK_WRITE(V0){
+  String webhookdata = param.asStr();
+  Serial.println(webhookdata);
+}</code></pre><p>Now, every time you’ll trigger <code>V0</code> pin (with <code>Blynk.virtualWrite(V0, 1)</code> from hardware side or with control widget
+assigned to <code>V0</code>) - <code>BLYNK_WRITE(V0)</code> will be triggered.</p><p><strong>NOTE :</strong> usually 3-d party servers returns big responses, so you have to increase hardware maximum allowed message size with 
+<code>#define BLYNK_MAX_READBYTES 1024</code>. Where <code>1024</code> - is maximum allowed message size.</p><p><strong>NOTE :</strong> Blynk cloud has limitation for webhook widget - you are allowed to send only 1 request per second. You can
+ change this on local server with <code>webhooks.frequency.user.quota.limit</code>. Please be very careful using webhooks, 
+ as many resources not capable to handle even 1 req/sec, so you may be banned on some of them. For example thingspeak 
+ allows to send 1 request per 15 seconds.</p><p> <strong>NOTE :</strong> In order to avoid spamming Blynk Webhook has one more limitation - in case your webhook requests were failed 10 times 
+ in row your webhook widget will be stopped. In order to resume it you need to open widget and save it again. Failed requests 
+ are requests that return status code that are not equal to 200 or 302.</p><p> <strong>NOTE :</strong> Webhook widget may affect <code>Blynk.syncAll()</code> feature. As returned response from server may be big. 
+ So, please, be careful with it.</p><h1 id="sharing">Sharing</h1><p>Blynk offers two types of sharing your projects with other people:</p><ul>
+<li><p><strong>Share access to your hardware.</strong> Think about giving someone an App for your Project. They can’t modify, but can control and see what’s there.</p>
+</li>
+<li><p><strong>Share your Project configuration.</strong> Others will get a clone of your project by scanning a given QR link, but they won’t be able to control your hardware. It’s great for tutorials, instructables, etc.</p>
+</li>
+</ul><h2 id="sharing-shared-access-to-your-hardware">Shared access to your hardware</h2><p>Imagine giving someone an App to control your Project.</p><ul>
+<li>people you’ve shared your project with can’t modify anything. They can only use it</li>
+<li>you can update your app, change the layout, add widgets and it’s immediately synced to everyone</li>
+<li>you can revoke access at any moment</li>
+</ul><p>How it works:
+- you send the QR code to your users (you can email, print, post to social media, do whatever you want)
+- others download Blynk app, scan the QR code and your app opens for them ready to use. They don’t even need to login or create an account.</p><p>Go to your Project’s Settings:</p><p><img src="http://docs.blynk.cc/images/dash_settings_sharing.png" style="width: 200px; height:360px"></p><p>Click on “Generate Link” button :</p><p><img src="http://docs.blynk.cc/images/dash_settings_sharing_generate.png" style="width: 200px; height:360px"></p><p>It will generate QR code you can share with others:</p><p><img src="http://docs.blynk.cc/images/dash_public_sharing.png" style="width: 200px; height:360px"></p><p>That’s it! Now <strong>Exit the settings and press PLAY button.</strong></p><p>Another person would need to install Blynk app and scan QR code from the login screen (scanning from existing profile is not yet supported) ;</p><p><img src="http://docs.blynk.cc/images/scan_qr.png" style="width: 200px; height:360px"></p><p><strong>NOTE:</strong> Your Project should be active, don’t forget to press Play button.</p><p><strong>WARNING:</strong> Sharing costs 1000 energy and this energy is not recoverable even you didn’t use sharing at all.</p><h2 id="sharing-share-your-project-configuration">Share your Project configuration</h2><p>In case you want to share your Project’s set up without giving access to your hardware (for example to make a tutorial or instructable)- follow the steps: </p><p>In Project’s Settings go to <strong>Clone</strong> button.</p><p><img src="http://docs.blynk.cc/images/clone.png" style="width: 200px; height:360px"></p><p>It will generate QR code you can share with anyone.</p><p><img src="http://docs.blynk.cc/images/QR.png" style="width: 200px; height:360px"></p><p>Another person <strong>should Log In to Blynk app</strong> and press QR button in Projects gallery</p><p><img src="http://docs.blynk.cc/images/QR_button_edit.png" style="width: 200px; height:360px"></p><p>After the scan, a new Project will be created, all the widgets, settings, layout will be cloned. Another person would need enough Energy Balance to clone your Project.</p><p><strong>Auth Token will be different!</strong>. Nobody will get access to your hardware. They just get a copy of the layout and settings.</p><h1 id="http-restful-api">HTTP RESTful API</h1><p>Blynk HTTP RESTful API allows to easily read and write values of Pins in Blynk apps and Hardware.<br>API description can be found <a href="http://docs.blynkapi.apiary.io/">here</a>.</p><h1 id="supported-hardware">Supported Hardware</h1><p>Blynk supports more than 400 boards already, including support for Arduino, Particle, ARM mbed, TI Energia, MicroPython, Node.js, OpenWRT and many Single Board Computers. You can add your own connection types easily (see <a href="https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient">these</a> examples for Arduino)!</p><h2 id="supported-hardware-platforms">Platforms</h2><ul>
+<li><p><strong>Arduino</strong> (<a href="https://github.com/blynkkk/blynk-library">https://github.com/blynkkk/blynk-library</a>)</p>
+<ul>
+<li>Arduino Uno, Duemilanove</li>
+<li>Arduino Nano, Mini, Pro Mini, Pro Micro, Due, Mega</li>
+<li>Arduino 101 (Intel Curie, with BLE)</li>
+<li>Arduino MKR1000</li>
+<li>Arduino Zero</li>
+<li>Arduino Yún (onboard WiFi and Ethernet, via Bridge)</li>
+<li>Arduino.org UNO WiFi</li>
+</ul>
+</li>
+<li><p><strong>Arduino-like</strong></p>
+<ul>
+<li>Blynk Board</li>
+<li>ESP8266 (Generic, NodeMCU, Witty Cloud, Huzzah, WeMos D1, Seeed Wio Link, etc.)</li>
+<li>ESP32 (WiFi, BLE)</li>
+<li>Nordic nRF51/nRF52 - based boards</li>
+<li>Teensy 3.2/3.1</li>
+<li>Blue Pill (STM32F103C)</li>
+<li>Realtek RTL8710 / Ameba via <a href="https://github.com/pvvx/RtlDuino">RTLduino</a></li>
+<li>BBC micro:bit</li>
+<li>LightBlue Bean <em>, soon</em></li>
+<li>DFRobot Bluno</li>
+<li>RedBear Duo (WiFi, BLE)</li>
+<li>RedBearLab Blend Micro</li>
+<li>RedBearLab BLE Nano (v1 and v2)</li>
+<li>Seeed Tiny BLE</li>
+<li>Simblee BLE</li>
+<li>RFduino BLE</li>
+<li>The AirBoard (BLE-Link, RN-XV)</li>
+<li>Feather M0 WiFi</li>
+<li>Feather 32u4 BLE</li>
+<li>Intel Edison</li>
+<li>Intel Galileo</li>
+<li>Fishino Guppy, Uno, Mega</li>
+<li>TinyCircuits TinyDuino (CC3000)</li>
+<li>Microduino/mCookie Core, Core+, CoreUSB</li>
+<li>Wicked WildFire V2, V3, V4</li>
+<li>Digistump Oak</li>
+<li>chipKIT Uno32</li>
+<li>Alorium XLR8 (FPGA)</li>
+<li>LinkIt ONE (WiFi only)</li>
+</ul>
+</li>
+<li><p><strong>Energia</strong></p>
+<ul>
+<li>Texas Instruments<ul>
+<li>CC3200-LaunchXL</li>
+<li>Tiva C Connected LaunchPad</li>
+<li>Stellaris LM4F120 LaunchPad</li>
+<li>MSP430F5529 + CC3100</li>
+<li>LaunchPad MSP432</li>
+</ul>
+</li>
+<li>RedBearLab (CC3200, WiFi Mini)</li>
+</ul>
+</li>
+<li><p><strong>Particle</strong> <a href="https://github.com/vshymanskyy/blynk-library-spark">https://github.com/vshymanskyy/blynk-library-spark</a>)</p>
+<ul>
+<li>Core</li>
+<li>Photon</li>
+<li>Electron</li>
+<li>RPi</li>
+<li>SparkFun RedBoard</li>
+<li>RedBear Duo (WiFi &amp; BLE)</li>
+</ul>
+</li>
+<li><p><strong>ARM mbed</strong> (<a href="https://developer.mbed.org/users/vshymanskyy/code/Blynk/">https://developer.mbed.org/users/vshymanskyy/code/Blynk/</a>)</p>
+<ul>
+<li>Seeed Tiny BLE</li>
+<li>RedBearLab BLE Nano</li>
+<li>BBC micro:bit</li>
+<li>STM32 Nucleo + Wiznet 5100 <em>, soon</em></li>
+</ul>
+</li>
+<li><p><strong>JavaScript</strong> (Node.js, Espruino, Browsers) (<a href="https://www.npmjs.com/package/blynk-library">https://www.npmjs.com/package/blynk-library</a>)</p>
+<ul>
+<li>Regular PC with Linux / Windows / OS X</li>
+<li>Raspberry Pi (Banana Pi, Orange Pi, …)</li>
+<li>BeagleBone Black</li>
+<li>Onion Omega</li>
+<li>Onion Omega 2</li>
+<li>Intel Galileo</li>
+<li>Intel Edison</li>
+<li>Intel Joule</li>
+<li>LeMaker Guitar</li>
+<li>LeMaker Banana Pro</li>
+<li>Samsung ARTIK 5</li>
+<li>PandaBoard, CubieBoard, pcDuino, Tessel 2</li>
+<li>VoCore (OpenWRT + <a href="https://github.com/vshymanskyy/OpenWRT-Espruino-packages">Espruino package</a>)</li>
+<li>Espruino Pico</li>
+<li>…</li>
+</ul>
+</li>
+<li><p><strong>Python</strong> (<a href="https://github.com/vshymanskyy/blynk-library-python">https://github.com/vshymanskyy/blynk-library-python</a>)</p>
+<ul>
+<li>MicroPython</li>
+<li>Python 2</li>
+<li>Python 3</li>
+</ul>
+</li>
+<li><p><strong>Lua</strong> (<a href="https://github.com/blezek/blynk-esp">https://github.com/blezek/blynk-esp</a>)</p>
+<ul>
+<li>NodeMCU</li>
+</ul>
+</li>
+</ul><h2 id="supported-hardware-arduino-connection-types">Arduino connection types</h2><ul>
+<li><p>USB (Serial), connected to your laptop or desktop</p>
+</li>
+<li><p><strong>Ethernet:</strong></p>
+<ul>
+<li>Arduino Ethernet Shield (W5100)</li>
+<li>Arduino Ethernet Shield 2 (W5500)</li>
+<li>SeeedStudio Ethernet Shield V2.0 (W5200)</li>
+<li>ENC28J60-based modules</li>
+</ul>
+</li>
+<li><p><strong>WiFi:</strong></p>
+<ul>
+<li>ESP8266 as WiFi modem (running original firmware)</li>
+<li>Arduino WiFi 101 Shield</li>
+<li>Arduino WiFi Shield</li>
+<li>WIZnet WizFi310</li>
+<li>Adafruit CC3000 WiFi Breakout / Shield</li>
+<li>RN-XV WiFly</li>
+</ul>
+</li>
+<li><p><strong>Bluetooth Smart (BLE 4.0):</strong></p>
+<ul>
+<li>HM-10, HC-08</li>
+<li>DFRobot BLE-Link module</li>
+<li>Microduino/mCookie BLE</li>
+<li>RedBearLab BLE Mini</li>
+<li>nRF8001-based boards (Adafruit Bluefruit LE, etc.)</li>
+</ul>
+</li>
+<li><p><strong>Bluetooth 2.0 Serial Port Profile (SPP)</strong></p>
+<ul>
+<li>HC-05, HC-06, …</li>
+</ul>
+</li>
+<li><p><strong>GSM/3G:</strong></p>
+<ul>
+<li>SIMCom SIM800 series (SIM800A, SIM800C, SIM800L, SIM800H, SIM808, SIM868)</li>
+<li>SIMCom SIM900 series (SIM900A, SIM900D, SIM908, SIM968)</li>
+<li>A6/A7</li>
+<li>M590 <em>(beta)</em></li>
+<li>GPRSbee</li>
+<li>Microduino GSM</li>
+<li>Adafruit FONA (Mini Cellular GSM Breakout)</li>
+<li>Adafruit FONA 800/808 Shield</li>
+</ul>
+</li>
+</ul><h2 id="supported-hardware-made-by-community">Made by Community</h2><ul>
+<li><a href="http://instructables.com/id/WIZnet-W5500-EVB-and-Blynk-App-communication">WIZnet-W5500-EVB</a></li>
+<li><a href="https://github.com/juncaofish/NI-LabVIEWInterfaceforBlynk">LabVIEW</a></li>
+<li><a href="https://github.com/tzapu/node-red-contrib-blynk">Node-RED</a> (can be used as bridge to HTTP, TCP, UDP, MQTT, XMPP, IRC, OSC…)</li>
+</ul><h2 id="supported-hardware-problematic-boards">Problematic Boards</h2><p>These boards are not supported and do not work out of the box:
+- <a href="http://www.arduino.org/products/boards/arduino-tian">Arduino Tian</a></p><p>Here is a list of <a href="https://github.com/blynkkk/blynk-library/issues?q=is%3Aissue+is%3Aopen+label%3A%22for+reference%22"><strong>known library issues</strong></a></p><h1 id="troubleshooting">Troubleshooting</h1><h2 id="troubleshooting-connection">Connection</h2><p>If you experience connection problems, follow these steps:</p><ol>
+<li>Check that your hardware, wires, cables and power supply are good quality, not harmed or damaged, etc.<br>Use high power USB cables and USB ports.</li>
+<li>Check your wiring using the examples (TCP/HTTP Client or similar) <strong>provided with your shield and hardware</strong>.<ul>
+<li>Once you understand how to manage connection, it’s much easier to use Blynk.</li>
+</ul>
+</li>
+<li>Try running command <code>telnet blynk-cloud.com 8442</code> from your PC, connected to the same network as your hardware.
+You should see something like: <code>Connected to blynk-cloud.com.</code>.</li>
+<li>Try running Blynk default examples for your platform <strong>without modifications</strong> to see if it is working.<ul>
+<li>Double-check that you have selected <strong>the right example</strong> for your connection type and hardware model.</li>
+<li>Our examples come with <strong>comments and explanations</strong>. <strong>Read them carefully.</strong></li>
+<li>Check that your Auth Token is valid (copied from the App and <strong>doesn’t contain spaces, etc.</strong>)</li>
+<li>If it doesn’t work, try looking into <a href="#enable-debug">serial debug prints</a>.</li>
+</ul>
+</li>
+<li>Done! Add your modifications and functionality. Enjoy Blynk!</li>
+</ol><p><strong><em>Note:</em></strong> when you have multiple devices connected to your network, they should all have different MAC and IP addresses. For example, when using 2 Arduino UNO with Ethernet shields, flashing default example to both of them will cause connection problems. You should use <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Boards_Ethernet/Arduino_Ethernet_Manual/Arduino_Ethernet_Manual.ino">manual ethernet configuration</a> example.</p><h2 id="troubleshooting-wifi-network-connection">WiFi network connection</h2><p>If you encounter WiFi connection problems, please check these pitfalls:</p><ul>
+<li>You’re trying to connect to “WPA &amp; WPA2 Enterprise” network (often used in offices), and your shield does not support this security method</li>
+<li>Your WiFi network has a login page that requests entering an access token (often used in restaurants)</li>
+<li>Your WiFi network security disallows connecting alien devices completely (MAC filtering, etc)</li>
+<li>There is a firewall running. Default port for hardware connections is 8442. Make sure it’s open.</li>
+</ul><h2 id="troubleshooting-delay">Delay</h2><p>If you use long <code>delay()</code> or send your hardware to sleep inside of the <code>loop()</code> expect connection drops and downgraded performance.</p><p><strong><em>DON’T DO THAT:</em></strong></p><pre><code class="lang-cpp">void loop()
+{
+  ...
+  delay(<span class="number">1000</span>); <span class="comment">// this is long delay, that should be avoided</span>
+  other_long_operation();
+  ...
+  Blynk.run();
+}</code></pre><p><strong><em>Note:</em></strong> This also applies to the BLYNK_READ &amp; BLYNK_WRITE handlers!</p><p><strong><em>SOLUTION:</em></strong>
+If you need to perform actions in time intervals - use timers, for example <a href="#blynk-firmware-blynktimer">BlynkTimer</a>.</p><h2 id="troubleshooting-flood-error">Flood Error</h2><p>If your code frequently sends a lot of requests to our server, your hardware will be disconnected. Blynk App may show “Your hardware is offline”</p><p>When <code>Blynk.virtualWrite</code> is in the <code>void loop</code>, it generates hundreds of “writes” per second </p><p>Here is an example of what may cause flood. <strong><em>DON’T DO THAT:</em></strong></p><pre><code class="lang-cpp">void loop()
+{
+  Blynk.virtualWrite(<span class="number">1</span>, value); <span class="comment">// This line sends hundreds of messages to Blynk server</span>
+  Blynk.run();
+}</code></pre><p><strong><em>SOLUTION:</em></strong>
+If you need to perform actions in time intervals - use timers, for example <a href="#blynk-firmware-blynktimer">BlynkTimer</a>.</p><p>Using <code>delay()</code> will not solve the problem either. It may cause <a href="#delay">another issue</a>. Use timers!</p><p>If sending hundreds of requests is what you need for your product you may increase flood limit on local server 
+and within Blynk library.
+For local server you need to change <code>user.message.quota.limit</code> property within <code>server.properties</code> file :</p><pre><code>    #100 Req/sec rate limit per user.
+    user.message.quota.limit=100</code></pre><p>For library you need to change <code>BLYNK_MSG_LIMIT</code> property within <code>BlynkConfig.h</code> file :</p><pre><code>    //Limit the amount of outgoing commands.
+    #define BLYNK_MSG_LIMIT 20</code></pre><h2 id="troubleshooting-enable-debug">Enable debug</h2><p>To enable debug prints on the default Serial, add this on the top of your sketch <strong>(it should be the first line
+in your sketch)</strong>:</p><pre><code class="lang-cpp"><span class="comment">#define BLYNK_DEBUG // Optional, this enables lots of prints</span>
+<span class="comment">#define BLYNK_PRINT Serial</span></code></pre><p>And enable serial in <code>void setup()</code>:</p><pre><code class="lang-cpp">Serial.begin(<span class="number">9600</span>);</code></pre><p>You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).</p><p><strong><em>Note:</em></strong> enabling debug mode will slow down your hardware processing speed up to 10 times.</p><h2 id="troubleshooting-geo-dns-problem">Geo DNS problem</h2><p>Blynk Cloud utilizes <a href="https://en.wikipedia.org/wiki/Geodns">Geo DNS</a> for non-commercial solutions in order to minimize servers maintenance costs. 
+It means that when you connect to <code>blynk-cloud.com</code>, DNS service redirects you to the closest server based on your IP address.
+The issue is that the hardware and application sometimes are not in the same network. And there is a chance that hardware and smartphone are connected to different servers. You will get <code>User is not registered</code> message in that case. </p><p>There are 2 ways to resolve this issue:</p><ul>
+<li>Use <a href="#blynk-server">Local Blynk Server</a></li>
+<li><p><code>ping blynk-cloud.com</code> from the network your hardware is connected to. Use the IP address that you get during this ping and put it in mobile app like that:</p>
+<p><img src="http://docs.blynk.cc/images/login.png" style="width: 200px; height:360px">  <img src="http://docs.blynk.cc/images/custom.png" style="width: 200px; height:360px"></p>
+</li>
+</ul><h2 id="troubleshooting-reset-password">Reset password</h2><p>On login screen click on “Problems signing in?” label and than “Reset Password” button. You’ll get instruction on your email.</p><h1 id="security">Security</h1><p>Blynk server has 3 ports open for different security levels.</p><ul>
+<li><strong>8441</strong> - SSL/TLS connection for hardware</li>
+<li><strong>8442</strong> - plain TCP connection for hardware (no security)</li>
+<li><strong>8443</strong> - mutual authentication (mutual SSL) connection for Mobile Apps</li>
+</ul><p>Hardware may select to connect to 8441 or 8442, depending on it’s capabilities.</p><h4>Use SSL gateway</h4><p>Most platforms are not capable to handle SSL, so they connect to 8442.
+However, our <a href="https://github.com/blynkkk/blynk-library/blob/master/scripts/blynk-ser.sh">gateway script</a> can be used to add SSL security layer to communication.</p><pre><code class="lang-bash">./blynk-ser.sh -f SSL</code></pre><p>This will forward all hardware connections from 8441 port to the server via SSL gateway.
+You can run this script on your Raspberry Pi, desktop computer, or even directly on your router!</p><p><strong>Note:</strong> when using your own server, you should overwrite the bundled server.crt certificate, or specify it to the script using <code>--cert</code> switch:</p><pre><code class="lang-bash">./blynk-ser.sh -f SSL -s &lt;server ip&gt; -p <span class="number">8441</span> --cert=&lt;certificate&gt;.crt</code></pre><p>Flag <code>-f SSL</code> is enabled by default for USB communication so you don’t have to explicit declare it.</p><p><strong>Note:</strong> SSL is supported by the gateway only on Linux/OSX for now</p><p>If you want to skip SSL, and connect to TCP, you can also do that:</p><pre><code class="lang-bash">./blynk-ser.sh -t TCP</code></pre><h4>Use Local Blynk Server</h4><p>In order to gain maximum security you could <a href="#blynk-server">install Blynk server locally</a> and 
+restrict access to your network, so nobody except you could access it. In this case all data is stored locally within
+your network and not send via Internet.</p><p>In case of Local Blynk Server there is also no need to protect connection between your hardware and Local Blynk Server.
+This is true for Ethernet connection and partially true for Wi-Fi connection. In case of Wi-Fi you have to use at least 
+WPA, WPA2 (Wi-Fi Protected Access) Wi-Fi type in order to protect wireless traffic. </p><p>WPA and WPA2 offer a very robust encryption that is likely to protect all data travelling over the air—given that 
+a strong enough password is used. Even if your data is plain TCP/IP, another user won’t be able to decipher captured 
+packets. Still, make sure that your password is strong enough, otherwise the only limiting factor for an attacker is time.</p><h1 id="ota">OTA</h1><p>Blynk also supports over the air updates for - ESP8266, NodeMCU and SparkFun Blynk boards. OTA supported only 
+for the private servers and for the paid customers for now.</p><h2 id="ota-how-does-it-work">How does it work?</h2><ul>
+<li>You need to use <a href="https://github.com/blynkkk/blynk-library/tree/master/examples/Export_Demo/Template_ESP8266">regular sketch for exported apps</a>;</li>
+<li>After you launched your hardware you are ready for OTA;</li>
+<li>You can trigger the firmware update for the specific hardware via it’s token or for all hardware.</li>
+</ul><h3 id="ota-how-does-it-work-flow">Flow</h3><ol>
+<li>User triggers OTA with one of below HTTPS request;</li>
+<li>User provides within HTTPS request admin credentials and firmware binary file to update hardware with;</li>
+<li>When hardware connects to server - server checks it firmware. In case, hardware firmware build date differs from 
+uploaded firmware, than server sends special command to hardware with url for the new firmware;</li>
+<li><p>Hardware processes url with below <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Export_Demo/Template_ESP8266/OTA.h#L28">handler</a>: </p>
+<pre><code>  BLYNK_WRITE(InternalPinOTA) {
+    //url to get firmware from. This is HTTP url
+    //http://localhost:8080/static/ota/FUp_2441873656843727242_upload.bin
+    overTheAirURL = param.asString();
+    ...
+  }</code></pre>
+<ol>
+<li>Hardware downloads new firmware and starts flashing firmware;  </li>
+</ol>
+</li>
+</ol><h2 id="ota-trigger-update-for-the-specific-hardware">Trigger update for the specific hardware</h2><pre><code>curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?token=123</code></pre><ul>
+<li><code>Template_ESP8266.ino.nodemcu.bin</code> - is relative (or full) path to your firmware;</li>
+<li><code>--insecure</code> flag for servers with self-generated certificates. You don’t need this flag if you used Let’s Encrypt or other trusted certificates;</li>
+<li><code>admin@blynk.cc:admin</code> admin credentials to your server. This is default ones. Format is <code>username:password</code>. You can change it in <code>server.properties</code> file;</li>
+<li><code>token</code> is token of your hardware you want apply the firmware update to. The firmware update will be initiated only in case device is online;</li>
+</ul><h2 id="ota-trigger-ota-for-all-devices">Trigger OTA for all devices</h2><p>Update for all devices will be triggered only when they are connected to the cloud. You need to remove the token part for that.</p><pre><code>curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start</code></pre><p>In that case, OTA will be triggered right after device connected to the server. In case device is online firmware update 
+will be initiated only when device will be connected again.</p><h2 id="ota-trigger-ota-for-the-specific-user">Trigger OTA for the specific user</h2><p>In that case firmware update will be triggered for all devices of specified user. </p><pre><code>curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?user=pupkin@gmail.com</code></pre><h2 id="ota-trigger-ota-for-specific-user-and-project">Trigger OTA for specific user and project</h2><p>In that case firmware update will be triggered for all devices of specified user within specified project. </p><pre><code>curl -v -F file=@Template_ESP8266.ino.nodemcu.bin --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/start?user=pupkin@gmail.com&amp;project=123</code></pre><h2 id="ota-stop-ota">Stop OTA</h2><pre><code>curl -v --insecure -u admin@blynk.cc:admin https://localhost:9443/admin/ota/stop</code></pre><h2 id="ota-how-to-make-firmware">How to make firmware</h2><p>In order to make firmware in Arduino IDE - go to menu: Sketch -&gt; Export compiled Binary.</p><p><em>NOTE:</em> ESP8266 right now takes firmware only via HTTP. And not HTTPS.</p><h1 id="blynk-server">Blynk server</h1><p>Blynk Server is an Open Source Java server, responsible for forwarding messages between Blynk mobile application and 
+various microcontroller boards (i.e. Arduino, Raspberry Pi. etc).</p><p>Download latest server build:</p><p><a href="https://github.com/blynkkk/blynk-server/releases" class="button">Download Blynk Server</a></p><h2 id="blynk-server-why-do-i-need-local-blynk-server">Why do I need Local Blynk Server?</h2><ul>
+<li>Better security. You are the only one who knows about the server. You can setup security policies tied to your specific needs (MAC, IPs, login names, etc). You can also make it accessible only within your private network.</li>
+<li>Better stability. No need to rely on 3rd party Cloud solution. You have the full control.</li>
+<li>Lower latency. Server is as close to you as it could be. </li>
+<li>Maximum privacy. All data is stored locally and is not shared with anyone.</li>
+</ul><h2 id="blynk-server-installing-your-own-local-blynk-server">Installing your own Local Blynk Server</h2><p>For detailed instruction please follow <a href="https://github.com/blynkkk/blynk-server#blynk-server">github page</a>.</p><h1 id="blynk-firmware">Blynk Firmware</h1><h2 id="blynk-firmware-configuration">Configuration</h2><h3 id="blynk-firmware-configuration-blynkbegin">Blynk.begin()</h3><p>The simplest way to configure Blynk is to call <code>Blynk.begin()</code>:</p><pre><code class="lang-cpp">Blynk.begin(auth, ...);</code></pre><p>It has various parameters for different hardware, depending on the type of connection you use. Follow the example sketches for your board.</p><p><code>begin()</code> is basically doing these steps:</p><ol>
+<li>Connects to network (WiFi, Ethernet, …)</li>
+<li>Calls <code>Blynk.config(...)</code> - sets auth token, server address</li>
+<li>Tries to connects to the server once (can block for more than 30s)</li>
+</ol><p>If your shield/connection type is not supported yet - you can craft it yourself easily! 
+<a href="https://github.com/blynkkk/blynk-library/tree/master/examples/More/ArduinoClient">Here are some examples</a>.</p><h3 id="blynk-firmware-configuration-blynkconfig">Blynk.config()</h3><p><code>config()</code> allows you to manage network connection yourself.
+You can set up your shield (WiFi, Ethernet, …) manually, and then call:</p><pre><code class="lang-cpp">Blynk.config(auth, server, port);</code></pre><p>or just</p><pre><code class="lang-cpp">Blynk.config(auth);</code></pre><p><strong>Note:</strong> Just after <code>Blynk.config(...)</code>, Blynk is not yet connected to the server.<br>It will try to connect when it reaches first <code>Blynk.run()</code> or <code>Blynk.connect()</code>call.<br>If you want to skip connecting to the server, just call <code>Blynk.disconnect()</code> right after configuration.</p><p>For setting-up WiFi connection, you can use a <code>connectWiFi</code> (just for convenience):</p><pre><code class="lang-cpp">Blynk.connectWiFi(ssid, pass);</code></pre><p>To connect to open WiFi networks, set pass to an empty string (<code>""</code>).</p><h2 id="blynk-firmware-connection-management">Connection management</h2><p>There are several functions to help with connection management:</p><h3 id="blynk-firmware-connection-management-blynkconnect">Blynk.connect()</h3><pre><code class="lang-cpp"><span class="comment"># This functions will try connecting to Blynk server.</span>
+<span class="comment"># Returns true when connected, false if timeout reached.</span>
+<span class="comment"># Default timeout is <span class="number">30</span> seconds.</span>
+bool result = Blynk.connect();
+bool result = Blynk.connect(timeout);</code></pre><h3 id="blynk-firmware-connection-management-blynkdisconnect">Blynk.disconnect()</h3><p>To disconnect from Blynk server, use:</p><pre><code class="lang-cpp">Blynk.disconnect();</code></pre><h3 id="blynk-firmware-connection-management-blynkconnected">Blynk.connected()</h3><p>To get the status of connection to Blynk Server use:</p><pre><code class="lang-cpp">bool result = Blynk.connected();</code></pre><h3 id="blynk-firmware-connection-management-blynkrun">Blynk.run()</h3><p>This function should be called frequently to process incoming commands and perform housekeeping of Blynk connection.
+It is usually called in <code>void loop() {}</code>.</p><p>You can initiate it in other places, unless you run out of heap memory (in the cascaded functions with local memory).
+For example, it is not recommended to call <code>Blynk.run()</code> inside of the  <code>BLYNK_READ</code> and <code>BLYNK_WRITE</code> functions on low-RAM devices.</p><h2 id="blynk-firmware-digital-analog-pins-control">Digital &amp; Analog pins control</h2><p>The library can perform basic pin IO (input-output) operations out-of-the-box:</p><pre><code>digitalRead
+digitalWrite
+analogRead
+analogWrite (PWM or Analog signal depending on the platform)</code></pre><p>No need to write code for simple things like LED, Relay control and analog sensors.</p><h2 id="blynk-firmware-virtual-pins-control">Virtual pins control</h2><p>Virtual Pins are designed to send any data from your microcontroller to the Blynk App and back. 
+Think about Virtual Pins as channels for sending any data. Make sure you differentiate Virtual Pins from physical 
+pins on your hardware. Virtual Pins have no physical representation.</p><p>Virtual Pins can be used to interface with libraries (Servo, LCD and others) and implement custom functionality. 
+The device may send data to the App using  <code>Blynk.virtualWrite(pin, value)</code> and receive data from the App using <code>BLYNK_WRITE(vPIN)</code>.</p><h4>Virtual Pin data types</h4><p>The actual values are sent as strings, so there are no practical limits on the data that can be sent.<br>However, remember the limitations of the platform when dealing with numbers. For example the integer on Arduino 
+is 16-bit, allowing range -32768 to 32767.
+You can interpret incoming data as Integers, Floats, Doubles and Strings:</p><pre><code class="lang-cpp">param.asInt();
+param.asFloat();
+param.asDouble();
+param.asStr();</code></pre><p>You can also get the RAW data from the param buffer:</p><pre><code class="lang-cpp">param.getBuffer()
+param.getLength()</code></pre><h3 id="blynk-firmware-virtual-pins-control-blynkvirtualwritevpin-value">Blynk.virtualWrite(vPin, value)</h3><p>You can send all the formats of data to Virtual Pins</p><pre><code class="lang-cpp"><span class="comment">// Send string</span>
+Blynk.virtualWrite(pin, <span class="string">"abc"</span>);
+
+<span class="comment">// Send integer</span>
+Blynk.virtualWrite(pin, <span class="number">123</span>);
+
+<span class="comment">// Send float</span>
+Blynk.virtualWrite(pin, <span class="number"><span class="number">12</span>.<span class="number">34</span></span>);
+
+<span class="comment">// Send multiple values as an array</span>
+Blynk.virtualWrite(pin, <span class="string">"hello"</span>, <span class="number">123</span>, <span class="number"><span class="number">12</span>.<span class="number">34</span></span>);
+
+<span class="comment">// Send RAW data</span>
+Blynk.virtualWriteBinary(pin, buffer, length);</code></pre><p><strong>Note:</strong> Calling <code>virtualWrite</code> attempts to send the value to the network immediately.</p><h3 id="blynk-firmware-virtual-pins-control-blynksetpropertyvpin-property-value">Blynk.setProperty(vPin, “property”, value)</h3><p>This allows <a href="#blynk-main-operations-change-widget-properties">changing widget properties</a></p><h3 id="blynk-firmware-virtual-pins-control-blynk_writevpin">BLYNK_WRITE(vPIN)</h3><p><code>BLYNK_WRITE</code> defines a function that is called when device receives an update of Virtual Pin value from the server:</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">0</span>)
+{   
+  int value = param.asInt(); <span class="comment">// Get value as integer</span>
+
+  <span class="comment">// The param can contain multiple values, in such case:</span>
+  int x = param[<span class="number">0</span>].asInt();
+  int y = param[<span class="number">1</span>].asInt();
+}</code></pre><h3 id="blynk-firmware-virtual-pins-control-blynk_readvpin">BLYNK_READ(vPIN)</h3><p><code>BLYNK_READ</code> defines a function that is called when device is requested to send it’s current value of Virtual Pin to the server. Normally, this function should contain some <code>Blynk.virtualWrite</code> calls.</p><pre><code class="lang-cpp">BLYNK_READ(V<span class="number">0</span>)
+{
+  Blynk.virtualWrite(V<span class="number">0</span>, newValue);
+}</code></pre><h3 id="blynk-firmware-virtual-pins-control-blynk_write_default">BLYNK_WRITE_DEFAULT()</h3><p>This redefines the handler for all pins that are not covered by custom <code>BLYNK_WRITE</code> functions.</p><pre><code class="lang-cpp">BLYNK_WRITE_DEFAULT()
+{
+  int pin = request.pin;      <span class="comment">// Which exactly pin is handled?</span>
+  int value = param.asInt();  <span class="comment">// Use param as usual.</span>
+}</code></pre><h3 id="blynk-firmware-virtual-pins-control-blynk_read_default">BLYNK_READ_DEFAULT()</h3><p>This redefines the handler for all pins that are not covered by custom <code>BLYNK_READ</code> functions.</p><pre><code class="lang-cpp">BLYNK_READ_DEFAULT()
+{
+  int pin = request.pin;      <span class="comment">// Which exactly pin is handled?</span>
+  Blynk.virtualWrite(pin, newValue);
+}</code></pre><h3 id="blynk-firmware-virtual-pins-control-blynk_connected">BLYNK_CONNECTED()</h3><p>This function is called every time Blynk gets connected to the server. It’s convenient to call sync functions here.</p><pre><code class="lang-cpp">BLYNK_CONNECTED() {
+<span class="comment">// Your code here</span>
+}</code></pre><h3 id="blynk-firmware-virtual-pins-control-blynk_app_connected">BLYNK_APP_CONNECTED()</h3><p>This function is called every time the Blynk app gets connected to the server.</p><pre><code class="lang-cpp">BLYNK_APP_CONNECTED() {
+<span class="comment">// Your code here</span>
+}</code></pre><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino">Example</a></p><h3 id="blynk-firmware-virtual-pins-control-blynk_app_disconnected">BLYNK_APP_DISCONNECTED()</h3><p>This function is called every time the Blynk app gets connected to the server.</p><pre><code class="lang-cpp">BLYNK_APP_DISCONNECTED() {
+<span class="comment">// Your code here</span>
+}</code></pre><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino">Example</a></p><h3 id="blynk-firmware-virtual-pins-control-blynksyncall">Blynk.syncAll()</h3><p>Request server to send the most recent values for all widgets. In other words, all analog/digital pin states will be restored and every virtual pin will generate BLYNK_WRITE event.</p><pre><code class="lang-cpp">BLYNK_CONNECTED() {
+    Blynk.syncAll();
+}</code></pre><h3 id="blynk-firmware-virtual-pins-control-blynksyncvirtualvpin">Blynk.syncVirtual(vPin)</h3><p>Requests virtual pins value update. The corresponding <code>BLYNK_WRITE</code> handler is called as the result.</p><pre><code class="lang-cpp">Blynk.syncVirtual(V<span class="number">0</span>);
+<span class="comment"># Requesting multiple pins is also supported:</span>
+Blynk.syncVirtual(V<span class="number">0</span>, V<span class="number">1</span>, V<span class="number">6</span>, V<span class="number">9</span>, V<span class="number">16</span>);</code></pre><h2 id="blynk-firmware-blynktimer">BlynkTimer</h2><p><code>BlynkTimer</code> enables you to perform periodic actions in the main <code>loop()</code> context.<br>It is the same as widely used SimpleTimer, but fixes several issues.<br><code>BlynkTimer</code> is included in Blynk library by default, so no need to install SimpleTimer separately or include SimpleTimer.h<br><strong>Please note that a single BlynkTimer object allows to schedule up to 16 timers.</strong></p><p>For more information on timer usage, please see: <a href="http://playground.arduino.cc/Code/SimpleTimer">http://playground.arduino.cc/Code/SimpleTimer</a><br>And here is a BlynkTimer <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino#L30">example sketch</a>.</p><h2 id="blynk-firmware-debugging">Debugging</h2><h3 id="blynk-firmware-debugging-define-blynk_print">#define BLYNK_PRINT</h3><h3 id="blynk-firmware-debugging-define-blynk_debug">#define BLYNK_DEBUG</h3><p>To enable debug prints on the default Serial, add on the top of your sketch <strong>(should be the first line)</strong>:</p><pre><code class="lang-cpp"><span class="comment">#define BLYNK_PRINT Serial // Defines the object that is used for printing</span>
+<span class="comment">#define BLYNK_DEBUG        // Optional, this enables more detailed prints</span></code></pre><p>And enable Serial Output in setup():</p><pre><code class="lang-cpp">Serial.begin(<span class="number">9600</span>);</code></pre><p>Open Serial Monitor and you’ll see the debug prints.</p><p>You can also use spare Hardware serial ports or SoftwareSerial for debug output (you will need an adapter to connect to it with your PC).</p><p><span style="color:#D3435C;"><strong>WARNING:</strong> Enabling <code>BLYNK_DEBUG</code> will slowdown your hardware processing speed up to 10 times!</span></p><h3 id="blynk-firmware-debugging-blynk_log">BLYNK_LOG()</h3><p>When <code>BLYNK_PRINT</code> is defined, you can use <code>BLYNK_LOG</code> to print your logs. The usage is similar to <code>printf</code>:</p><pre><code class="lang-cpp">BLYNK_LOG(<span class="string">"This is my value: %d"</span>, <span class="number">10</span>);</code></pre><p>On some platforms (like Arduino 101) the <code>BLYNK_LOG</code> may be unavailable, or may just use too much resources.<br>In this case you can use a set of simpler log functions:</p><pre><code class="lang-cpp">BLYNK_LOG<span class="number">1</span>(<span class="string">"Heeey"</span>); <span class="comment">// Print a string</span>
+BLYNK_LOG<span class="number">1</span>(<span class="number">10</span>);      <span class="comment">// Print a number</span>
+BLYNK_LOG<span class="number">2</span>(<span class="string">"This is my value: "</span>, <span class="number">10</span>); <span class="comment">// Print <span class="number">2</span> values</span>
+BLYNK_LOG<span class="number">4</span>(<span class="string">"Temperature: "</span>, <span class="number">24</span>, <span class="string">" Humidity: "</span>, <span class="number">55</span>); <span class="comment">// Print <span class="number">4</span> values</span>
+...</code></pre><h2 id="blynk-firmware-minimizing-footprint">Minimizing footprint</h2><p>To minimize the program Flash/RAM, you can disable some of the built-in functionality:</p><ol>
+<li>Comment-out <code>#define BLYNK_PRINT</code> to remove prints</li>
+<li>Put on the top of your sketch:<pre><code>#define BLYNK_NO_BUILTIN   // Disable built-in analog &amp; digital pin operations
+#define BLYNK_NO_FLOAT     // Disable float operations</code></pre>
+</li>
+</ol><p>Please also remember that a single <code>BlynkTimer</code> can schedule many timers, so most probably you need only one instance of BlynkTimer in your sketch.</p><h2 id="blynk-firmware-porting-hacking">Porting, hacking</h2><p>If you want to dive into crafting/hacking/porting Blynk library implementation, please also check <a href="https://github.com/blynkkk/blynk-library/tree/master/extras/docs">this documemtation</a>.</p><h1 id="faq">FAQ</h1><ul>
+<li><p>I backed Blynk on Kickstarter. Where are my widgets and why the app is free?</p>
+<blockquote>
+<p>App is free because otherwise you would have to pay to download it. This is how AppStore and Google Play works.
+Current Blynk release has a limited amount of widgets. We decided to make them free for everyone until we implement store. After that, every widget will be paid. However every backer will get them for free (according to their pledge).</p>
+</blockquote>
+</li>
+<li><p>What is Blynk Cloud?</p>
+<blockquote>
+<p>Blynk Cloud is a open-source software written on Java using plain TCP/IP and secured TCP/IP (for hardware that supports it) sockets and running on our server. Blynk iOS and Android apps connect to Blynk Cloud by default. Access is free for every Blynk user. We also provide a Private Server distribution for those who want to <a href="#blynk-server">install it locally</a>.</p>
+</blockquote>
+</li>
+<li><p>How much access to Cloud Blynk Server cost?</p>
+<blockquote>
+<p>It is free for every Blynk user.</p>
+</blockquote>
+</li>
+<li><p>Can I run Blynk server locally?</p>
+<blockquote>
+<p>Yes. Those of you, who want extra security or don’t have internet connection, can install Local Blynk Server and run it in your own local network. Blynk Server is Open-Source and it takes less than few seconds to deploy. All the instructions and files are <a href="#blynk-server">here</a>.</p>
+</blockquote>
+</li>
+<li><p>What are the requirements to run Private Blynk Server?</p>
+<blockquote>
+<p>To run Private Blynk Server, all you need is Java Runtime Environment.</p>
+</blockquote>
+</li>
+<li><p>Can I run Blynk server on Raspberry Pi?</p>
+<blockquote>
+<p>Yes, surely! <a href="#blynk-server-how-to-run-local-blynk-server-launch-blynk-server-on-raspberry-pi">Here is instruction</a>.</p>
+</blockquote>
+</li>
+<li><p>Does Blynk app work over Bluetooth?</p>
+<blockquote>
+<p>Yes. It is in beta right now.</p>
+</blockquote>
+</li>
+<li><p>Does Blynk support Ethernet / Wi-FI / UART?</p>
+<blockquote>
+<p>Yes, all of them. See full list of <a href="#supported-hardware">supported hardware</a> and shields.</p>
+</blockquote>
+</li>
+<li><p>I don’t have any shield. Can I use Blynk with my computer?</p>
+<blockquote>
+<p>Yes, you can use Blynk just with a USB cable. There is a step-by-step <a href="#other-hardware-connect-over-usb">instruction</a> on how to do it.</p>
+</blockquote>
+</li>
+<li><p>Can Blynk handle multiple Arduinos?</p>
+<blockquote>
+<p>Yes. There 3 ways right now :</p>
+<ul>
+<li>add multiple devices to your project.</li>
+<li>you may use same <a href="#getting-started-getting-started-with-application-auth-token">Auth Token</a> for different hardware. In that case you can control few hardwares from 1 dashboard.</li>
+<li>you can do it using <a href="#widgets-other-bridge">Bridge functionality</a> which allows you to send messages from one hardware to another.</li>
+</ul>
+</blockquote>
+</li>
+<li><p>Does Blynk server store sensor data when app goes offline?</p>
+<blockquote>
+<p>Yes, every command that hardware sends to server is stored. You could use <a href="#widgets-displays-history-graph">History Graph</a> widget in order to view it.</p>
+</blockquote>
+</li>
+<li><p>How many Virtual Pins I can use?</p>
+<blockquote>
+<p>It depends mostly on your hardware. Low-end hardware may use up to 32 Virtual Pins. More powerful (like ESP8266) can 
+use up to 128 but it requires also BLYNK_USE_128_VPINS property in your sketch. <a href="https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h#L64">Example</a>.</p>
+</blockquote>
+</li>
+<li><p>Why app requires all this permissions?</p>
+<blockquote>
+<p><a href="http://help.blynk.cc/faq/blynk-android-permissions-explained">http://help.blynk.cc/faq/blynk-android-permissions-explained</a></p>
+</blockquote>
+</li>
+</ul><h1 id="links">Links</h1><ul>
+<li><a href="http://www.blynk.cc/">Blynk site</a></li>
+<li><a href="http://community.blynk.cc/">Blynk community</a></li>
+<li><a href="http://www.fb.com/blynkapp">Facebook</a></li>
+<li><a href="http://twitter.com/blynk_app">Twitter</a></li>
+<li><a href="https://github.com/blynkkk/blynk-library">Blynk Library</a></li>
+<li><a href="https://github.com/blynkkk/blynk-library/tree/master/examples">Blynk Examples</a></li>
+<li><a href="https://github.com/blynkkk/blynk-server">Blynk Server</a></li>
+<li><a href="https://www.kickstarter.com/projects/167134865/blynk-build-an-app-for-your-arduino-project-in-5-m/description">Kickstarter campaign</a></li>
+</ul><h1 id="license">License</h1><p>This project is released under The MIT License (MIT)</p></div>
+  </div>
+
+
+
+<input type="hidden" value="mata-inactive-38.png" id="mata-icon-name"></body></html>
