@@ -8,7 +8,7 @@ Instead, edit the stylus (.styl) files and compile it to CSS on your machine.
  * Fonts
  */
 @import url("http://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400");
-@import url(https://fonts.googleapis.com/css?family=Oxygen);
+/*@import url(https://fonts.googleapis.com/css?family=Oxygen);
 
 /*@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); */
 
@@ -166,9 +166,9 @@ a:hover {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-.content p {
+/*.content p {
   font-family: oxygen;
-}
+}*/
 
 .content pre {
   font-family: Menlo, monospace;
@@ -894,7 +894,7 @@ a.big.button:hover:visited {
 }
 .menu a.level-2 {
   font-weight: normal;
-  font-family: oxygen;
+  /*font-family: oxygen;*/
   color: #7F7F7F;
 
 } 
