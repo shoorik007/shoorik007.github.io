@@ -261,7 +261,7 @@ Blynk.virtualWrite(pin, <span class="string">"hello"</span>, <span class="number
 {
   <span class="comment">// This command writes Arduino's uptime in seconds to Virtual Pin V<span class="number">5</span></span>
   Blynk.virtualWrite(<span class="number">5</span>, millis() / <span class="number">1000</span>);
-}</code></pre><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushDataOnRequest/PushDataOnRequest.ino#L26">PushDataOnRequest</a></p><h3 id="blynk-main-operations-get-data-from-hardware-pushing-data-from-hardware">Натискання даних з апаратного забезпечення</h3><p>Якщо вам потрібен сенсор PUSH або інші дані з вашого апаратного забезпечення до віджету, ви можете написати будь-яку потрібну логіку.
+}</code></pre><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushDataOnRequest/PushDataOnRequest.ino#L26">PushDataOnRequest</a></p><h3 id="blynk-main-operations-get-data-from-hardware-pushing-data-from-hardware">Надсилання даних з апаратного забезпечення</h3><p>Якщо вам потрібен сенсор PUSH або інші дані з вашого апаратного забезпечення до віджету, ви можете написати будь-яку потрібну логіку.
 Просто встановіть частоту в режимі PUSH. Будь-яка команда, яка передає обладнання Blynk Cloud автоматично зберігається на сервері
 і ви отримуєте цю інформацію або з <a href="#widgets-displays-history-graph">History Graph</a> віджета
 або з <a href="http://docs.blynkapi.apiary.io/#reference/0/pin-history-data/get-all-history-data-for-specific-pin">HTTP API</a>.</p><p><img src="http://docs.blynk.cc/images/frequency_reading_push.png" style="width: 200px; height:360px"></p><p>Ми рекомендуємо надсилати дані з інтервалами та уникати <a href="#troubleshooting-flood-error">Flood Error</a>.<br>Ви можете використовувати таймери, як <a href="#blynk-firmware-blynktimer">BlynkTimer</a>.<br>Будь ласка, прочитайте інструкції всередині цього <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/PushData/PushData.ino">прикладу скетчу</a> для більш детальної інформації.</p><p>Ось як це може працювати:</p><pre><code class="lang-cpp"><span class="comment">#include &lt;SPI.h&gt;</span>
@@ -302,21 +302,22 @@ void loop()
 BLYNK_WRITE(V<span class="number">0</span>) {
    ....
 }</code></pre><p>Команда <code>Blynk.syncAll()</code>  відновлює всі значення віджету на основі останніх збережених значень на сервері. 
-Всі аналогові та цифрові піни будуть відновлені. Кожен віртуальний пристрій буде виконуватися <code>BLYNK_WRITE</code> події.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino">Sync Hardware with App state</a></p><p>You can also update a single Virtual Pin value by calling <code>Blynk.syncVirtual(V0)</code> or you can update several pins with <code>Blynk.syncVirtual(V0, V1, V2, ...)</code>.</p><p>You can also use server to store any value without widget. Just call <code>Blynk.virtualWrite(V0, value)</code>.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_SingleValue/ServerAsDataStorage_SingleValue.ino">Storing single value on server</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_MultiValue/ServerAsDataStorage_MultiValue.ino">Storing multiple values on server</a></p><h3 id="blynk-main-operations-state-syncing-for-app">For app</h3><p>If you need to keep your hardware in sync with Widgets’ state even if app is offline use <code>Blynk.virtualWrite</code>.</p><p>Imagine you have a LED Widget connected to the Virtual Pin V1 in the app, and a physical button attached to your hardware. 
-When you press a physical button, you would expect to see updated state of the LED Widget in the app. 
-To achieve that you need to send <code>Blynk.virtualWrite(V1, 255)</code> when a physical button gets pressed.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonInterrupt/ButtonInterrupt.ino">Represent physical button state via LED widget with interrupts</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonPoll/ButtonPoll.ino">Represent physical button state via LED widget with polling</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino">Represent physical button state via Button widget with polling</a></p><h2 id="blynk-main-operations-control-of-multiple-devices">Control of multiple devices</h2><p>Blynk app has support of multiple devices. That means you can assign any widget to specific device with own auth token. 
-For example - you may have button on V1 that controls wi-fi bulb A and another button on V1 that controls wi-fi bulb B. In order 
-to do this you need more than 1 device within your project. To achieve this please go to project settings and click on “Devices” section : </p><p><img src="http://docs.blynk.cc/images/new_project_settings.png" style="width: 200px; height:360px"></p><p>You’ll see list of devices :</p><p><img src="http://docs.blynk.cc/images/list_of_devices.png" style="width: 200px; height:360px"></p><p>So you can add new device : </p><p><img src="http://docs.blynk.cc/images/new_device.png" style="width: 200px; height:360px"></p><p>After above steps, every widget will have one more field “Target” : </p><p><img src="http://docs.blynk.cc/images/widget_settings_devices.png" style="width: 200px; height:360px"></p><p>Now you need to assign widget to device and after that widget will control only this specific device.</p><p>That’s it! Now you need to upload sketches with correct Auth Tokens to your hardware.</p><h3 id="blynk-main-operations-control-of-multiple-devices-tags">Tags</h3><p>Tags feature allows you to group multiple devices. Tags are very useful in case you want to control few devices with 
-1 widget. For example, imagine a case when you have 3 smart bulbs and you want to turn on all those bulbs with one 
-single click. You need to assign 3 devices to 1 tag and assign tag to button. That’s it.</p><p>Tag widgets also support state syncing. So you can get state of widget from your hardware. However you can’t update 
-state of such widgets from hardware.</p><h2 id="blynk-main-operations-devices-online-status">Devices online status</h2><p>Blynk app has support for online statuses for multiple devices.</p><p><img src="http://docs.blynk.cc/images/online_status.png" style="width: 200px; height:360px"></p><p>In ideal world when device closes tcp connection with some <code>connection.close()</code> - connected server will get notification 
-regarding closed connection. So you can get instant status update on UI. However in real world this mostly exceptional situation. 
-In majority of cases there is no easy and instant way to find out that connection is not active anymore. </p><p>That’s why Blynk uses <code>HEARTBEAT</code> mechanism. With this approach hardware periodically sends <code>ping</code> command with predefined 
-interval (10 seconds by default, <code>BLYNK_HEARTBEAT</code> <a href="https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h">property</a>). 
-In case hardware don’t send anything within 10 seconds server waits additional 5 seconds and after that connection 
-assumed to be broken and closed by server. So on UI you’ll see connection status update only after 15 seconds when it is 
-actually happened.</p><p>You can also change <code>HEARTBEAT</code> interval from hardware side via <code>Blynk.config</code>. In that case <code>newHeartbeatInterval * 2.3</code> formula will be applied. So in case you you decided to set <code>HEARTBEAT</code> interval to 
-5 seconds. You’ll get notification regarding connection with 11 sec delay in worst case.</p><h2 id="blynk-main-operations-project-settings">Project Settings</h2><p>Every project has it’s own settings:</p><p><img src="http://docs.blynk.cc/images/project_settings.png" style="width: 200px; height:360px"></p><ul>
+Всі аналогові та цифрові піни будуть відновлені. Кожен віртуальний пристрій буде виконуватися <code>BLYNK_WRITE</code> події.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/HardwareSyncStateFromApp/HardwareSyncStateFromApp.ino">Sync Hardware with App state</a></p><p>You can also update a single Virtual Pin value by calling <code>Blynk.syncVirtual(V0)</code> or you can update several pins with <code>Blynk.syncVirtual(V0, V1, V2, ...)</code>.</p><p>You can also use server to store any value without widget. Just call <code>Blynk.virtualWrite(V0, value)</code>.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_SingleValue/ServerAsDataStorage_SingleValue.ino">Storing single value on server</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/ServerAsDataStorage/ServerAsDataStorage_MultiValue/ServerAsDataStorage_MultiValue.ino">Storing multiple values on server</a></p><h3 id="blynk-main-operations-state-syncing-for-app">For app</h3><p>If you need to keep your hardware in sync with Widgets’ state even if app is offline use <code>Blynk.virtualWrite</code>.</p><p>Уявіть, що у вас є світлодіодний віджет, підключений до програми Virtual Pins V1, і фізична кнопка, прикріплена до вашого обладнання.
+Коли ви натискаєте фізичну кнопку, ви очікуєте побачити оновлений стан світлодіодного віджета в додатку.
+Для досягнення цього потрібно відправити <code>Blynk.virtualWrite(V1, 255)</code> коли натискається фізична кнопка.</p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonInterrupt/ButtonInterrupt.ino">Представте фізичний стан кнопки за допомогою світлодіодного віджета з перериваннями</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/ButtonPoll/ButtonPoll.ino">Представте фізичну кнопку за допомогою світлодіодного віджета з опитуванням</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/Sync/SyncPhysicalButton/SyncPhysicalButton.ino">Представте фізичну кнопку за допомогою кнопки віджета з опитуванням</a></p><h2 id="blynk-main-operations-control-of-multiple-devices">Керування кількома пристроями</h2><p>Додаток Blynk підтримує кілька пристроїв. Це означає, що ви можете призначити будь-який віджет для певного пристрою за допомогою власного токену.
+Наприклад, у вас може бути кнопка на V1, яка керує Wi-Fi лампочкою A та іншою кнопкою на V1, яка контролює Wi-Fi лампу B. Для цього вам потрібно більше одного пристрою у вашому проекті. Для цього перейдіть до налаштувань проекту та натисніть розділ "Пристрої" : </p><p><img src="http://docs.blynk.cc/images/new_project_settings.png" style="width: 200px; height:360px"></p><p>Ви побачите список пристроїв :</p><p><img src="http://docs.blynk.cc/images/list_of_devices.png" style="width: 200px; height:360px"></p><p>Таким чином, ви можете додати новий пристрій : </p><p><img src="http://docs.blynk.cc/images/new_device.png" style="width: 200px; height:360px"></p><p>Після вищезгаданих кроків у кожного віджету буде ще одне поле "Target" : </p><p><img src="http://docs.blynk.cc/images/widget_settings_devices.png" style="width: 200px; height:360px"></p><p>Тепер вам потрібно призначити віджет на пристрій, після чого віджет буде керувати лише цим конкретним пристроєм.</p><p>Це воно! Тепер вам потрібно завантажити ескізи з правильними Auth Tokens на ваш апаратне забезпечення.</p><h3 id="blynk-main-operations-control-of-multiple-devices-tags">Tags</h3><p>Функція тегів дозволяє групувати кілька пристроїв. Теги дуже корисні, якщо ви хочете керувати кількома пристроями з одним віджетом. Наприклад, уявіть собі випадок, коли у вас є 3 розумні лампочки, і ви хочете включити всі ці лампи одним натисненням кнопки. Вам потрібно призначити 3 пристрою на 1 тег і призначити тег для кнопки. Ось і все. </p><p> Теги віджетів також підтримують синхронізацію стану. Таким чином ви можете отримати стан віджетів зі свого апаратного забезпечення. Однак ви не можете оновити стан таких віджетів від апаратного забезпечення.</p><h2 id="blynk-main-operations-devices-online-status">Пристрої онлайн статус</h2><p>Додаток Blynk підтримує онлайн-статуси для кількох пристроїв.</p><p><img src="http://docs.blynk.cc/images/online_status.png" style="width: 200px; height:360px"></p><p>У ідеальному світі, коли пристрій закриває TCP з'єднання з деякими <code>connection.close()</code> - пов'язаний сервер отримає сповіщення про закрите з'єднання. Таким чином, ви можете отримати миттєве оновлення статусу в інтерфейсі користувача. Однак в реальному житті це в основному виняткова ситуація.
+У більшості випадків немає простих і швидких способів з'ясувати, що зв'язок більше не активний. </p><p>Ось чому блінк використовує <code>HEARTBEAT</code> механізм За допомогою цього підходу апарат періодично надсилає <code>ping</code> команда із заздалегідь визначеною
+інтервал (10 секунд за замовчуванням) <code>BLYNK_HEARTBEAT</code> <a href="https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h">властивості</a>). 
+
+
+
+
+
+
+
+
+
+In case hardware don’t send anything within 10 seconds server waits additional 5 seconds and after that connection assumed to be broken and closed by server. So on UI you’ll see connection status update only after 15 seconds when it is actually happened.</p><p>You can also change <code>HEARTBEAT</code> interval from hardware side via <code>Blynk.config</code>. In that case <code>newHeartbeatInterval * 2.3</code> formula will be applied. So in case you you decided to set <code>HEARTBEAT</code> interval to 5 seconds. You’ll get notification regarding connection with 11 sec delay in worst case.</p><h2 id="blynk-main-operations-project-settings">Project Settings</h2><p>Every project has it’s own settings:</p><p><img src="http://docs.blynk.cc/images/project_settings.png" style="width: 200px; height:360px"></p><ul>
 <li><strong>Theme</strong> - switch between the Light and Black Blynk Theme (Business accounts have wider choice);</li>
 <li><strong>Keep screen always on</strong> - allows you to use the Blynk app without going to the sleep mode (usually all mobile devices do that);</li>
 <li><strong>Send app connected command</strong> - with this option enabled the server will send “App Connected” and “App Disconnected” commands 
@@ -1097,79 +1098,79 @@ BLYNK_LOG<span class="number">4</span>(<span class="string">"Temperature: "</spa
 #define BLYNK_NO_FLOAT     // Disable float operations</code></pre>
 </li>
 </ol><p>Please also remember that a single <code>BlynkTimer</code> can schedule many timers, so most probably you need only one instance of BlynkTimer in your sketch.</p><h2 id="blynk-firmware-porting-hacking">Porting, hacking</h2><p>If you want to dive into crafting/hacking/porting Blynk library implementation, please also check <a href="https://github.com/blynkkk/blynk-library/tree/master/extras/docs">this documemtation</a>.</p><h1 id="faq">FAQ</h1><ul>
-<li><p>I backed Blynk on Kickstarter. Where are my widgets and why the app is free?</p>
+<li><p>Я підтримав Blynk на Kickstarter. Де мої віджети та чому додаток безкоштовний?</p>
 <blockquote>
-<p>App is free because otherwise you would have to pay to download it. This is how AppStore and Google Play works.
-Current Blynk release has a limited amount of widgets. We decided to make them free for everyone until we implement store. After that, every widget will be paid. However every backer will get them for free (according to their pledge).</p>
+<p>Додаток безкоштовний, тому що інакше вам доведеться заплатити, щоб його завантажити. Так працює AppStore і Google Play.
+Поточний реліз Blynk має обмежений обсяг віджетів. Ми вирішили зробити їх вільними для всіх, доки ми не реалізуємо магазин. Після цього кожний віджет буде заплачений. Однак кожен захисник отримає їх безкоштовно (згідно з їхніми обіцянками).</p>
 </blockquote>
 </li>
-<li><p>What is Blynk Cloud?</p>
+<li><p>Що таке Blynk Cloud?</p>
 <blockquote>
-<p>Blynk Cloud is a open-source software written on Java using plain TCP/IP and secured TCP/IP (for hardware that supports it) sockets and running on our server. Blynk iOS and Android apps connect to Blynk Cloud by default. Access is free for every Blynk user. We also provide a Private Server distribution for those who want to <a href="#blynk-server">install it locally</a>.</p>
+<p>Blynk Cloud - це програмне забезпечення з відкритим кодом, написане на Java за допомогою простого TCP/IP та захищеного TCP/IP (для апаратного забезпечення, що його підтримує) розеток і працює на нашому сервері. За замовчуванням Blynk програми iOS та Android підключаються до Blynk Cloud. Доступ для кожного користувача Blynk є безкоштовним. Ми також надаємо розповсюдження приватного сервера для тих, хто бажає <a href="#blynk-server">встановити його локально</a>.</p>
 </blockquote>
 </li>
-<li><p>How much access to Cloud Blynk Server cost?</p>
+<li><p>Скільки коштує доступ до Cloud Blynk Server?</p>
 <blockquote>
-<p>It is free for every Blynk user.</p>
+<p>Це безкоштовно для кожного користувача Blynk.</p>
 </blockquote>
 </li>
-<li><p>Can I run Blynk server locally?</p>
+<li><p>Чи можу я запустити Blynk сервер локально?</p>
 <blockquote>
-<p>Yes. Those of you, who want extra security or don’t have internet connection, can install Local Blynk Server and run it in your own local network. Blynk Server is Open-Source and it takes less than few seconds to deploy. All the instructions and files are <a href="#blynk-server">here</a>.</p>
+<p>Так. Ті з вас, хто хоче додаткової безпеки або не мають підключення до Інтернету, можуть встановити Local Blynk Server і запустити його у своїй локальній мережі. Blynk Server є відкритим вихідним кодом, і для розгортання потрібно менше кількох секунд. Всі інструкції та файли є <a href="#blynk-server">тут</a>.</p>
 </blockquote>
 </li>
-<li><p>What are the requirements to run Private Blynk Server?</p>
+<li><p>Які вимоги до запуску приватного сервера Blynk?</p>
 <blockquote>
-<p>To run Private Blynk Server, all you need is Java Runtime Environment.</p>
+<p>Щоб запустити приватний Blynk Server, вам потрібно лише Java Runtime Environment.</p>
 </blockquote>
 </li>
-<li><p>Can I run Blynk server on Raspberry Pi?</p>
+<li><p>Чи можу я запустити Blynk сервер на Raspberry Pi?</p>
 <blockquote>
-<p>Yes, surely! <a href="#blynk-server-how-to-run-local-blynk-server-launch-blynk-server-on-raspberry-pi">Here is instruction</a>.</p>
+<p>Так, звичайно! <a href="#blynk-server-how-to-run-local-blynk-server-launch-blynk-server-on-raspberry-pi">Ось інструкція</a>.</p>
 </blockquote>
 </li>
-<li><p>Does Blynk app work over Bluetooth?</p>
+<li><p>Чи працює додаток Blynk над Bluetooth?</p>
 <blockquote>
-<p>Yes. It is in beta right now.</p>
+<p>Так. Це зараз в бета-версії.</p>
 </blockquote>
 </li>
-<li><p>Does Blynk support Ethernet / Wi-FI / UART?</p>
+<li><p>Чи підтримує Blynk Ethernet/Wi-FI/UART?</p>
 <blockquote>
-<p>Yes, all of them. See full list of <a href="#supported-hardware">supported hardware</a> and shields.</p>
+<p>Так, всі вони. Див. Повний список <a href="#supported-hardware">підтримуваного обладнання</a> ти шилдів.</p>
 </blockquote>
 </li>
-<li><p>I don’t have any shield. Can I use Blynk with my computer?</p>
+<li><p>У мене немає шилда. Чи можу я використовувати Blynk з моїм комп'ютером?</p>
 <blockquote>
-<p>Yes, you can use Blynk just with a USB cable. There is a step-by-step <a href="#other-hardware-connect-over-usb">instruction</a> on how to do it.</p>
+<p>Так, ви можете використовувати Blynk просто за допомогою USB-кабелю. Тут поступово <a href="#other-hardware-connect-over-usb">інструкція</a> про те, як це зробити.</p>
 </blockquote>
 </li>
-<li><p>Can Blynk handle multiple Arduinos?</p>
+<li><p>Чи може Blynk  керувати кількома Arduino?</p>
 <blockquote>
-<p>Yes. There 3 ways right now :</p>
+<p>Так. Існує 3 способи прямо зараз :</p>
 <ul>
-<li>add multiple devices to your project.</li>
-<li>you may use same <a href="#getting-started-getting-started-with-application-auth-token">Auth Token</a> for different hardware. In that case you can control few hardwares from 1 dashboard.</li>
-<li>you can do it using <a href="#widgets-other-bridge">Bridge functionality</a> which allows you to send messages from one hardware to another.</li>
+<li>додайте декілька пристроїв до вашого проекту.</li>
+<li>ви можете використовувати той самий <a href="#getting-started-getting-started-with-application-auth-token">Auth Token</a> для різних апаратних засобів. У такому випадку ви можете контролювати декілька програм з однієї інформаційної панелі.</li>
+<li>ви можете це зробити, використовуючи <a href="#widgets-other-bridge">функцію мосту (Bridge)</a> яка дозволяє відправляти повідомлення від одного апарату до іншого.</li>
 </ul>
 </blockquote>
 </li>
-<li><p>Does Blynk server store sensor data when app goes offline?</p>
+<li><p>Чи зберігає Blynk сервер дані датчиків, коли програма йде в автономному режимі?</p>
 <blockquote>
-<p>Yes, every command that hardware sends to server is stored. You could use <a href="#widgets-displays-history-graph">History Graph</a> widget in order to view it.</p>
+<p>Так, кожна команда, яка передає апаратне забезпечення на сервер, зберігається. Ви могли б використовувати <a href="#widgets-displays-history-graph">History Graph</a> віджет, щоб переглянути їх.</p>
 </blockquote>
 </li>
-<li><p>How many Virtual Pins I can use?</p>
+<li><p>Скільки віртуальних пінів я можу використовувати?</p>
 <blockquote>
-<p>It depends mostly on your hardware. Low-end hardware may use up to 32 Virtual Pins. More powerful (like ESP8266) can 
-use up to 128 but it requires also BLYNK_USE_128_VPINS property in your sketch. <a href="https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h#L64">Example</a>.</p>
+<p>В основному це залежить від вашого обладнання. Низькотехнологічне обладнання може використовувати до 32 віртуальних пінів. Більш потужний (наприклад, ESP8266) може
+використовуйте до 128, але у вашому скетчі також потрібна властивість BLYNK_USE_128_VPINS. <a href="https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h#L64">Зразок</a>.</p>
 </blockquote>
 </li>
-<li><p>Why app requires all this permissions?</p>
+<li><p>Чому додаток вимагає всіх цих дозволів?</p>
 <blockquote>
 <p><a href="http://help.blynk.cc/faq/blynk-android-permissions-explained">http://help.blynk.cc/faq/blynk-android-permissions-explained</a></p>
 </blockquote>
 </li>
-</ul><h1 id="links">Links</h1><ul>
+</ul><h1 id="links">Посилання</h1><ul>
 <li><a href="http://www.blynk.cc/">Blynk site</a></li>
 <li><a href="http://community.blynk.cc/">Blynk community</a></li>
 <li><a href="http://www.fb.com/blynkapp">Facebook</a></li>
@@ -1178,7 +1179,7 @@ use up to 128 but it requires also BLYNK_USE_128_VPINS property in your sketch. 
 <li><a href="https://github.com/blynkkk/blynk-library/tree/master/examples">Blynk Examples</a></li>
 <li><a href="https://github.com/blynkkk/blynk-server">Blynk Server</a></li>
 <li><a href="https://www.kickstarter.com/projects/167134865/blynk-build-an-app-for-your-arduino-project-in-5-m/description">Kickstarter campaign</a></li>
-</ul><h1 id="license">License</h1><p>This project is released under The MIT License (MIT)</p></div>
+</ul><h1 id="license">Ліцензія</h1><p>This project is released under The MIT License (MIT)</p></div>
   </div>
 
 
