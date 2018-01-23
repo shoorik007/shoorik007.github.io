@@ -8,9 +8,9 @@ Instead, edit the stylus (.styl) files and compile it to CSS on your machine.
  * Fonts
  */
 @import url("http://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:400");
-/*@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
 
-/*@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); 
 
 /* ----------------------------------------------------------------------------
  * Base
