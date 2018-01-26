@@ -347,34 +347,32 @@ Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");</c
 #define BLYNK_YELLOW    "#ED9D00"
 #define BLYNK_RED       "#D3435C"
 #define BLYNK_DARK_BLUE "#5F7CD8"</code></pre><p>На стороні прошивки також підтримуються об'єкти віджета <code>setLabel()</code> і <code>setColor()</code> функції.</p><p>Специфічні властивості віджету: </p><p><strong>Button</strong></p><p><code>onLabel</code> є рядком для позначення увімкненої кнопки;</p><p><code>offLabel</code> це рядок для позначення вимкненої кнопки;</p><p><strong>Music Player</strong></p><p><code>isOnPlay</code> це логічне значення приймає true/false.</p><pre><code>Blynk.setProperty(V0, "isOnPlay", "true");</code></pre><p><strong>Меню</strong></p><p><code>labels</code> це список рядків для вибору віджета меню;</p><pre><code>Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");</code></pre><p><strong>Потокове відео</strong></p><pre><code class="lang-cpp">Blynk.setProperty(V<span class="number">1</span>, <span class="string">"url"</span>, <span class="string">"http:<span class="comment">//my_new_video_url"</span>);</span></code></pre><p>Ви також можете змінити властивості віджетів за допомогою <a href="http://docs.blynkapi.apiary.io/#">HTTP API</a>.</p><h2 id="blynk-main-operations-limitations-and-recommendations">Обмеження та рекомендації</h2><ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li><p>Don’t put <code>Blynk.virtualWrite</code> and any other <code>Blynk.*</code> command inside <code>void loop()</code>- it will cause 
-lot’s of outgoing messages to our server and your connection will be terminated; </p>
+<li><p>Не кладіть <code>Blynk.virtualWrite</code> і будь-яку іншу <code>Blynk.*</code> команду усередині <code>void loop()</code>- це призведе до великої кількості вихідних повідомлень на наш сервер, і ваше з'єднання буде припинено; </p>
 </li>
-<li><p>We recommend calling functions with intervals. For example, use <a href="#blynk-firmware-blynktimer">BlynkTimer</a></p>
+<li><p>Ми рекомендуємо викликати функції з інтервалами. Наприклад, використовуйте <a href="#blynk-firmware-blynktimer">BlynkTimer</a></p>
 </li>
-<li><p>Avoid using long delays with <code>delay()</code> – it may cause connection breaks;</p>
+<li><p>Уникайте тривалих затримок з <code>delay()</code> – це може призвести до перерв зв'язку;</p>
 </li>
-<li><p>If you send more than 100 values per second - you may cause 
-<a href="#troubleshooting-flood-error">Flood Error</a> and your hardware will be automatically disconnected from the server;</p>
+<li><p>Якщо ви надсилаєте понад 100 значень за секунду, це може призвести 
+<a href="#troubleshooting-flood-error">Flood Error</a> і ваше обладнання буде автоматично відключено від сервера;</p>
 </li>
-<li><p>Be careful sending a lot of <code>Blynk.virtualWrite</code> commands as most hardware is not very powerful (like ESP8266) 
-so it may not handle many requests. </p>
+<li><p>Будьте обережні, надсилайте багато<code>Blynk.virtualWrite</code> команд, оскільки більшість апаратних засобів не дуже потужні (наприклад, ESP8266), тому він може не обробляти багато запитів. </p>
 </li>
-</ul><h1 id="widgets">Widgets</h1><p>Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.</p><p>There are 4 types of Widgets: </p><ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul><h1 id="widgets">Віджети</h1><p>Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.</p><p>There are 4 types of Widgets: </p><ul>
 <li><strong>Controllers</strong> - they send commands to hardware. Use them to control your stuff;</li>
 <li><strong>Displays</strong> - used for various visualizations of data that comes from hardware to the smartphone;</li>
 <li><strong>Notifications</strong> - are various widgets to send messages and notifications;</li>
