@@ -328,36 +328,39 @@ BLYNK_WRITE(V<span class="number">0</span>) {
 інтервал (10 секунд за замовчуванням) <code>BLYNK_HEARTBEAT</code> <a href="https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkConfig.h">властивості</a>). 
 У випадку, якщо апаратне забезпечення не надсилає нічого протягом 10 секунд, сервер чекає додаткових 5 секунд, після чого пристрій вважається що зєднання пропало та закрито сервером. Таким чином, в інтерфейсі користувача ви побачите статус підключення лише після 15 секунд, коли це станеться.</p><p>Ви також можете змінити <code>HEARTBEAT</code> інтервал від апаратної сторони через <code>Blynk.config</code>. В такому разі <code>newHeartbeatInterval * 2.3</code> формула буде застосована. Отже, якщо ви вирішили встановити <code>HEARTBEAT</code> інтервал до 5 секунд. Ви отримаєте повідомлення про зв'язок із затримкою 11 сек у найгіршому випадку.</p><h2 id="blynk-main-operations-project-settings">Параметри проекту</h2><p>У кожного проекту є власні налаштування:</p><p><img src="http://docs.blynk.cc/images/project_settings.png" style="width: 200px; height:360px"></p><ul>
 <li><strong>Тема</strong> - перемикання між темою "Світлою" та "Темною" (бізнес-рахунки мають ширший вибір);</li>
-
-
-
-
-
-
-
-
-
-
-<li><strong>Keep screen always on</strong> - allows you to use the Blynk app without going to the sleep mode (usually all mobile devices do that);</li>
-<li><strong>Send app connected command</strong> - with this option enabled the server will send “App Connected” and “App Disconnected” commands 
-to your hardware when your Blynk app goes online/offline. <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino">Usage example</a>;</li>
-<li><strong>Do not show offline notifications</strong> - right now, for debugging purposes, every time your hardware goes offline - the Blynk 
-Server will notify you with popup in the app about that. However, when debugging is not needed or the Blynk app is used only 
-via HTTP/S this notifications are meaningless. So this switch allows you to turn off this popups. Also this switch turns off 
-the Push notification “Notify when offline” option.</li>
-</ul><h2 id="blynk-main-operations-change-widget-properties">Change Widget properties</h2><p>Changing some of the widget properties from hardware side is also supported.<br>For example, you can change the color of LED widget based on a condition:</p><pre><code>//change LED color
+<li><strong>Зберегти екран завжди</strong> - дозволяє користуватися програмою Blynk, не переходячи в сплячий режим (зазвичай це робить усі мобільні пристрої);</li>
+<li><strong>Надіслати команду зі з'єднанням із додатком</strong> -за допомогою цієї опції сервером буде надіслано команди "Підключено до програми" та "Від'єднано від програми"
+на вашому апаратному забезпеченні, коли ваш додаток Blynk надходить у режимі онлайн / офлайн. <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/AppConnectedEvents/AppConnectedEvents.ino">Приклад використання</a>;</li>
+<li><strong>Не показувати в режимі офлайн-сповіщень</strong> - зараз, для налагодження, кожного разу, коли ваше обладнання виходить в автономному режимі, - Blynk
+Сервер сповістить вас про спливаюче вікно у програмі. Однак, коли налагодження не потрібне або використовується лише програма Blynk
+через HTTP/S ці сповіщення безглузді. Таким чином, цей перемикач дозволяє вимкнути ці спливаючі вікна. Також цей вимикач вимикається опція "Повідомити, коли в автономному режимі".</li>
+</ul><h2 id="blynk-main-operations-change-widget-properties">Змінити властивості віджету</h2><p>Також підтримується зміна деяких властивостей віджетів з боку апаратного забезпечення.<br>Наприклад, ви можете змінити колір світлодіодного віджета на основі умови:</p><pre><code>//change LED color
 Blynk.setProperty(V0, "color", "#D3435C");
 
 //change LED label
 Blynk.setProperty(V0, "label", "My New Widget Label");
 
 //change MENU labels
-Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");</code></pre><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_SingleValue/SetProperty_SingleValue.ino">Set Property for single value field</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_MultiValue/SetProperty_MultiValue.ino">Set Property for multi value field</a></p><p><strong>NOTE : </strong> Changing these parameters work <strong>only</strong> for widgets attached to Virtual pins (analog/digital pins won’t work).</p><p>Four widget properties are supported - <code>color</code>, <code>label</code>, <code>min</code>, <code>max</code> for all widgets : </p><p><code>label</code> is string for label of all widgets.</p><p><code>color</code> is string in <a href="http://www.w3schools.com/html/html_colors.asp">HEX</a> format (in the form: #RRGGBB, 
-where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF). For example :</p><pre><code>#define BLYNK_GREEN     "#23C48E"
+Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");</code></pre><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_SingleValue/SetProperty_SingleValue.ino">Встановити властивість для одного значення поля</a></p><p><a href="https://github.com/blynkkk/blynk-library/blob/master/examples/More/SetProperty/SetProperty_MultiValue/SetProperty_MultiValue.ino">Встановіть властивість для багатозначного поля</a></p><p><strong>ПРИМІТКА : </strong> Зміна цих параметрів працює <strong>лише</strong> для віджетів, доданих до віртуальних пінів (аналогові/цифрові штирі не працюють).</p><p>Підтримуються чотири властивості віджету - <code>color</code>, <code>label</code>, <code>min</code>, <code>max</code> для всіх віджетів : </p><p><code>label</code> це рядок для мітки всіх віджетів.</p><p><code>color</code> це рядок в <a href="http://www.w3schools.com/html/html_colors.asp">HEX</a> формат (у формі: #RRGGBB,
+де RR (червоний), GG (зелений) та BB (синій) шістнадцяткові значення між 00 і FF). Наприклад:</p><pre><code>#define BLYNK_GREEN     "#23C48E"
 #define BLYNK_BLUE      "#04C0F8"
 #define BLYNK_YELLOW    "#ED9D00"
 #define BLYNK_RED       "#D3435C"
-#define BLYNK_DARK_BLUE "#5F7CD8"</code></pre><p>On firmware side, widget objects also support <code>setLabel()</code> and <code>setColor()</code> functions.</p><p>Widget specific properties: </p><p><strong>Button</strong></p><p><code>onLabel</code> is string for ON label of button;</p><p><code>offLabel</code> is string for OFF label of button;</p><p><strong>Music Player</strong></p><p><code>isOnPlay</code> is boolean accepts true/false.</p><pre><code>Blynk.setProperty(V0, "isOnPlay", "true");</code></pre><p><strong>Menu</strong></p><p><code>labels</code> is list of strings for Menu widget selections;</p><pre><code>Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");</code></pre><p><strong>Video Streaming</strong></p><pre><code class="lang-cpp">Blynk.setProperty(V<span class="number">1</span>, <span class="string">"url"</span>, <span class="string">"http:<span class="comment">//my_new_video_url"</span>);</span></code></pre><p>You can also change widget properties via <a href="http://docs.blynkapi.apiary.io/#">HTTP API</a>.</p><h2 id="blynk-main-operations-limitations-and-recommendations">Limitations and Recommendations</h2><ul>
+#define BLYNK_DARK_BLUE "#5F7CD8"</code></pre><p>На стороні прошивки також підтримуються об'єкти віджета <code>setLabel()</code> і <code>setColor()</code> функції.</p><p>Специфічні властивості віджету: </p><p><strong>Button</strong></p><p><code>onLabel</code> є рядком для позначення увімкненої кнопки;</p><p><code>offLabel</code> це рядок для позначення вимкненої кнопки;</p><p><strong>Music Player</strong></p><p><code>isOnPlay</code> це логічне значення приймає true/false.</p><pre><code>Blynk.setProperty(V0, "isOnPlay", "true");</code></pre><p><strong>Меню</strong></p><p><code>labels</code> це список рядків для вибору віджета меню;</p><pre><code>Blynk.setProperty(V0, "labels", "label 1", "label 2", "label 3");</code></pre><p><strong>Потокове відео</strong></p><pre><code class="lang-cpp">Blynk.setProperty(V<span class="number">1</span>, <span class="string">"url"</span>, <span class="string">"http:<span class="comment">//my_new_video_url"</span>);</span></code></pre><p>Ви також можете змінити властивості віджетів за допомогою <a href="http://docs.blynkapi.apiary.io/#">HTTP API</a>.</p><h2 id="blynk-main-operations-limitations-and-recommendations">Обмеження та рекомендації</h2><ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li><p>Don’t put <code>Blynk.virtualWrite</code> and any other <code>Blynk.*</code> command inside <code>void loop()</code>- it will cause 
 lot’s of outgoing messages to our server and your connection will be terminated; </p>
 </li>
