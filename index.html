@@ -358,40 +358,26 @@ Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");</c
 </li>
 <li><p>Будьте обережні, надсилайте багато<code>Blynk.virtualWrite</code> команд, оскільки більшість апаратних засобів не дуже потужні (наприклад, ESP8266), тому він може не обробляти багато запитів. </p>
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</ul><h1 id="widgets">Віджети</h1><p>Widgets are interface modules. Each of them performs a specific input/ output function when communicating with the hardware.</p><p>There are 4 types of Widgets: </p><ul>
-<li><strong>Controllers</strong> - they send commands to hardware. Use them to control your stuff;</li>
-<li><strong>Displays</strong> - used for various visualizations of data that comes from hardware to the smartphone;</li>
-<li><strong>Notifications</strong> - are various widgets to send messages and notifications;</li>
-<li><strong>Interface</strong> - are various widgets to make your UI look better;</li>
-<li><strong>Others</strong> - widgets that don’t belong to any category;</li>
-</ul><p>Each Widget has it’s own settings. </p><p>Some of the Widgets (e.g. Bridge Widget) are used to enable some functionality and they don’t have any settings.</p><h2 id="widgets-common-widget-settings">Common Widget Settings</h2><h3 id="widgets-common-widget-settings-pin-selector">Pin Selector</h3><p>This is one of the main parameters you need to set. It defines which pin to control or to read from. </p><p><img src="http://docs.blynk.cc/images/pin_selection.png" style="width: 200px; height:360px"></p><p><strong>Digital Pins</strong> - represent physical Digital IO pins on your hardware. PWM-enabled pins are marked with the <code>~</code> symbol</p><p><strong>Analog Pins</strong> - represent physical Analog IO pins on your hardware</p><p><strong>Virtual Pins</strong> - have no physical representation. They are used for any data transfer between Blynk App and your hardware.
-Read more about Virtual Pins <a href="#blynk-main-operations-virtual-pins">here</a>.</p><h3 id="widgets-common-widget-settings-data-mapping">Data Mapping</h3><p>In case you want to map incoming values to specific range you may use mapping button : </p><p><img src="http://docs.blynk.cc/images/display_edit_mapping.png" style="width: 200px; height:360px"></p><p>Let’s say your sensor sends values from 0 to 1023. But you want to display values in a range 0 to 100 in the application. 
-With data mapping enabled, incoming value 1023 will be mapped to 100.</p><h3 id="widgets-common-widget-settings-splitmerge">SPLIT/MERGE</h3><p>Some of the Widgets can send more than one value. And with this switch you can control how to send them.</p><p><img src="http://docs.blynk.cc/images/split_merge.gif" style="width: 300px; height:280px"></p><ul>
+</ul><h1 id="widgets">Віджети</h1><p>Віджети - це модулі інтерфейсу. Кожен з них виконує певну функцію вводу/виводу при спілкуванні з апаратним забезпеченням.</p><p>Існує 4 типи віджетів: </p><ul>
+<li><strong>Controllers</strong> - вони відправляють команди на апаратне забезпечення. Використовуйте їх, щоб контролювати ваші речі;</li>
+<li><strong>Displays</strong> - використовується для різних візуалізацій даних, що надходять від апаратного забезпечення до смартфону;</li>
+<li><strong>Notifications</strong> - різні віджети для надсилання повідомлень;</li>
+<li><strong>Interface</strong> - це різні віджети, які роблять ваш інтерфейс краще;</li>
+<li><strong>Others</strong> - віджети, які не належать до жодної категорії;</li>
+</ul><p>Кожен віджет має власні налаштування. </p><p>Деякі віджети (наприклад Bridge Widget) використовуються для ввімкнення деяких функцій, і вони не мають жодних налаштувань.</p><h2 id="widgets-common-widget-settings">Загальні налаштування віджету</h2><h3 id="widgets-common-widget-settings-pin-selector">Вибір піна</h3><p>Це один з основних параметрів, які потрібно встановити. Він визначає, яким піном можна керувати або читати. </p><p><img src="http://docs.blynk.cc/images/pin_selection.png" style="width: 200px; height:360px"></p><p><strong>Digital Pins</strong> - представляють собою фізичні цифрові піни IO на вашому апаратному забезпеченні. Піни з підтримкою PWM позначені символом <code>~</code> </p><p><strong>Analog Pins</strong> - представляють фізичні аналогові IO піни на вашому апаратному забезпеченні</p><p><strong>Virtual Pins</strong> - не мають фізичного представлення. Вони використовуються для будь-якої передачі даних між програмою Blynk та вашим обладнанням.
+Дізнайтеся більше про Віртуальні піни <a href="#blynk-main-operations-virtual-pins">тут</a>.</p><h3 id="widgets-common-widget-settings-data-mapping">Data Mapping</h3><p>Якщо ви хочете відобразити вхідні значення до певного діапазону, ви можете використовувати кнопку відображення : </p><p><img src="http://docs.blynk.cc/images/display_edit_mapping.png" style="width: 200px; height:360px"></p><p>Скажімо, ваш датчик передає значення від 0 до 1023. Але ви хочете відображати значення в діапазоні від 0 до 100 в додатку.
+Якщо ввімкнуто відображення даних, вхідне значення 1023 буде відображено до 100.</p><h3 id="widgets-common-widget-settings-splitmerge">SPLIT/MERGE</h3><p>Деякі віджети можуть надсилати більше одного значення. І за допомогою цього вимикача ви можете контролювати, як відправити їх.</p><p><img src="http://docs.blynk.cc/images/split_merge.gif" style="width: 300px; height:280px"></p><ul>
 <li><p><strong>SPLIT</strong>:
-Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don’t need to write any code.</p>
-<p>  <strong>NOTE:</strong> In this mode you send multiple commands from one widget, which can reduce performance of your hardware.</p>
-<p>  Example: If you have a Joystick Widget and it’s set to D3 and D4, it will send 2 commands over the Internet:</p>
+Кожен параметр надсилається безпосередньо на Pin у вашому апаратурі (наприклад, D7). Вам не потрібно писати жодного коду.</p>
+<p>  <strong>ПРИМІТКА:</strong> У цьому режимі ви надсилаєте декілька команд з одного віджета, що може знизити ефективність вашого обладнання.</p>
+<p>  Приклад: якщо у вас є Joystick Widget і він встановлений на D3 та D4, він надсилатиме 2 команди через Інтернет:</p>
 <pre><code class="lang-cpp">  digitalWrite(<span class="number">3</span>, value);
   digitalWrite(<span class="number">4</span>, value);</code></pre>
 </li>
 <li><p><strong>MERGE</strong>:
-When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you’ll need to parse it on the hardware. </p>
-<p>  This mode can be used with Virtual Pins only.</p>
-<p>  Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1</p>
+Коли вибрано режим MERGE, ви надішлете лише 1 повідомлення, яке складається з масиву значень. Але вам потрібно буде проаналізувати його на апаратному рівні. </p>
+<p>  Цей режим можна використовувати тільки з Virtual Pins.</p>
+<p>  Приклад: додайте віджет zeRGBa та встановіть його в режим MERGE. Виберіть віртуальний контакт V1</p>
 <pre><code class="lang-cpp">  BLYNK_WRITE(V<span class="number">1</span>) <span class="comment">// There is a Widget that WRITEs data to V<span class="number">1</span> </span>
   {
     int r = param[<span class="number">0</span>].asInt(); <span class="comment">// get a RED channel value</span>
@@ -399,25 +385,35 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
     int b = param[<span class="number">2</span>].asInt(); <span class="comment">// get a BLUE channel value</span>
   }</code></pre>
 </li>
-</ul><h3 id="widgets-common-widget-settings-send-on-release">Send On Release</h3><p>This option is available for most controller widgets and allows you to decrease data traffic on your hardware. 
-For example, when you move joystick widget, commands are continuously streamed to the hardware, during a single joystick move 
-you can send dozens of commands. There are use-cases where it’s needed, however creating such a load may cause hardware reset. 
-We recommend enabling <strong>Send On Release</strong> feature for most of the cases, unless you really need instant feedback.
-This option is enabled by default.</p><h3 id="widgets-common-widget-settings-write-interval">Write interval</h3><p>Similar to above option. However, allows you to stream values to your hardware within certain interval. For example, 
-setting write interval to 100 ms - means, that while you move slider only 1 value will be send to hardware within 100 ms.
-This option also used to decrease data traffic on your hardware.</p><h3 id="widgets-common-widget-settings-color-gradient">Color gradient</h3><p>Some display widgets have ability to select gradient. Gradient allows you to colorize your widgets without any coding. 
-At the moment we provide 2 types of gradients :</p><ul>
+</ul><h3 id="widgets-common-widget-settings-send-on-release">Send On Release</h3><p>Цей параметр доступний для більшості віджетів контролера та дозволяє зменшити трафік даних на вашому апаратному забезпеченні. 
+Наприклад, коли ви переміщаєте віджет джойстика, команди постійно потокуються на апаратне забезпечення, під час переміщення одного джойстика ви можете надсилати десятки команд. Є випадки використання, де це необхідно, однак створення такого навантаження може спричинити скидання апаратного забезпечення. 
+Ми рекомендуємо ввімкнути <strong>Send On Release</strong> функцію для більшості випадків, якщо вам не потрібно миттєвого зворотного зв'язку.
+Цей параметр ввімкнено за умовчанням.</p><h3 id="widgets-common-widget-settings-write-interval">Write interval</h3><p>Аналогічно варіанту вище . Тим не менш, ви можете передавати значення на ваш апаратне забезпечення протягом певного інтервалу. Наприклад, встановлення інтервалу запису до 100 мс - означає, що під час переміщення слайдера лише 1 значення буде передано на апаратне забезпечення протягом 100 мс.
+Цей параметр також використовується для зменшення трафіку даних на вашому апаратному забезпеченні.</p><h3 id="widgets-common-widget-settings-color-gradient">Color gradient</h3><p>Деякі віджетні дисплеї мають можливість вибору градієнта. Градієнт дозволяє розфарбувати віджети без кодування. 
+На даний момент ми надаємо 2 типи градієнтів :</p><ul>
 <li>Warm: Green - Orange - Red;</li>
 <li>Cold : Green - Blue - Violet;</li>
-</ul><p>Gradient changes color of your widget based on min/max properties. For example, you select warm gradient for your Level 
-Display widget with min 0 and max 100 value. When value 10 comes to widget it will have green color, when value 50 comes you’ll see orange color, when value 80 comes you’ll see red color.</p><h2 id="widgets-controllers">Controllers</h2><h3 id="widgets-controllers-button">Button</h3><p>Works in push or switch modes. Allows to send 0/1 (LOW/HIGH) values. Button sends 1 (HIGH) on press and sends 0 (LOW) on release.</p><p><img src="http://docs.blynk.cc/images/button.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/button_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-controllers-slider">Slider</h3><p>Similar to potentiometer. Allows to send values between MIN and MAX.</p><p><img src="http://docs.blynk.cc/images/slider.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/slider_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-controllers-timer">Timer</h3><p>Timer triggers actions at a specific time. Even if smartphone is offline. Start time sends 1 (HIGH). Stop time sends 0 (LOW).</p><p>Recent Android version also has improved Timer within Eventor widget.
-With Eventor Time Event you can assign multiple timers on same pin, send any string/value, select days and timezone. 
-It is recommended to use Eventor over Timer widget.
-However Timer widget is still suitable for simple timer events.</p><p><img src="http://docs.blynk.cc/images/timer.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/timer_edit.png" style="width: 200px; height:360px"></p><p><strong>NOTE:</strong> The timer widget rely on the server time and not your phone time. Sometimes the phone time may not match the server time. </p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino">Timer</a></p><h3 id="widgets-controllers-joystick">Joystick</h3><p>Control servo movements in 4 directions</p><h4>Settings:</h4><ul>
-<li><p>SPLIT/MERGE modes - read <a href="#widgets-common-widget-settings-splitmerge">here</a></p>
+</ul><p>Градієнт змінює колір вашого віджету на основі властивостей min / max. Наприклад, ви вибираєте теплий градієнт для свого віджета дисплея рівня з мінімальним значенням 0 і не більше 100 значень. Коли значення 10 приходить до віджету, він буде зеленим кольором, коли значення 50 з'явиться, ви побачите помаранчевий колір, коли значення 80 з'явиться, ви побачите червоний колір.</p><h2 id="widgets-controllers">Controllers</h2><h3 id="widgets-controllers-button">Button</h3><p>Працює в режимах переключення або перемикання. Дозволяє надсилати значення 0/1 (LOW / HIGH). Кнопка натиснута - надсилає 1 (HIGH) і надсилає 0 (LOW) при відпусканні.</p><p><img src="http://docs.blynk.cc/images/button.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/button_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-controllers-slider">Slider</h3><p>Подібний до потенціометра. Дозволяє надсилати значення між MIN і MAX.</p><p><img src="http://docs.blynk.cc/images/slider.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/slider_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-controllers-timer">Timer</h3><p>Таймер активізує дії в певний час. Навіть якщо смартфон знаходиться поза мережею. Час початку відправляє 1 (HIGH). Час зупинки відправляє 0 (LOW).</p><p>Нещодавня версія Android також покращила таймер у віджеті Eventor.
+З події Eventor Time ви можете призначити кілька таймерів на одному піні, відправити будь-яке рядок/значення, вибрати дні та часовий пояс. 
+Рекомендується використовувати Eventor за допомогою віджета таймера.
+Однак віджет Таймер все ще підходить для простих подій таймера.</p><p><img src="http://docs.blynk.cc/images/timer.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/timer_edit.png" style="width: 200px; height:360px"></p><p><strong>NOTE:</strong> Віджет таймера залежить від часу сервера, а не вашого часу телефону. Іноді час телефону може не співпадати з часом сервера. </p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/Timer/Timer.ino">Timer</a></p><h3 id="widgets-controllers-joystick">Joystick</h3><p>Контроль серводвигунів у 4 напрямках</p><h4>Settings:</h4><ul>
+<li><p>SPLIT/MERGE режими - читати <a href="#widgets-common-widget-settings-splitmerge">тут</a></p>
 </li>
 <li><p><strong>Rotate on Tilt</strong></p>
 </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul><p>When it’s ON, Joystck will automatically rotate if you use your smartphone in landscape orientation<br>- <strong>Auto-Return</strong>
 - 
 When it’s OFF, Joystick handle will not return back to center position. It will stay where you left it. </p><p><img src="http://docs.blynk.cc/images/joystick.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/joystick_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino">JoystickTwoAxis</a></p><h3 id="widgets-controllers-zergba">zeRGBa</h3><p>zeRGBa is usual RGB controller (color picker).</p><h4>Settings:</h4><ul>
