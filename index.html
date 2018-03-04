@@ -414,17 +414,17 @@ Blynk.setProperty(V0, "labels", "Menu Item 1", "Menu Item 2", "Menu Item 3");</c
 
 
 
-</ul><p>When it’s ON, Joystck will automatically rotate if you use your smartphone in landscape orientation<br>- <strong>Auto-Return</strong>
+</ul><p>Коли він увімкнений, Джойстик автоматично повертається, якщо ви використовуєте свій смартфон у альбомній орієнтації<br>- <strong>Auto-Return</strong>
 - 
-When it’s OFF, Joystick handle will not return back to center position. It will stay where you left it. </p><p><img src="http://docs.blynk.cc/images/joystick.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/joystick_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino">JoystickTwoAxis</a></p><h3 id="widgets-controllers-zergba">zeRGBa</h3><p>zeRGBa is usual RGB controller (color picker).</p><h4>Settings:</h4><ul>
+Коли він вимкнений, рукоятка джойстика не повернеться до центральної позиції. Він залишиться там, де ви його залишили. </p><p><img src="http://docs.blynk.cc/images/joystick.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/joystick_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/JoystickTwoAxis/JoystickTwoAxis.ino">JoystickTwoAxis</a></p><h3 id="widgets-controllers-zergba">zeRGBa</h3><p>zeRGBa це звичайний контролер RGB (вибір кольорів).</p><h4>Налаштування:</h4><ul>
 <li><strong>SPLIT</strong>:
-Each of the parameters is sent directly to the Pin on your hardware (e.g D7). You don’t need to write any code.</li>
-</ul><p><strong>NOTE:</strong> In this mode you send multiple commands from one widget, which can reduce performance of your hardware.</p><p>Example: If you have a zeRGBa Widget and it’s set to D1, D2, D3 it will send 3 commands over the Internet:</p><pre><code class="lang-cpp">digitalWrite(<span class="number">1</span>, r);
+Кожен параметр надсилається безпосередньо на Pin у вашому апаратурі (наприклад, D7). Вам не потрібно писати жодного коду.</li>
+</ul><p><strong>ПРИМІТКА:</strong> У цьому режимі ви надсилаєте декілька команд з одного віджета, що може знизити ефективність вашого обладнання.</p><p>Приклад: Якщо у вас є віджет zeRGBa і він встановлений на D1, D2, D3, він надсилатиме 3 команди через Інтернет:</p><pre><code class="lang-cpp">digitalWrite(<span class="number">1</span>, r);
 digitalWrite(<span class="number">2</span>, g);
 digitalWrite(<span class="number">3</span>, b);</code></pre><ul>
 <li><strong>MERGE</strong>:
-When MERGE mode is selected, you are sending just 1 message, consisting of array of values. But you’ll need to parse it on the hardware. </li>
-</ul><p>This mode can be used with Virtual Pins only.</p><p>Example: Add a zeRGBa Widget and set it to MERGE mode. Choose Virtual Pin V1.</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) <span class="comment">// zeRGBa assigned to V<span class="number">1</span> </span>
+Коли вибрано режим MERGE, ви надішлете лише 1 повідомлення, що складається з масиву значень. Але вам потрібно буде проаналізувати його на апаратному рівні. </li>
+</ul><p>Цей режим можна використовувати тільки з Virtual Pins.</p><p>Приклад: додайте віджет zeRGBa та встановіть його в режим MERGE. Виберіть віртуальний контакт V1.</p><pre><code class="lang-cpp">BLYNK_WRITE(V<span class="number">1</span>) <span class="comment">// zeRGBa assigned to V<span class="number">1</span> </span>
 {
     <span class="comment">// get a RED channel value</span>
     int r = param[<span class="number">0</span>].asInt();
@@ -432,99 +432,95 @@ When MERGE mode is selected, you are sending just 1 message, consisting of array
     int g = param[<span class="number">1</span>].asInt();
     <span class="comment">// get a BLUE channel value</span>
     int b = param[<span class="number">2</span>].asInt();
-}</code></pre><h3 id="widgets-controllers-step-control">Step Control</h3><p>Step control is like 2 buttons assigned to 1 pin. One button increments your value by desired step and another 
-one decrements it. It is very useful for use cases where you need to change your values very precisely and you can’t 
-achieve this precision with slider widget.</p><p><strong>Send Step</strong> option allows you to send step to hardware instead of actual value of step widget.
-<strong>Loop value</strong> option allows you to reset step widget to start value when maximum value is reached.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">Basic Sketch</a></p><h2 id="widgets-displays">Displays</h2><h3 id="widgets-displays-value-display">Value Display</h3><p>Displays incoming data from your sensors or Virtual Pins.</p><p><img src="http://docs.blynk.cc/images/display.png" style="width: 77px; height:80px"> </p><p><img src="http://docs.blynk.cc/images/display_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-displays-labeled-value">Labeled Value</h3><p>Displays incoming data from your sensors or Virtual Pins. It is a better version of ‘Value Display’ as it has a formatting 
-string, so you could format incoming value to any string you want.</p><p><img src="http://docs.blynk.cc/images/display.png" style="width: 77px; height:80px"> </p><p><img src="http://docs.blynk.cc/images/labeled_value_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h4>Formatting options</h4><p>For example: your sensor sends vaule of 12.6789 to Blynk application.
-Next formatting options are supported:</p><p><code>/pin/</code> - displays the value without formatting (12.6789)</p><p><code>/pin./</code> - displays the rounded value without decimal part (13)</p><p><code>/pin.#/</code> - displays the value with 1 decimal digit (12.7)</p><p><code>/pin.##/</code> - displays the value with two decimal places (12.68)</p><p><img src="http://docs.blynk.cc/images/labeled_value_format_edit.png" style="width: 200px; height:360px"></p><h3 id="widgets-displays-led">LED</h3><p>A simple LED for indication. You need to send 0 in order to turn LED off. And 255 in order to turn LED on. Or just use
-Blynk API as described below :</p><pre><code class="lang-cpp">WidgetLED led<span class="number">1</span>(V<span class="number">1</span>); <span class="comment">//register to virtual pin <span class="number">1</span></span>
+}</code></pre><h3 id="widgets-controllers-step-control">Step Control</h3><p>Крок управління - це як 2 кнопки, призначені для 1 штир. Одна кнопка збільшує значення за бажаним кроком, а інший зменшує його. Це дуже корисно для випадків використання, коли вам потрібно дуже точно змінити свої значення, і ви не можете досягти цієї точності за допомогою слайдера.</p><p><strong>Send Step</strong> Параметр дозволяє вам відправити кроки до апаратного забезпечення замість фактичного значення кроку віджета.
+<strong>Loop value</strong> параметр дозволяє відновити етап віджету, щоб почати значення, коли досягнуто максимальне значення.</p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">Basic Sketch</a></p><h2 id="widgets-displays">Displays</h2><h3 id="widgets-displays-value-display">Value Display</h3><p>Відображає вхідні дані з ваших сенсорів або віртуальних контактів.</p><p><img src="http://docs.blynk.cc/images/display.png" style="width: 77px; height:80px"> </p><p><img src="http://docs.blynk.cc/images/display_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-displays-labeled-value">Labeled Value</h3><p>Відображає вхідні дані з ваших сенсорів або віртуальних контактів. Це краща версія "Значення дисплея", оскільки воно має лінію форматування, так що ви можете відформатувати вхідне значення будь-якому бажаному рядку.</p><p><img src="http://docs.blynk.cc/images/display.png" style="width: 77px; height:80px"> </p><p><img src="http://docs.blynk.cc/images/labeled_value_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h4>Параметри форматування</h4><p>Наприклад: ваш датчик передає значення 12.6789 до програми Blynk.
+Наступні формати параметри підтримуються:</p><p><code>/pin/</code> - відображає значення без форматування (12.6789)</p><p><code>/pin./</code> - відображає округлену величину без десяткової частини (13)</p><p><code>/pin.#/</code> - відображає значення з 1 десятковою цифрою (12.7)</p><p><code>/pin.##/</code> - відображає значення з двома десятковими знаками (12.68)</p><p><img src="http://docs.blynk.cc/images/labeled_value_format_edit.png" style="width: 200px; height:360px"></p><h3 id="widgets-displays-led">LED</h3><p>Простий індикатор для індикації. Вам потрібно надіслати 0, щоб вимкнути світлодіод. І 255, щоб включити світлодіод. Або просто використовуйте
+Blynk API, як описано нижче:</p><pre><code class="lang-cpp">WidgetLED led<span class="number">1</span>(V<span class="number">1</span>); <span class="comment">//register to virtual pin <span class="number">1</span></span>
 led<span class="number">1</span>.off();
-led<span class="number">1</span>.on();</code></pre><p>All values between 0 and 255 will change LED brightness :</p><pre><code class="lang-cpp">WidgetLED led<span class="number">2</span>(V<span class="number">2</span>);
-led<span class="number">2</span>.setValue(<span class="number">127</span>); <span class="comment">//set brightness of LED to <span class="number">50</span>%.</span></code></pre><p><img src="http://docs.blynk.cc/images/led.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/led_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino">LED</a></p><h3 id="widgets-displays-gauge">Gauge</h3><p>A great visual way to display incoming numeric values.</p><p><img src="http://docs.blynk.cc/images/gauge.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/gauge_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h4>Formatting options</h4><p>For example: your sensor sends vaule of 12.6789 to Blynk application.
-Next formatting options are supported:</p><p><code>/pin/</code> - displays the value without formatting (12.6789)</p><p><code>/pin./</code> - displays the rounded value without decimal part (13)</p><p><code>/pin.#/</code> - displays the value with 1 decimal digit (12.7)</p><p><code>/pin.##/</code> - displays the value with two decimal places (12.68)</p><h3 id="widgets-displays-lcd">LCD</h3><p>This is a regular 16x2 LCD display made in our secret facility in China.</p><h4>SIMPLE / ADVANCED MODE</h4><h4>Commands</h4><p>You need to use special commands with this widget:</p><pre><code>lcd.print(x, y, "Your Message");</code></pre><p>Where x is a symbol position (0-15), y is a line id (0 or 1), </p><pre><code>lcd.clear();</code></pre><p><img src="http://docs.blynk.cc/images/lcd.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/lcd_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino">LCD Advanced Mode</a>
+led<span class="number">1</span>.on();</code></pre><p>Всі значення між 0 і 255 змінять яскравість світлодіодів :</p><pre><code class="lang-cpp">WidgetLED led<span class="number">2</span>(V<span class="number">2</span>);
+led<span class="number">2</span>.setValue(<span class="number">127</span>); <span class="comment">//set brightness of LED to <span class="number">50</span>%.</span></code></pre><p><img src="http://docs.blynk.cc/images/led.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/led_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LED/LED_Blink/LED_Blink.ino">LED</a></p><h3 id="widgets-displays-gauge">Gauge</h3><p>Відмінний візуальний спосіб відображення вхідних числових значень.</p><p><img src="http://docs.blynk.cc/images/gauge.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/gauge_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h4>Параметри форматування</h4><p>Наприклад: ваш датчик передає значення 12.6789 до програми Blynk.
+Наступні формати параметри підтримуються:</p><p><code>/pin/</code> - відображає значення без форматування (12.6789)</p><p><code>/pin./</code> - відображає округлену величину без десяткової частини (13)</p><p><code>/pin.#/</code> - відображає значення з 1 десятковою цифрою (12.7)</p><p><code>/pin.##/</code> - відображає значення з двома десятковими знаками (12.68)</p><h3 id="widgets-displays-lcd">LCD</h3><p>Це звичайний РК-дисплей 16x2, виготовлений на нашому секретному об'єкті в Китаї.</p><h4>SIMPLE / ADVANCED MODE</h4><h4>Commands</h4><p>Вам потрібно використовувати спеціальні команди за допомогою цього віджета:</p><pre><code>lcd.print(x, y, "Your Message");</code></pre><p>Де x - позиція символу (0-15), y - ідентифікатор рядка (0 або 1), </p><pre><code>lcd.clear();</code></pre><p><img src="http://docs.blynk.cc/images/lcd.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/lcd_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_AdvancedMode/LCD_AdvancedMode.ino">Розширений режим LCD</a>
 <strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModePushing/LCD_SimpleModePushing.ino">LCD Simple Mode Pushing</a>
-<strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino">LCD Simple Mode Reading</a></p><h4>Formatting options</h4><p>For example: your sensor sends vaule of 12.6789 to Blynk application.
-Next formatting options are supported:</p><p><code>/pin/</code> - displays the value without formatting (12.6789)</p><p><code>/pin./</code> - displays the rounded value without decimal part (13)</p><p><code>/pin.#/</code> - displays the value with 1 decimal digit (12.7)</p><p><code>/pin.##/</code> - displays the value with two decimal places (12.68)</p><p><img src="http://docs.blynk.cc/images/lcd_format_edit.png" style="width: 200px; height:360px"></p><h3 id="widgets-displays-superchart">SuperChart</h3><p>SuperChart is used to visualise live and historical data. You can use it for sensor data, for binary event logging and more.</p><p>To use SuperChart widget you would need to push the data from the hardware with the desired interval by using timers.<br><a href="https://examples.blynk.cc/?board=ESP8266&amp;shield=ESP8266%20WiFi&amp;example=GettingStarted%2FPushData">Here is</a> a basic example for data pushing.</p><h4>Interactions:</h4><ul>
-<li><p><strong>Switch between time ranges and Live mode</strong>
-<br>Tap time ranges at the bottom of the widget to change time ranges</p>
+<strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/Widgets/LCD/LCD_SimpleModeReading/LCD_SimpleModeReading.ino">LCD Простий спосіб натискання</a></p><h4>Параметри форматування</h4><p>Наприклад: ваш датчик передає значення 12.6789 до програми Blynk.
+Наступні формати параметри підтримуються:</p><p><code>/pin/</code> - відображає значення без форматування (12.6789)</p><p><code>/pin./</code> - відображає округлену величину без десяткової частини (13)</p><p><code>/pin.#/</code> - відображає значення з 1 десятковою цифрою (12.7)</p><p><code>/pin.##/</code> - відображає значення з двома десятковими знаками (12.68)</p><p><img src="http://docs.blynk.cc/images/lcd_format_edit.png" style="width: 200px; height:360px"></p><h3 id="widgets-displays-superchart">SuperChart</h3><p>SuperChart використовується для візуалізації живих та історичних даних. Ви можете використовувати його для даних датчиків, для ведення журнал двійкових подій і багато іншого.</p><p>Щоб використовувати віджет SuperChart, вам потрібно буде натискати дані з апаратного забезпечення з потрібним інтервалом за допомогою таймерів.<br><a href="https://examples.blynk.cc/?board=ESP8266&amp;shield=ESP8266%20WiFi&amp;example=GettingStarted%2FPushData">Ось</a> основний приклад для натискання даних.</p><h4>Взаємодії:</h4><ul>
+<li><p><strong>Переключення між діапазонами часу та Режим Live</strong>
+<br>Натисніть діапазони часу в нижній частині віджету, щоб змінити часові діапазони</p>
 </li>
-<li><p><strong>Tap Legend Elements</strong> to show or hide datastreams
+<li><p><strong>Натисніть елементи "Легенда"</strong> показати або приховати базі даних
 <br></p>
 </li>
-<li><p><strong>Tap’n’hold to view timestamp and corresponding values</strong></p>
+<li><p><strong>Tap'n'hold, щоб переглянути позначку часу та відповідні значення</strong></p>
 </li>
 </ul><p><img src="http://docs.blynk.cc/images/tapnhold_charts.png" style="width: 300px; height:280px"></p><ul>
-<li><strong>Quick swipe from left to right to reveal previous data</strong> </li>
-</ul><p><img src="http://docs.blynk.cc/images/swipe_charts.png" style="width: 300px; height:280px"></p><p>Then you can then scroll data back and forward within the given time range.</p><ul>
-<li><strong>Full Screen Mode</strong><br>
-Press this button to open Full Screen view in landscape orientation:</li>
-</ul><p><img src="http://docs.blynk.cc/images/fullscreen_charts.png" style="width: 300px; height:280px"></p><p>Simply rotate the phone back to portrait mode. Chart should rotate automagically. 
-In full screen view you will see X (time) and multiple Y scales. 
-Full Screen Mode can be disabled from widget Settings.</p><ul>
-<li><strong>Menu Button</strong><br>
-Menu button will open additional functions:<ul>
-<li>Export to CSV</li>
-<li>Erase Data on the server </li>
+<li><strong>Швидко проведіть пальцем зліва направо, щоб відкрити попередні дані</strong> </li>
+</ul><p><img src="http://docs.blynk.cc/images/swipe_charts.png" style="width: 300px; height:280px"></p><p>Тоді ви зможете прокрутити дані назад і вперед протягом заданого діапазону часу.</p><ul>
+<li><strong>Повноекранний режим</strong><br>
+Натисніть цю кнопку, щоб відкрити повноекранний режим у альбомній орієнтації:</li>
+</ul><p><img src="http://docs.blynk.cc/images/fullscreen_charts.png" style="width: 300px; height:280px"></p><p>Просто поверніть телефон у портретний режим. Діаграма повинна обертатися автоматично.
+У повноекранному режимі ви побачите X (час) та кілька Y масштабів.
+Повноекранний режим може бути відключений від налаштувань віджетів.</p><ul>
+<li><strong>Кнопка меню</strong><br>
+Кнопка меню відкриє додаткові функції:<ul>
+<li>Експортувати в CSV</li>
+<li>Видалити дані на сервері </li>
 </ul>
 </li>
-</ul><p><img src="http://docs.blynk.cc/images/menu_charts.png" style="width: 300px; height:280px"></p><h4>SuperChart Settings:</h4><ul>
-<li><p><strong>Chart Title</strong></p>
+</ul><p><img src="http://docs.blynk.cc/images/menu_charts.png" style="width: 300px; height:280px"></p><h4>Налаштування SuperChart:</h4><ul>
+<li><p><strong>Назва діаграми</strong></p>
 </li>
-<li><p><strong>Title Font Size</strong>
-You have a choice of 3 font sizes</p>
+<li><p><strong>Розмір шрифту заголовка</strong>
+У вас є вибір з трьох розмірів шрифту</p>
 </li>
-<li><p><strong>Title Alignment</strong>
-Choose chart title alignment. This setting also affects Title and Legend position on the Widget.</p>
+<li><p><strong>Вирівнювання заголовків</strong>
+Виберіть вирівнювання заголовка діаграми. Цей параметр також впливає на позицію назви та легенди у віджеті.</p>
 </li>
-<li><p><strong>Datastreams</strong> - add datastreams (read below how to configure datastreams)</p>
+<li><p><strong>Datastreams</strong> - додати стежки даних (читайте нижче, як налаштувати datrereams)</p>
 </li>
 <li><strong>Show/Hide Title</strong></li>
 <li><strong>Show/Hide Legend</strong></li>
-</ul><h4>Datastream Settings</h4><p>Widget supports up to 4 Datastreams. 
-Press Datastream Settings Icon to open Datastream Settings.</p><p><img src="http://docs.blynk.cc/images/datastream_charts.png"></p><p><strong>Design:</strong>
-Choose available types of Chart:</p><ul>
+</ul><h4>Налаштування Datastream</h4><p>Віджет підтримує до 4 Datastreams.
+Натисніть піктограму параметрів Datastream, щоб відкрити Настройки Datastream.</p><p><img src="http://docs.blynk.cc/images/datastream_charts.png"></p><p><strong>Дизайн:</strong>
+Виберіть доступні типи графіків:</p><ul>
 <li>Line</li>
 <li>Area</li>
 <li>Bar</li>
 <li>Binary (anchor LINK to binary)</li>
 </ul><p><strong>Color:</strong>
-Choose solid colors or gradients</p><p><strong>Source and input:</strong>
-You can use 3 types of Data source: </p><p><strong>1. Virtual Pin</strong>
-Choose the desired Device and Virtual Pin to read the data from. </p><p><strong>2. Tags</strong>
-SuperChart can aggregate data from multiple devices using built-in aggregation functions. 
-For example, if you have 10 Temperature sensors sending temperature with the given period, 
-you can plot average value from 10 sensors on the widget.</p><p>To use Tags:</p><ul>
-<li><strong><a href="#blynk-main-operations-control-of-multiple-devices-tags">Add Tag</a></strong> to every device you want to aggregate data from. </li>
-<li><strong>Push data to the same Virtual Pin</strong> on every device. (e.g. <code>Blynk.virtualWrite (V0, temperature);</code>)</li>
-<li><strong>Choose Tag as a source</strong> in SuperChart Widget and use the pin where the data is coming to (e.g V0)<br></li>
-</ul><p><strong>Functions available:</strong> </p><ul>
-<li><strong>SUM</strong>, will summarize all incoming values to the specified Virtual Pin across all devices tagged with the chosen tag</li>
-<li><strong>AVG</strong>, will plot average value </li>
-<li><strong>MED</strong>, will find a median value</li>
-<li><strong>MIN</strong>, will plot minimum value </li>
-<li><strong>MAX</strong> will plot minimum value </li>
-</ul><p><strong>☝️ IMPORTANT: Tags are not working in Live Mode.</strong></p><ol>
+Виберіть суцільні кольори або градієнти</p><p><strong>Джерело та вхідні дані:</strong>
+Ви можете використовувати 3 типи джерела даних: </p><p><strong>1. Virtual Pin</strong>
+Виберіть потрібний пристрій та віртуальний PIN, щоб прочитати дані з. </p><p><strong>2. Tags</strong>
+SuperChart може збирати дані з кількох пристроїв за допомогою вбудованих функцій агрегації.
+Наприклад, якщо у вас є 10 температурних датчиків, що відправляють температуру з заданим періодом, ви можете побудувати середнє значення від 10 датчиків на віджеті.</p><p>To use Tags:</p><ul>
+<li><strong><a href="#blynk-main-operations-control-of-multiple-devices-tags">Add Tag</a></strong> для кожного пристрою, з якого потрібно збирати дані. </li>
+<li><strong>Натисніть дані на той же Virtual Pin</strong> на кожному пристрої (наприклад, <code>Blynk.virtualWrite (V0, temperature);</code>)</li>
+<li><strong>Виберіть Тег як джерело</strong> у SuperChart Widget і використовуйте контактний сигнал, де дані надходять (наприклад, V0)<br></li>
+</ul><p><strong>Доступні функції:</strong> </p><ul>
+<li><strong>SUM</strong>, буде підбивати підсумки всіх вхідних значень до зазначеного віртуального контакту на всіх пристроях, позначених вибраною тегом</li>
+<li><strong>AVG</strong>, буде складати середню величину </li>
+<li><strong>MED</strong>, знайде медіанне значення</li>
+<li><strong>MIN</strong>, буде складати мінімальне значення </li>
+<li><strong>MAX</strong> буде складати мінімальне значення </li>
+</ul><p><strong>☝️ ВАЖЛИВО: мітки не працюють у режимі Live.</strong></p><ol>
 <li><strong><a href="#widgets-time-input-device-selector">Device Selector</a></strong>
-If you add Device Selector Widget to your project, you can use it as a source for SuperChart. 
-In this case, when you change the device in Device Selector, chart will be updated accordingly</li>
-</ol><p><strong>Y-Axis Settings</strong>
-<br>There are two modes of how to scale data along the Y axis</p><ol>
+Якщо ви додаєте до вашого проекту віджета вибору пристрою, ви можете використовувати його як джерело для SuperChart.
+У цьому випадку, коли ви змінюєте пристрій у Device Selector, діаграма буде оновлено відповідно</li>
+</ol><p><strong>Параметри осі Y</strong>
+<br>Існує два режими масштабування даних вздовж осі Y</p><ol>
 <li><strong>Values</strong><br>
-When this mode is selected, Y scale will be set to the values you choose. 
-For example, if your hardware sends data with values varying from -100 to 100, you can set the chart 
-to this values and data will be rendered correctly.</li>
-</ol><p><img src="http://docs.blynk.cc/images/yScale_manual_charts.png" style="width: 300px; height:212"></p><p>You may also want to visualize the data within some specific range. 
-Let’s say incoming data has values in the range of 0-55, but you would like to see only values in the range 30-50. 
-You can set it up and if values are out of Y scale you configured, chart will be cropped</p><ol>
-<li><strong>% of Height</strong><br>
-This option allows you to auto-scale incoming data on the widget and position it the way you want. 
-In this mode, you set up the percentage of widget height on the screen, from 0% to 100%. </li>
-</ol><p><img src="http://docs.blynk.cc/images/yheight2_charts.png" style="width: 300px; height:212px"></p><p>If you set 0-100%, in fact it’s a full auto-scale. No matter in which range the data is coming,<br>it will be always scaled to the whole height of the widget.</p><p>If you set it to 0-25%, then this chart will only be rendered on 1/4 of the widget height:
-<img src="http://docs.blynk.cc/images/yheight2_manual_charts.png" style="width: 300px; height:212px"></p><p>This setting is very valuable for <strong>Binary Chart</strong> or for visualizing a few datastreams on the same chart in a different way.</p><p><img src="http://docs.blynk.cc/images/binary_charts.png" style="width: 300px; height:280px"></p><p><strong>Suffix:</strong> <br>Here you can specify a suffix that will be shown during the Tap’n’hold</p><p><img src="http://docs.blynk.cc/images/suffix_charts.png" style="width: 300px; height:280px"></p><p><strong>Connect Missing Data Points</strong><br>
-If this switch is ON, then SuperChart will connect all the dots even if there was no data</p><p><img src="http://docs.blynk.cc/images/datapoints1_charts.png" style="width: 300px; height:280px"></p><p>If it’s set to OFF, then you will see gaps in case there was no data.</p><p><img src="http://docs.blynk.cc/images/datapoints2_charts.png" style="width: 300px; height:280px"></p><p><strong>Binary Chart Settings</strong><br>
-This type of chart is useful to plot binary data, for example when unit was ON or OFF, or when motion was detected or when certain threshold was reached.</p><p>You need to specify a <strong>FLIP</strong> point, which is the point where incoming data will be turned into TRUE or FALSE state.</p><p>For example, you send the data in the range of <code>0 to 1023</code>. If you set <code>512</code> as a <strong>FLIP</strong> point, then everything above <code>512</code> (excluding 512) will be recorded as <code>TRUE</code>, any value below <code>512</code> (including 512) will be <code>FALSE</code>.</p><p>Another example, if you send <code>0 and 1</code> and set <code>0</code> as a <strong>FLIP</strong> point, then <code>1</code> will be <code>TRUE</code>, <code>0</code> will be <code>FALSE</code></p><p><strong>State Labels:</strong><br>
-Here you can specify how <code>TRUE/FALSE</code> should be shown in Tap’n’Hold mode. </p><p>For example, you can set to <code>TRUE</code> to “Equipment ON” label, <code>FALSE</code> to “Equipment OFF”.</p><p><img src="http://docs.blynk.cc/images/binarylabel_charts.png" style="width: 300px; height:280px"></p><h3 id="widgets-displays-graph">Graph</h3><p>Easily plot incoming data from your project in various designs.</p><p><img src="http://docs.blynk.cc/images/graph.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/graph_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-displays-history-graph">History Graph</h3><p>Allows you to see any data your hardware had sent to server previously. History graph has 3 granularities :</p><ul>
+Якщо вибрано цей режим, масштаб Y буде встановлено до вибраних вами значень.
+Наприклад, якщо ваш апаратне забезпечення передає дані зі значеннями від -100 до 100, ви можете встановити діаграму
+до цих значень і даних будуть виправлені правильно.</li>
+</ol><p><img src="http://docs.blynk.cc/images/yScale_manual_charts.png" style="width: 300px; height:212"></p><p>Ви також можете переглядати дані в певному діапазоні.
+Скажімо, що вхідні дані мають значення в діапазоні 0-55, але ви хочете бачити лише значення в діапазоні 30-50.
+Ви можете встановити його, і якщо значення не входять у шкалу Y, яку ви налаштовували, діаграма буде обрізана</p><ol>
+<li><strong>% висоти</strong><br>
+Ця опція дозволяє автоматично масштабувати вхідні дані на віджеті та розташовувати їх так, як ви хочете.
+У цьому режимі ви встановлюєте відсоток висоти віджетів на екрані, від 0% до 100%. </li>
+</ol><p><img src="http://docs.blynk.cc/images/yheight2_charts.png" style="width: 300px; height:212px"></p><p>Якщо ви встановите 0-100%, насправді це повна автоматична шкала. Незалежно від того, в якому діапазоні дані надходять,<br>це буде завжди масштабується до всієї висоти віджету.</p><p>Якщо ви встановите його на 0-25%, то ця діаграма відображатиметься лише на 1/4 висоти віджету:
+<img src="http://docs.blynk.cc/images/yheight2_manual_charts.png" style="width: 300px; height:212px"></p><p>Цей параметр дуже корисний для <strong>Binary Chart</strong> або для візуалізації декількох типів даних на тій же схемі іншим способом.</p><p><img src="http://docs.blynk.cc/images/binary_charts.png" style="width: 300px; height:280px"></p><p><strong>Suffix:</strong> <br>Тут ви можете вказати суфікс, який буде показано під час натискання кнопки</p><p><img src="http://docs.blynk.cc/images/suffix_charts.png" style="width: 300px; height:280px"></p><p><strong>З'єднати пропущені точки даних</strong><br>
+Якщо цей перемикач увімкнено, тоді SuperChart підключатиме всі точки, навіть якщо цього не булоa</p><p><img src="http://docs.blynk.cc/images/datapoints1_charts.png" style="width: 300px; height:280px"></p><p>Якщо його встановлено на OFF, то ви побачите прогалини у випадку відсутності даних.</p><p><img src="http://docs.blynk.cc/images/datapoints2_charts.png" style="width: 300px; height:280px"></p><p><strong>Параметри  Binary Chart</strong><br>
+Такий тип діаграми корисний для нанесення подвійних даних, наприклад, коли пристрій було ввімкнено або вимкнено, або коли рух було виявлено або коли певний пороговий показник був досягнутий.</p><p>Вам потрібно вказати <strong>FLIP</strong> точку, в якій вхідні дані будуть перетворюватися в стан TRUE або FALSE.</p><p>Наприклад, ви надсилаєте дані в діапазоні від <code>0 to 1023</code>. Якщо ви встановите <code>512</code> як <strong>FLIP</strong> точку,  то все вище <code>512</code> (за винятком 512) буде записано як <code>TRUE</code>,будь-яке значення нижче  <code>512</code> (включаючи 512) буде <code>FALSE</code>.</p><p>Інший приклад, якщо ви надішлете <code>0 and 1</code> і встановите <code>0</code> як <strong>FLIP</strong> точку, то <code>1</code> буде <code>TRUE</code>, <code>0</code> буде <code>FALSE</code></p><p><strong>State Labels:</strong><br>
+Тут ви можете вказати, як це зробити <code>TRUE/FALSE</code> повинен відображатися в режимі Tap'n'Hold. </p><p>Наприклад, ви можете встановити на <code>TRUE</code> на позначку “Equipment ON”, <code>FALSE</code> на “Equipment OFF”.</p><p><img src="http://docs.blynk.cc/images/binarylabel_charts.png" style="width: 300px; height:280px"></p><h3 id="widgets-displays-graph">Graph</h3><p>Легко складайте вхідні дані з вашого проекту в різних дизайнах.</p><p><img src="http://docs.blynk.cc/images/graph.png" style="width: 77px; height:80px"></p><p><img src="http://docs.blynk.cc/images/graph_edit.png" style="width: 200px; height:360px"></p><p><strong>Sketch:</strong> <a href="https://github.com/blynkkk/blynk-library/blob/master/examples/GettingStarted/BlynkBlink/BlynkBlink.ino">BlynkBlink</a></p><h3 id="widgets-displays-history-graph">History Graph</h3><p>Allows you to see any data your hardware had sent to server previously. History graph has 3 granularities :</p><ul>
 <li>Minute granularity - <code>1h</code>, <code>6h</code>;</li>
 <li>Hour granularity - <code>1d</code>, <code>1w</code>;</li>
 <li>Day granularity - <code>1m</code>, <code>3m</code>;</li>
